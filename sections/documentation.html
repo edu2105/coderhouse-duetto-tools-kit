@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="https://kit.fontawesome.com/3e54838a37.js" crossorigin="anonymous"></script>
+    <title>Documentation</title>
+</head>
+<body>
+    <div class="main-layout">
+        <header class="header">
+            <!-- Nav visible for Mobile -->
+            <div class="mobile-menu">
+                <input type="checkbox" id="mobile-menu-check">
+                <div class="mobile-menu-open-btn">
+                    <label for="mobile-menu-check">
+                        <i class="fas fa-bars"></i>
+                    </label>
+                </div>
+                <div class="mobile-menu-nav">
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="./how-it-works.html">How it works</a></li>
+                        <li class="mobile-sub-nav">
+                                <a href="./tools.html">Tools&#9663;</a>
+                                <!-- Sub-Menu -->
+                                <ul class="mobile-sub-nav-content">
+                                    <li><a href="../tools-kit/validator.html">HTNG Validator</a></li>
+                                    <li><a href="../tools-kit/converter.html">XML To CSV</a></li>
+                                    <li><a href="../tools-kit/rate-sum.html">Rate Sum</a></li>
+                                </ul>
+                        </li>
+                        <li><a href="./documentation.html">Documentation</a></li>
+                        <li><a href="./feedback.html">Send feedback</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Duetto Logo + Horizontal Navigation Bar  -->
+            <a href="../index.html"><img src="../images/duetto-logo.png" alt="Duetto Logo"></a>
+            <nav class="header-nav-bar">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="./how-it-works.html">How it works</a></li>
+                    <li class="sub-nav">
+                        <a href="./tools.html">Tools&#9663;</a>
+                        <!-- Sub-Menu -->
+                        <ul class="sub-nav-content">
+                            <li><a href="../tools-kit/validator.html">HTNG Validator</a></li>
+                            <li><a href="../tools-kit/converter.html">XML To CSV</a></li>
+                            <li><a href="../tools-kit/rate-sum.html">Rate Sum</a></li>
+                        </ul>                    
+                    </li>
+                    <li><a href="#">Documentation</a></li>
+                    <li><a href="./feedback.html">Send feedback</a></li>
+                </ul>
+            </nav>
+            <!-- Placeholder to center Duetto Logo for mobile view -->
+            <div class="mobile-placeholder"></div>
+        </header>
+        
+        <main class="main">
+            <!-- Main Section -->
+            <div class="main-section-container">
+                <h1>&#128214;Find all the related documentation in the table below</h1>
+            </div>
+    
+            <!-- Secondary Sections  -->
+            <div class="sub-section-container">
+                <table class="table">
+                    <tr class="table-headers">
+                        <th>Section</th>
+                        <th>Description</th>
+                        <th>Link</th>
+                    </tr>
+                    <tr class="table-rows">
+                        <td>HTNG Standard</td>
+                        <td>Take a look to the official HTNG documentation for all message types.</td>
+                        <td>This is a link</td>
+                    </tr>
+                    <tr class="table-rows">
+                        <td>Integrations Team</td>
+                        <td>See a complete confluence workspace dedicated to integrations.</td>
+                        <td>This is a link</td>
+                    </tr>
+                </table>
+            </div>
+        </main>
+    
+        <footer class="footer">
+            <!-- Footer horizontal navigation bar, includes social links -->
+            <nav class="footer-nav-bar">
+                <ul>
+                    <li><a href="https://duetto.slack.com/archives/CGHL8TTT6" target="_blank"><i class="fab fa-slack"> Slack</i></a></li>    
+                    <li><a href="https://mail.google.com/mail/?view=cm&fs=1&to=productintegrations@duettoresearch.com" target="_blank"><i class="far fa-envelope"> Gmail</i></a></li>
+                    <li><a href="https://duettoresearch.atlassian.net/wiki/spaces/PM/overview" target="_blank"><i class="fab fa-confluence"> Confluence</i></a></li>
+                </ul>
+            </nav>
+        </footer>
+    </div>
+</body>
+</html>
