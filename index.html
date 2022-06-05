@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="shortcut icon" href="./images/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <script src="https://kit.fontawesome.com/3e54838a37.js" crossorigin="anonymous"></script>
     <title>Duetto Tools Kit</title>
 </head>
@@ -39,9 +40,9 @@
                 </div>
             </div>
             <!-- Duetto Logo + Horizontal Navigation Bar  -->
-            <a href="./index.html"><img src="./images/duetto-logo.png" alt="Duetto Logo"></a>
+            <a href="./index.html"><img class="animate__animated animate__backInLeft" src="./images/duetto-logo.png" alt="Duetto Logo"></a>
             <nav class="header-nav-bar">
-                <ul>
+                <ul class="animate__animated animate__backInRight">
                     <li><a href="#">Home</a></li>
                     <li><a href="./sections/how-it-works.html">How it works</a></li>
                     <li class="sub-nav">
@@ -64,7 +65,7 @@
         <main class="main">
             <!-- Main Section -->
             <div class="main-section-container">
-                <h1>&#129520; Welcome to Duetto Tools Kit</h1>
+                <h1 class="animate__animated animate__flash">&#129520; Welcome to Duetto Tools Kit</h1>
                 <p>This site was designed by the Integrations team in order to provide you different solutions for your daily work.</p>
             </div>
             
@@ -92,12 +93,11 @@
             <div class="tools-section">
                 <div class="cards-title">
                     <h2>Available Tools</h2>
-                    <h3>Visit the <a href="./sections/tools.html">Tools</a> section to start using them!</h3>
                 </div>
                 <div class="cards-container">
-                    <div class="card">
+                    <div class="card wow animate__animated animate__zoomIn" data-wow-duration="2s">
                         <div class="card-img">
-                            <a href="./tools-kit/validator.html"><img src="./images/htng.jpg" alt="HTNG Logo"></a>
+                            <a href="./tools-kit/validator.html"><img src="./images/htng.png" alt="HTNG Logo"></a>
                         </div>
                         <div class="card-content">
                             <h4>HTNG Validator</h4>
@@ -106,9 +106,9 @@
                         <button>Try Out</button>
                     </div>
         
-                    <div class="card">
+                    <div class="card wow animate__animated animate__zoomIn" data-wow-duration="2s">
                         <div class="card-img">
-                            <a href="./tools-kit/converter.html"><img src="./images/xmlToCsv.jpg" alt="XML To CSV Logo"></a>
+                            <a href="./tools-kit/converter.html"><img src="./images/xmlToCsv.png" alt="XML To CSV Logo"></a>
                         </div>
                         <div class="card-content">
                             <h4>Converter</h4>
@@ -117,13 +117,35 @@
                         <button>Try Out</button>
                     </div>
         
-                    <div class="card">
+                    <div class="card wow animate__animated animate__zoomIn" data-wow-duration="2s">
                         <div class="card-img">
-                            <a href="./tools-kit/rate-sum.html"><img src="./images/calculation.jpeg" alt="XML To CSV Logo"></a>
+                            <a href="./tools-kit/rate-sum.html"><img src="./images/calculation.png" alt="XML To CSV Logo"></a>
                         </div>
                         <div class="card-content">
                             <h4>Rate Sum</h4>
                             <p>Will make the rate calculation for you. You just need to upload any booking stay-day file.</p>
+                        </div>
+                        <button>Try Out</button>
+                    </div>
+
+                    <div class="card coming-soon wow animate__animated animate__zoomIn" data-wow-duration="2s">
+                        <div class="card-img">
+                           <img src="./images/coming-soon.png" alt="Compset Automation">
+                        </div>
+                        <div class="card-content">
+                            <h4>Comp Set Automation</h4>
+                            <p>A friendly UI to set the competitors for a Hotel.</p>
+                        </div>
+                        <button>Try Out</button>
+                    </div>
+
+                    <div class="card coming-soon wow animate__animated animate__zoomIn" data-wow-duration="2s">
+                        <div class="card-img">
+                           <img src="./images/coming-soon.png" alt="Partner Certification">
+                        </div>
+                        <div class="card-content">
+                            <h4>Partner Certification</h4>
+                            <p>Partners will be able to certificate an integration through our new automated process.</p>
                         </div>
                         <button>Try Out</button>
                     </div>
@@ -142,5 +164,8 @@
             </nav>
         </footer>
     </div>
+
+    <script src="./js/wow.js"></script>
+    <script> new WOW().init();</script>
 </body>
 </html>

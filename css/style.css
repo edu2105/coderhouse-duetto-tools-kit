@@ -278,7 +278,8 @@ body{
 }
 
 .main .tools-section{
-    background-color: var(--header-background-color-2);
+    background-image: url("../images/duetto-tools-background.jpg");
+    background-size: cover;
 }
 
 .main .tools-section .cards-title{
@@ -311,16 +312,29 @@ body{
     background-color: var(--header-background-color-1);
 }
 
-.main .tools-section .cards-container .card .card-img{
-    background-color: white;
+.main .tools-section .cards-container .card.coming-soon{
+    border: 2px solid;
+    border-color: grey;
+    border-radius: .5rem;
+    box-sizing: border-box;
+    box-shadow: none;
+    padding: .5rem;
+    width: 15%;
+    height: auto;
+    display: grid;
+    grid-template-rows: 10rem 1fr;
+    background-color: grey;
 }
-
 
 .main .tools-section .cards-container .card .card-img img{
     max-width: 100%;
     max-height: 100%;
     display: block;
     margin: auto;
+}
+
+.main .tools-section .cards-container .card.card.coming-soon .card-img img:hover{
+    cursor: not-allowed;
 }
 
 .main .tools-section .cards-container .card .card-content h4{
@@ -331,6 +345,15 @@ body{
 .main .tools-section .cards-container .card .card-content p{
     margin: 0 0 1rem 0;
     text-align: center;
+    color: var(--header-background-color-4);
+    font-weight: bold;
+}
+
+.main .tools-section .cards-container .card.coming-soon .card-content p{
+    margin: 0 0 1rem 0;
+    text-align: center;
+    color: black;
+    font-weight: bold;
 }
 
 .main .tools-section .cards-container .card button{
@@ -344,11 +367,26 @@ body{
     width: 100%;
 }
 
+.main .tools-section .cards-container .card.coming-soon button{
+    background-color: grey; 
+    color: white; 
+    border: 2px solid;
+    font-size: var(--main-font-size);
+    height: 2.5rem;
+    width: 100%;
+    box-shadow: none;
+}
+
 .main .tools-section .cards-container .card button:hover{
     background-color: var(--header-background-color-4);
     color: white;
     box-shadow: none;
     cursor: pointer;
+}
+
+.main .tools-section .cards-container .card.coming-soon button:hover{
+    cursor: not-allowed;
+    background-color: grey;
 }
 
 #collapsible:checked ~.htng-code{
@@ -471,7 +509,7 @@ body{
 
 .footer .footer-nav-bar{
     height: 100%;
-}
+}   
 
 .footer .footer-nav-bar ul{
     display: flex;
@@ -523,11 +561,16 @@ body{
     .main .tools-section .cards-container{
         flex-direction: column;
         align-items: center;
-        
     }
 
-    .main .tools-section .cards-container .card{
+    .main .tools-section .cards-container .card,
+    .main .tools-section .cards-container .card.coming-soon{
         width: 50%;
+        margin: 1rem 0 1rem 0;
+    }
+
+    .main .tools-section{
+        background-size: auto;
     }
 }
 
