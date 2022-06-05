@@ -12,6 +12,7 @@
     --main-font-size: 1.2rem;
     --main-img-width: 15rem;
     --main-img-height: 12rem;
+    --main-tools-section-text-color: white;
     --footer-li-color: white;
     --foter-font-size: 1.2rem;
 }
@@ -276,6 +277,80 @@ body{
     max-width: fit-content;
 }
 
+.main .tools-section{
+    background-color: var(--header-background-color-2);
+}
+
+.main .tools-section .cards-title{
+    text-align: center;
+}
+
+.main .tools-section .cards-title h2{
+    color: var(--main-tools-section-text-color);
+}
+
+.main .tools-section .cards-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-bottom: 4rem;
+}
+
+.main .tools-section .cards-container .card{
+    box-shadow: 0 .25rem .5rem 0 var(--header-background-color-4);
+    border: 2px solid;
+    border-color: var(--header-background-color-4);
+    border-radius: .5rem;
+    box-sizing: border-box;
+    padding: .5rem;
+    width: 15%;
+    height: auto;
+    display: grid;
+    grid-template-rows: 10rem 1fr;
+    background-color: var(--header-background-color-1);
+}
+
+.main .tools-section .cards-container .card .card-img{
+    background-color: white;
+}
+
+
+.main .tools-section .cards-container .card .card-img img{
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+    margin: auto;
+}
+
+.main .tools-section .cards-container .card .card-content h4{
+    color: var(--main-tools-section-text-color);
+    text-align: center;
+}
+
+.main .tools-section .cards-container .card .card-content p{
+    margin: 0 0 1rem 0;
+    text-align: center;
+}
+
+.main .tools-section .cards-container .card button{
+    transition-duration: all 0.4s linear; 
+    background-color: white; 
+    color: var(--header-background-color-3); 
+    border: 2px solid;
+    font-size: var(--main-font-size);
+    box-shadow: 0px .3rem .6rem;
+    height: 2.5rem;
+    width: 100%;
+}
+
+.main .tools-section .cards-container .card button:hover{
+    background-color: var(--header-background-color-4);
+    color: white;
+    box-shadow: none;
+    cursor: pointer;
+}
+
 #collapsible:checked ~.htng-code{
     visibility: visible;
     display: block;
@@ -439,6 +514,24 @@ body{
 }
 
 
+/* Reduce font-size to avoid nav bar items wrap */
+@media(max-width: 840px){
+    html{
+        font-size: 14px;
+    }
+
+    .main .tools-section .cards-container{
+        flex-direction: column;
+        align-items: center;
+        
+    }
+
+    .main .tools-section .cards-container .card{
+        width: 50%;
+    }
+}
+
+
 /* Medium devices like tablets */
 @media(max-width: 768px){
     .header .header-nav-bar{
@@ -468,6 +561,7 @@ body{
     .main .sub-section-container{
         display: flex;
         flex-direction: column;
+        margin-left: 1.2rem;
     }
 
     .main textarea{
