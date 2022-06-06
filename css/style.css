@@ -32,12 +32,11 @@ body{
 .main-layout{
     display: grid;
     grid-template-columns: auto;
-    grid-template-rows: 1fr 9fr 1fr;
+    grid-template-rows: 1fr 12fr;
     height: 100%;
     grid-template-areas:
-    "header header header header"
-    "main main main main"
-    "footer footer footer footer"
+    "header"
+    "main"
     ;
 }
 
@@ -167,7 +166,7 @@ body{
 
 .main.index{
     display: grid;
-    grid-template-rows: 100% 100%;
+    grid-template-rows: 100% 100% 100%;
 }
 
 .main p{
@@ -188,13 +187,41 @@ body{
     color: var(--header-background-color-4);
 }
 
+.main mark{
+    background-color: var(--header-background-color-3);
+    padding: .5rem;
+    border-radius: .5rem;
+    color: whitesmoke;
+}
+
+.main.index p{
+    margin-left: 1.2rem;
+    color: white;
+    font-size: var(--main-font-size);
+}
+
+.main.index h1{
+    color: var(--header-background-color-4);
+}
+
+.main.index h2{
+    color: var(--header-background-color-4)
+}
+
+.main.index h3{
+    color: var(--header-background-color-4);
+}
+
 .main .start-section{
-    background-image: url("../images/hotel-view-wdc.jpg");
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../images/hotel-view-nyc.jpg");
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 
 .main .main-section-container{
@@ -206,9 +233,9 @@ body{
 }
 
 .main .sub-section-container.index{
-    margin: 1.2rem 1.2rem 1.2rem 6.2rem;
-    display: grid;
-    grid-template-columns: 1fr 3fr;
+    margin: 1.2rem 1.2rem 1.2rem 1.2rem;
+    display: flex;
+    justify-content: center;
 }
 
 .main .sub-section-container.tools{
@@ -292,7 +319,7 @@ body{
 }
 
 .main .tools-section{
-    background-image: url("../images/hotel-view-nyc.jpg");
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../images/hotel-view-wdc.jpg");
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
@@ -300,6 +327,7 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    height: 100%;
 }
 
 .main .tools-section .cards-title{
@@ -355,13 +383,35 @@ body{
     max-height: 100%;
     display: block;
     margin: auto;
+    transition-duration: all 0.4s linear; 
+    color: var(--header-background-color-3); 
+    border: 2px solid;
+    box-shadow: 0px .3rem .6rem;
+    background-color: white;
 }
 
-.main .tools-section .cards-container .card.card.coming-soon .card-img img:hover{
+.main .tools-section .cards-container .card.coming-soon .card-img img{
+    border: none;
+    box-shadow: none;
+}
+
+.main .tools-section .cards-container .card .card-img img:hover{
+    width: 100%;
+    height: 100%;
+    background-color: var(--header-background-color-4);
+    color: white;
+    box-shadow: none;
+}
+
+.main .tools-section .cards-container .card.coming-soon .card-img img:hover{
     cursor: not-allowed;
+    transition-duration: unset; 
+    border: none;
+    box-shadow: none;
+    color: none;
 }
 
-.main .tools-section .cards-container .card .card-content h4{
+.main .tools-section .cards-container .card .card-content h3{
     color: var(--main-tools-section-text-color);
     text-align: center;
 }
@@ -372,6 +422,7 @@ body{
     color: var(--header-background-color-4);
     font-weight: bold;
     word-wrap: break-word;
+    font-size: 1rem;
 }
 
 .main .tools-section .cards-container .card.coming-soon .card-content p{
@@ -412,6 +463,48 @@ body{
 .main .tools-section .cards-container .card.coming-soon button:hover{
     cursor: not-allowed;
     background-color: grey;
+}
+
+
+.main .video-container .video-content{
+    position: relative;
+    bottom: 90%;
+    margin-left: 2rem;
+    max-width: 40%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.main .video-container .video-content .video-content-detail{
+    margin-left: 2rem;
+}
+
+.main .video-container .video-content .video-content-detail h2{
+    margin: 3rem 0 0 2rem;
+}
+
+
+.main .video-container .video-content .video-content-detail li{
+    list-style: none;
+    color: white;
+    font-size: var(--main-font-size);
+    padding: .3rem;
+}
+
+.main .video-container .video-content .video-content-detail .goals i{
+    color: green;
+    margin-right: .3rem;
+}
+
+
+.main .video-container .video-content .video-content-detail p{
+    margin-left: 2.8rem;
+}
+
+#about-us-video{
+    object-fit: cover;
 }
 
 #collapsible:checked ~.htng-code{
@@ -520,16 +613,15 @@ body{
     cursor: pointer;
     box-shadow: 0px .6rem 1.2rem;
     transform: translateY(-2px);
-}   
+}
 /* Main styles end */
 
 
 /* Footer styles start */
 .footer{
-    grid-area: footer;
     background-color: var(--header-background-color-4);
     width: 100%;
-    height: 100%;
+    min-height: 4rem;
 }
 
 .footer .footer-nav-bar{
@@ -593,6 +685,9 @@ body{
         background-attachment: scroll;
     }
 
+    .main .video-container .video-content{
+        max-width: 75%;
+    }
 }
 
 
@@ -617,18 +712,23 @@ body{
 
     #mobile-menu-check:checked ~.mobile-menu-nav{
         visibility: visible;
-        width: 100vw;
-        height: 100vh;
-        top: 9%;
-        opacity: .9;
+        width: 100%;
+        height: 300%;
+        top: 7.7%;
+        opacity: .95;
         background-color: var(--header-background-color-3);
         transition: 0.6s;
+        z-index: 1;
     }
 
     .main .tools-section .cards-container{
         flex-direction: column;
         align-items: center;
         justify-content: center;
+    }
+
+    .main .tools-section .cards-title{
+        margin-top: 2rem;
     }
 
     .main .tools-section .cards-container .card,
@@ -647,6 +747,10 @@ body{
     .main textarea{
         width: calc(100% - 3rem);
         height: auto;
+    }
+
+    .main .video-container .video-content{
+        max-width: 75%;
     }
 }
 
@@ -677,6 +781,9 @@ body{
         flex-direction: column;
     }
     
+    .main .video-container .video-content{
+        max-width: 75%;
+    }
 }
 
 /* Media Queries end */
