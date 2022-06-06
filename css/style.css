@@ -68,7 +68,6 @@ body{
 .header .mobile-menu-nav{
     visibility: hidden;
     position: absolute;
-
 }
 
 .header .mobile-menu-nav li{
@@ -160,9 +159,15 @@ body{
 .main{
     grid-area: main;
     width: 100%;
+    height: 100%;
     overflow-y: scroll;
     display: flex;
     flex-direction: column;
+}
+
+.main.index{
+    display: grid;
+    grid-template-rows: 100% 100%;
 }
 
 .main p{
@@ -181,6 +186,15 @@ body{
 
 .main h3{
     color: var(--header-background-color-4);
+}
+
+.main .start-section{
+    background-image: url("../images/hotel-view-wdc.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100%;
 }
 
 .main .main-section-container{
@@ -278,8 +292,14 @@ body{
 }
 
 .main .tools-section{
-    background-image: url("../images/duetto-tools-background.jpg");
+    background-image: url("../images/hotel-view-nyc.jpg");
     background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 
 .main .tools-section .cards-title{
@@ -326,6 +346,10 @@ body{
     background-color: grey;
 }
 
+.main .tools-section .cards-container .card .card-img{
+    margin: auto;
+}
+
 .main .tools-section .cards-container .card .card-img img{
     max-width: 100%;
     max-height: 100%;
@@ -347,6 +371,7 @@ body{
     text-align: center;
     color: var(--header-background-color-4);
     font-weight: bold;
+    word-wrap: break-word;
 }
 
 .main .tools-section .cards-container .card.coming-soon .card-content p{
@@ -558,20 +583,16 @@ body{
         font-size: 14px;
     }
 
-    .main .tools-section .cards-container{
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .main .tools-section .cards-container .card,
-    .main .tools-section .cards-container .card.coming-soon{
-        width: 50%;
-        margin: 1rem 0 1rem 0;
+    .main .start-section{
+        background-attachment: scroll;
+        background-size: cover;
     }
 
     .main .tools-section{
-        background-size: auto;
+        background-size: cover;
+        background-attachment: scroll;
     }
+
 }
 
 
@@ -590,6 +611,10 @@ body{
         justify-self: flex-start;
     }
 
+    .main.index{
+        grid-template-rows: auto;
+    }
+
     #mobile-menu-check:checked ~.mobile-menu-nav{
         visibility: visible;
         width: 100vw;
@@ -598,6 +623,18 @@ body{
         opacity: .9;
         background-color: var(--header-background-color-3);
         transition: 0.6s;
+    }
+
+    .main .tools-section .cards-container{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .main .tools-section .cards-container .card,
+    .main .tools-section .cards-container .card.coming-soon{
+        width: 40%;
+        margin: 1rem 0 1rem 0;
     }
 
     .main .sub-section-container.index,
