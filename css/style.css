@@ -32,7 +32,7 @@ body{
 .main-layout{
     display: grid;
     grid-template-columns: auto;
-    grid-template-rows: 1fr 12fr;
+    grid-template-rows: 6vh 94vh;
     height: 100%;
     grid-template-areas:
     "header"
@@ -362,7 +362,7 @@ body{
     border-radius: .5rem;
     box-sizing: border-box;
     padding: .5rem;
-    width: 15%;
+    max-width: 15%;
     height: auto;
     display: grid;
     grid-template-rows: 10rem 1fr;
@@ -376,7 +376,6 @@ body{
     box-sizing: border-box;
     box-shadow: none;
     padding: .5rem;
-    width: 15%;
     height: auto;
     display: grid;
     grid-template-rows: 10rem 1fr;
@@ -759,17 +758,11 @@ body{
         visibility: visible;
         width: 100%;
         height: 300%;
-        top: 7.6%;
+        top: 6vh;
         opacity: .95;
         background-color: var(--header-background-color-3);
         transition: 0.6s;
         z-index: 1;
-    }
-
-    .main .tools-section .cards-container{
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
     }
 
     .main .tools-section .cards-title{
@@ -778,7 +771,7 @@ body{
 
     .main .tools-section .cards-container .card,
     .main .tools-section .cards-container .card.coming-soon{
-        width: 40%;
+        max-width: 40%;
         margin: 1rem 0 1rem 0;
     }
 
@@ -824,6 +817,24 @@ body{
         margin-left: 1rem;
         display: flex;
         flex-direction: column;
+    }
+
+    .main .sub-section-container .aside{
+        max-width: 80%;
+        text-align: start;
+        align-self: center;
+    }
+    
+
+    .main .tools-section .cards-container{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .main .tools-section .cards-container .card,
+    .main .tools-section .cards-container .card.coming-soon{
+        max-width: 80%;
+        margin: 1rem 0 1rem 0;
     }
     
     .main .video-container .video-content{
