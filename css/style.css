@@ -32,7 +32,7 @@ body{
 .main-layout{
     display: grid;
     grid-template-columns: auto;
-    grid-template-rows: 6vh 88vh 6vh;
+    grid-template-rows: 1fr 12fr 1fr;
     height: 100%;
     grid-template-areas:
     "header"
