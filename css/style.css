@@ -32,6 +32,18 @@ body{
 .main-layout{
     display: grid;
     grid-template-columns: auto;
+    grid-template-rows: 6vh 88vh 6vh;
+    height: 100%;
+    grid-template-areas:
+    "header"
+    "main"
+    "footer"
+    ;
+}
+
+.main-layout.index{
+    display: grid;
+    grid-template-columns: auto;
     grid-template-rows: 6vh 94vh;
     height: 100%;
     grid-template-areas:
@@ -666,6 +678,14 @@ body{
     background-color: var(--header-background-color-4);
     width: 100%;
     min-height: 4rem;
+    grid-area: footer;
+}
+
+.footer.index{
+    background-color: var(--header-background-color-4);
+    width: 100%;
+    min-height: 4rem;
+    grid-area: unset;
 }
 
 .footer .footer-nav-bar{
