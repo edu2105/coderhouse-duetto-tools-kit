@@ -252,12 +252,17 @@ body{
     justify-content: space-around;
 }
 
-.main .main-section-container{
+.main .main-section-container.index{
     margin: 0 1.2rem 0 1.2rem;
+}
+
+.main .main-section-container{
+    margin: 2.5rem 1.2rem 0 1.2rem;
 }
 
 .main .sub-section-container{
     margin: 1rem 1.2rem 1.2rem 6.2rem;
+    width: fit-content;
 }
 
 .main .sub-section-container.index{
@@ -378,19 +383,6 @@ body{
     margin-bottom: 4rem;
 }
 
-.main .tools-section .cards-container .card{
-    max-width: 15%;
-    background-color: var(--header-background-color-1);
-}
-
-.main .tools-section .cards-container .card p{
-    color: var(--header-background-color-4);
-}
-
-.main .tools-section .cards-container .card h5{
-    color: white;
-}
-
 .main .tools-section .cards-container .card-custom{
     box-shadow: 0 .25rem .5rem 0 var(--header-background-color-4);
     border: 2px solid;
@@ -508,23 +500,6 @@ body{
     cursor: not-allowed;
     background-color: grey;
 }
-
-.main .tools-section .cards-container .card.coming-soon a{
-    background-color: grey; 
-    color: white; 
-    border: none;
-}
-
-
-.main .tools-section .cards-container .card.coming-soon a:hover{
-    cursor: not-allowed;
-    background-color: grey;
-}
-
-.main .tools-section .cards-container .card.coming-soon img:hover{
-    cursor: not-allowed;
-}
-
 
 .main .video-container .video-content{
     position: relative;
@@ -761,6 +736,40 @@ body{
 }
 /* Footer styles end */
 
+
+/* Bootstrap CSS overrides */
+.list-group{
+    --bs-list-group-action-hover-color: white;
+    --bs-list-group-action-hover-bg: var(--header-background-color-4);
+}
+
+.main .tools-section .cards-container .card{
+    max-width: 15%;
+    background-color: var(--header-background-color-1);
+}
+
+.main .tools-section .cards-container .card p{
+    color: var(--header-background-color-4);
+}
+
+.main .tools-section .cards-container .card h5{
+    color: white;
+}
+
+.main .tools-section .cards-container .card.coming-soon a{
+    background-color: grey; 
+    color: white; 
+    border: none;
+}
+
+.main .tools-section .cards-container .card.coming-soon a:hover{
+    cursor: not-allowed;
+    background-color: grey;
+}
+
+.main .tools-section .cards-container .card.coming-soon img:hover{
+    cursor: not-allowed;
+}
 
 /* Media Queries start */
 
