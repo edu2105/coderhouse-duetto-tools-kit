@@ -379,6 +379,19 @@ body{
 }
 
 .main .tools-section .cards-container .card{
+    max-width: 15%;
+    background-color: var(--header-background-color-1);
+}
+
+.main .tools-section .cards-container .card p{
+    color: var(--header-background-color-4);
+}
+
+.main .tools-section .cards-container .card h5{
+    color: white;
+}
+
+.main .tools-section .cards-container .card-custom{
     box-shadow: 0 .25rem .5rem 0 var(--header-background-color-4);
     border: 2px solid;
     border-color: var(--header-background-color-4);
@@ -392,7 +405,7 @@ body{
     background-color: var(--header-background-color-1);
 }
 
-.main .tools-section .cards-container .card.coming-soon{
+.main .tools-section .cards-container .card-custom.coming-soon{
     border: 2px solid;
     border-color: grey;
     border-radius: .5rem;
@@ -405,11 +418,11 @@ body{
     background-color: grey;
 }
 
-.main .tools-section .cards-container .card .card-img{
+.main .tools-section .cards-container .card-custom .card-img{
     margin: auto;
 }
 
-.main .tools-section .cards-container .card .card-img img{
+.main .tools-section .cards-container .card-custom .card-img img{
     max-width: 100%;
     max-height: 100%;
     display: block;
@@ -421,12 +434,12 @@ body{
     background-color: white;
 }
 
-.main .tools-section .cards-container .card.coming-soon .card-img img{
+.main .tools-section .cards-container .card-custom.coming-soon .card-img img{
     border: none;
     box-shadow: none;
 }
 
-.main .tools-section .cards-container .card .card-img img:hover{
+.main .tools-section .cards-container .card-custom .card-img img:hover{
     width: 100%;
     height: 100%;
     background-color: var(--header-background-color-4);
@@ -434,7 +447,7 @@ body{
     box-shadow: none;
 }
 
-.main .tools-section .cards-container .card.coming-soon .card-img img:hover{
+.main .tools-section .cards-container .card-custom.coming-soon .card-img img:hover{
     cursor: not-allowed;
     transition-duration: unset; 
     border: none;
@@ -442,12 +455,12 @@ body{
     color: none;
 }
 
-.main .tools-section .cards-container .card .card-content h3{
+.main .tools-section .cards-container .card-custom .card-content h3{
     color: var(--main-tools-section-text-color);
     text-align: center;
 }
 
-.main .tools-section .cards-container .card .card-content p{
+.main .tools-section .cards-container .card-custom .card-content p{
     margin: 0 0 1rem 0;
     text-align: center;
     color: var(--header-background-color-4);
@@ -456,14 +469,14 @@ body{
     font-size: 1rem;
 }
 
-.main .tools-section .cards-container .card.coming-soon .card-content p{
+.main .tools-section .cards-container .card-custom.coming-soon .card-content p{
     margin: 0 0 1rem 0;
     text-align: center;
     color: black;
     font-weight: bold;
 }
 
-.main .tools-section .cards-container .card button{
+.main .tools-section .cards-container .card-custom button{
     transition-duration: all 0.4s linear; 
     background-color: white; 
     color: var(--header-background-color-3); 
@@ -474,7 +487,7 @@ body{
     width: 100%;
 }
 
-.main .tools-section .cards-container .card.coming-soon button{
+.main .tools-section .cards-container .card-custom.coming-soon button{
     background-color: grey; 
     color: white; 
     border: 2px solid;
@@ -484,16 +497,32 @@ body{
     box-shadow: none;
 }
 
-.main .tools-section .cards-container .card button:hover{
+.main .tools-section .cards-container .card-custom button:hover{
     background-color: var(--header-background-color-4);
     color: white;
     box-shadow: none;
     cursor: pointer;
 }
 
-.main .tools-section .cards-container .card.coming-soon button:hover{
+.main .tools-section .cards-container .card-custom.coming-soon button:hover{
     cursor: not-allowed;
     background-color: grey;
+}
+
+.main .tools-section .cards-container .card.coming-soon a{
+    background-color: grey; 
+    color: white; 
+    border: none;
+}
+
+
+.main .tools-section .cards-container .card.coming-soon a:hover{
+    cursor: not-allowed;
+    background-color: grey;
+}
+
+.main .tools-section .cards-container .card.coming-soon img:hover{
+    cursor: not-allowed;
 }
 
 
@@ -804,8 +833,13 @@ body{
         margin-top: 2rem;
     }
 
-    .main .tools-section .cards-container .card,
-    .main .tools-section .cards-container .card.coming-soon{
+    .main .tools-section .cards-container .card-custom,
+    .main .tools-section .cards-container .card-custom.coming-soon{
+        max-width: 40%;
+        margin: 1rem 0 1rem 0;
+    }
+
+    .main .tools-section .cards-container .card{
         max-width: 40%;
         margin: 1rem 0 1rem 0;
     }
@@ -866,8 +900,13 @@ body{
         align-items: center;
     }
 
-    .main .tools-section .cards-container .card,
-    .main .tools-section .cards-container .card.coming-soon{
+    .main .tools-section .cards-container .card-custom,
+    .main .tools-section .cards-container .card-custom.coming-soon{
+        max-width: 80%;
+        margin: 1rem 0 1rem 0;
+    }
+
+    .main .tools-section .cards-container .card{
         max-width: 80%;
         margin: 1rem 0 1rem 0;
     }
