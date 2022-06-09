@@ -262,7 +262,7 @@ body{
 
 .main .sub-section-container{
     margin: 1rem 1.2rem 1.2rem 6.2rem;
-    width: fit-content;
+    width: auto;
 }
 
 .main .sub-section-container.index{
@@ -737,10 +737,11 @@ body{
 /* Footer styles end */
 
 
-/* Bootstrap CSS overrides */
+/* Bootstrap CSS overrides start */
 .list-group{
     --bs-list-group-action-hover-color: white;
     --bs-list-group-action-hover-bg: var(--header-background-color-4);
+    width: fit-content;
 }
 
 .main .tools-section .cards-container .card{
@@ -770,6 +771,27 @@ body{
 .main .tools-section .cards-container .card.coming-soon img:hover{
     cursor: not-allowed;
 }
+
+.header .header-nav-bar .dropdown-menu{
+   background-color: var(--header-background-color-3);
+   color: white;
+}
+
+.header .header-nav-bar .dropdown-menu li{
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+}
+
+.header .header-nav-bar .dropdown-menu li a{
+    color: unset;
+    padding-left: 1rem;
+    padding-right: 0;
+    width: 100%;
+}
+/* Bootstrap CSS overrides end */
+
+
 
 /* Media Queries start */
 
