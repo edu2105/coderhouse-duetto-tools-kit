@@ -812,6 +812,11 @@ body{
 
 #formFile{
     margin: 0;
+    max-width: 100%;
+}
+
+.main .sub-section-container .card{
+    max-width: 80%;
 }
 
 /* Bootstrap CSS overrides end */
