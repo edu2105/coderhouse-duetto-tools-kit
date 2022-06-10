@@ -218,6 +218,7 @@ body{
     border-radius: .5rem;
     color: whitesmoke;
     margin-bottom: 0;
+    width: fit-content;
 }
 
 .main.index p,
@@ -612,8 +613,8 @@ body{
 
 .main .form .subscription input{
     height: 1.2rem;
-    width: 1.2rem;
     margin-left: 1rem;
+    margin-top: .3rem;
 }
 
 .main .form input[type="file"]{
@@ -789,6 +790,30 @@ body{
     padding-right: 0;
     width: 100%;
 }
+
+.fieldset .btn.btn-primary,
+.form .btn.btn-primary{
+    border-radius: 9px;
+    width: fit-content;
+    margin: 1rem 0 1rem 1rem;
+}
+
+.form .btn.btn-primary.rate-sum{
+    margin-left: 0;
+}
+
+#floatingTextarea{
+    height: unset;
+}
+
+.form-control{
+    width: auto;
+}
+
+#formFile{
+    margin: 0;
+}
+
 /* Bootstrap CSS overrides end */
 
 

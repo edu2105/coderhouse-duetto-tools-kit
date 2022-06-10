@@ -92,13 +92,15 @@
                         </label>
                         <label class="subscription">
                             <p>Let me know when a new feature is added</p>
-                            <input type="checkbox">
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                            </div>
                         </label>
                         <label>
                             <p>Feedback</p>
-                            <textarea name="feedback" cols="50" rows="10"></textarea>
+                            <textarea name="feedback" cols="70" rows="5"></textarea>
                         </label>
-                        <input type="submit" value="Send">
+                        <button type="button" class="btn btn-primary">Submit</button>
                     </fieldset>
                 </form>
             </div>
