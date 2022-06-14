@@ -32,7 +32,7 @@ body{
 .main-layout{
     display: grid;
     grid-template-columns: auto;
-    grid-template-rows: 6vh 12fr 1fr;
+    grid-template-rows: 6vh 12fr 6vh;
     height: 100%;
     grid-template-areas:
     "header"
@@ -152,7 +152,7 @@ body{
 
 .main.index{
     display: grid;
-    grid-template-rows: 100% 100% 95% 5%;
+    grid-template-rows: 94vh 100vh 88vh 6vh;
 }
 
 .main.feedback{
@@ -223,7 +223,7 @@ body{
     }
 
     .main .main-section-container.index{
-        margin: 0 1.2rem 0 1.2rem;
+        margin: 1.2rem 1.2rem 0 1.2rem;
     }
 
     .main .main-section-container{
@@ -669,7 +669,6 @@ body{
 .footer{
     background-color: var(--header-background-color-4);
     width: 100%;
-    min-height: 4rem;
     grid-area: footer;
 }
 
