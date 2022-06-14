@@ -137,38 +137,6 @@ body{
         color: var(--header-background-color-1);
         transition: 0.4s ;
     }
-
-    .header .header-nav-bar .sub-nav .sub-nav-content{
-        visibility: hidden;
-        position: absolute;
-        width: 0;
-        height: 0;
-        padding: 0;
-        margin-top: .2rem;
-    }
-
-    .header .header-nav-bar .sub-nav .sub-nav-content a{
-        color: white;
-        display: inline-block;
-        font-size: var(--header-font-size);
-    }
-
-    .header .header-nav-bar .sub-nav:hover .sub-nav-content{
-        visibility: visible;
-        display: flex;
-        flex-direction: column;
-        z-index: 1;
-        background-image: linear-gradient(to bottom, var(--header-background-color-1), var(--header-background-color-2), var(--header-background-color-3), var(--header-background-color-4));;
-        width: 10rem;
-        height: 9rem;
-        transition: height 1s;
-    }
-
-    .header .header-nav-bar .sub-nav .sub-nav-content a:hover{
-        color: var(--header-background-color-1);
-        transition: 0.4s;
-    }
-
 /* || HEADER END */
 
 
@@ -184,7 +152,7 @@ body{
 
 .main.index{
     display: grid;
-    grid-template-rows: 100% 100% 100%;
+    grid-template-rows: 100% 100% 95% 5%;
 }
 
 .main.feedback{
@@ -210,7 +178,7 @@ body{
 
     .main h3{
         color: var(--header-background-color-4);
-        font-size: ;font-size: calc(1rem + .6vw);
+        font-size: calc(1rem + .6vw);
     }
 
     .main mark{
@@ -301,6 +269,10 @@ body{
         max-width: 60%;
         text-align: start;
         align-self: center;
+    }
+
+    .main .sub-section-container .aside a:visited{
+        color: grey;
     }
 
     .main .sub-section-container .tech-stack-list{
@@ -791,6 +763,10 @@ body{
     width: 100%;
 }
 
+.header .header-nav-bar .dropdown-menu li a:hover{
+    color: var(--header-background-color-2);
+}
+
 .fieldset .btn.btn-primary,
 .form .btn.btn-primary{
     border-radius: 9px;
@@ -836,7 +812,6 @@ body{
     }
 }
 
-
 /* Reduce font-size to avoid nav bar items wrap */
 @media(max-width: 840px){
     html{
@@ -857,7 +832,6 @@ body{
         max-width: 75%;
     }
 }
-
 
 /* Medium devices like tablets */
 @media(max-width: 768px){
@@ -881,12 +855,13 @@ body{
     #mobile-menu-check:checked ~.mobile-menu-nav{
         visibility: visible;
         width: 100%;
-        height: 300%;
+        height: 100%;
         top: 6vh;
         opacity: .95;
         background-color: var(--header-background-color-3);
         transition: 0.6s;
         z-index: 1;
+        overflow-y: auto;
     }
 
     .main .tools-section .cards-title{
@@ -921,7 +896,6 @@ body{
     }
 }
 
-
 /* Small devices like mobile phones */
 @media(max-width: 480px){
     .main .sub-section-container .table th,
@@ -953,7 +927,6 @@ body{
         text-align: start;
         align-self: center;
     }
-    
 
     .main .tools-section .cards-container{
         flex-direction: column;
