@@ -152,7 +152,7 @@ body{
 
 .main.index{
     display: grid;
-    grid-template-rows: 94vh 94vh 88vh 6vh;
+    grid-template-rows: 94vh 94vh 88vh 1fr;
 }
 
 .main.feedback{
