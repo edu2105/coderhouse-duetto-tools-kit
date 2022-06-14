@@ -32,7 +32,7 @@ body{
 .main-layout{
     display: grid;
     grid-template-columns: auto;
-    grid-template-rows: 6vh 12fr 6vh;
+    grid-template-rows: 8vh 84vh 8vh;
     height: 100%;
     grid-template-areas:
     "header"
@@ -44,7 +44,7 @@ body{
 .main-layout.index{
     display: grid;
     grid-template-columns: auto;
-    grid-template-rows: 6vh 94vh;
+    grid-template-rows: 8vh 92vh;
     height: 100%;
     grid-template-areas:
     "header"
@@ -152,7 +152,7 @@ body{
 
 .main.index{
     display: grid;
-    grid-template-rows: 94vh 100vh 88vh 6vh;
+    grid-template-rows: 92vh 100vh 84vh 8vh;
 }
 
 .main.feedback{
