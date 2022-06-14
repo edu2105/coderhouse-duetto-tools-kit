@@ -152,11 +152,7 @@ body{
 
 .main.index{
     display: grid;
-<<<<<<< HEAD
-    grid-template-rows: 92vh 100vh 84vh 8vh;
-=======
     grid-template-rows: 94vh 94vh 88vh 6vh;
->>>>>>> index-redesign
 }
 
 .main.feedback{
