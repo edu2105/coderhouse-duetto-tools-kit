@@ -1,0 +1,19 @@
+@media(max-width: 840px){
+    html{
+        font-size: 14px;
+    }
+
+    .main .start-section{
+        background-attachment: scroll;
+        background-size: cover;
+    }
+
+    .main .tools-section{
+        background-size: cover;
+        background-attachment: scroll;
+    }
+
+    .main .video-container .video-content{
+        max-width: 75%;
+    }
+}

@@ -1,0 +1,31 @@
+.header{
+    .mobile-menu{
+        color: white;
+        font-size: var(--header-font-size);
+        display: none;
+        .mobile-menu-open-btn{
+            margin-left: 1rem;
+        }
+    };
+    #mobile-menu-check{
+        display: none;
+    };
+    .mobile-menu-nav{
+        visibility: hidden;
+        position: absolute;
+        li{
+            list-style: none;
+            margin: 3rem 0 3rem 0;
+            a{
+                text-decoration: none;
+                color: var(--header-li-color);
+                font-size: var(--header-font-size);
+                padding: .6rem;
+                &:hover{
+                    color: var(--header-background-color-1);
+                    transition: 0.4s ;
+                }
+            }
+        };
+    }
+}

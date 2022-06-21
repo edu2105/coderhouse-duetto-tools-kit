@@ -1,0 +1,404 @@
+.main{
+    grid-area: main;
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    p{
+        margin-left: 1.2rem;
+        color: var(--main-p-text-color);
+        font-size: var(--main-font-size);
+    };
+    h1{
+        color: var(--main-h1-text-color);
+    };
+    h2{
+        color: var(--header-background-color-3);
+    };
+    h3{
+        color: var(--header-background-color-4);
+        font-size: calc(1rem + .6vw);
+    };
+    mark{
+        background-color: var(--header-background-color-3);
+        padding: .3rem;
+        border-radius: .5rem;
+        color: whitesmoke;
+        margin-bottom: 0;
+        width: fit-content;
+    };
+    .start-section{
+        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../images/hotel-view-nyc.jpg");
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    };
+    .main-section-container{
+        margin: 2.5rem 1.2rem 0 1.2rem;
+    };
+    .sub-section-container{
+        margin: 1rem 1.2rem 1.2rem 6.2rem;
+        width: auto;
+        .table{
+            grid-column: span 2;  
+            max-width: 70%;
+        };
+        .section{
+            text-align: center;
+            h2{
+                margin-bottom: 1.5rem;
+            };
+            img{
+                width: var(--main-img-width);
+                height: var(--main-img-height);
+            }
+        };
+        .aside{
+            max-width: 60%;
+            text-align: start;
+            align-self: center;
+            a{
+                &:visited{
+                    color: grey;
+                }
+            }
+        };
+        .tech-stack-list{
+            padding-left: 0;
+            li{
+                background-color: var(--header-background-color-4);
+                padding: 1.2rem 1.2rem 1.2rem 0;
+                margin: 1.2rem 1.2rem 1.2rem 0;
+                width: 12.5rem;
+                text-align: center;
+                list-style: none;
+                a{
+                    text-decoration: none;
+                    color: white;
+                    font-size: var(--main-font-size);
+                    &:hover{
+                        color: var(--header-background-color-1);
+                        transition: 0.4s;
+                    }
+                }
+            }            
+        };
+        .collapsible-code-check{
+            display: none;
+        };
+        .collapsible-code-label{
+            background-color: var(--header-background-color-4);
+            color: white;
+            font-size: var(--main-font-size);
+            display: inline-block;
+            padding: .9rem;
+            cursor: pointer;
+            &:hover{
+                color: var(--header-background-color-1);
+                transition: 0.4s;
+            }
+        };
+        .htng-code{
+            visibility: collapse;
+            display: none;
+            margin-top: .6rem;
+            border: 2px solid var(--header-background-color-1);
+            padding: .3rem .6rem;
+            border-radius: .5rem;
+            box-sizing: border-box;
+            white-space: pre-wrap;
+            max-width: fit-content;
+        };
+        .validator-result{
+            display: none;
+        };
+        .payload-container{
+            margin-right: 1.2rem;
+            display: flex;
+            flex-direction: column;
+        };
+        .converter-container{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        };
+        span{
+            font-size: var(--main-font-size);
+            color: var(--header-background-color-3);
+        }
+    };
+    .tools-section{
+        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../images/hotel-view-wdc.jpg");
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        height: 100%;
+        .cards-title{
+            text-align: center;
+            h2{
+                color: var(--main-tools-section-text-color);
+            }
+        };
+        .cards-container{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-bottom: 4rem;
+            .card-custom{
+                box-shadow: 0 .25rem .5rem 0 var(--header-background-color-4);
+                border: 2px solid;
+                border-color: var(--header-background-color-4);
+                border-radius: .5rem;
+                box-sizing: border-box;
+                padding: .5rem;
+                max-width: 15%;
+                height: auto;
+                display: grid;
+                grid-template-rows: 10rem 1fr;
+                background-color: var(--header-background-color-1);
+                .card-img{
+                    margin: auto;
+                    height: 100%;
+                    img{
+                        width: 100%;
+                        height: 100%;
+                        display: block;
+                        margin: auto;
+                        transition-duration: all 0.4s linear; 
+                        color: var(--header-background-color-3); 
+                        border: 2px solid;
+                        box-shadow: 0px .3rem .6rem;
+                        background-color: white;
+                        &:hover{
+                            width: 95%;
+                            height: 95%;
+                            background-color: var(--header-background-color-4);
+                            color: white;
+                            box-shadow: none;
+                        }
+                    }
+                };
+                .card-content{
+                    h3{
+                        color: var(--main-tools-section-text-color);
+                        text-align: center;
+                    };
+                    p{
+                        margin: 0 0 1rem 0;
+                        text-align: center;
+                        color: var(--header-background-color-4);
+                        font-weight: bold;
+                        word-wrap: break-word;
+                        font-size: 1rem;
+                    }
+                };
+                button{
+                    transition-duration: all 0.4s linear; 
+                    background-color: white; 
+                    color: var(--header-background-color-3); 
+                    border: 2px solid;
+                    font-size: var(--main-font-size);
+                    box-shadow: 0px .3rem .6rem;
+                    height: 2.5rem;
+                    width: 100%;
+                    &:hover{
+                        background-color: var(--header-background-color-4);
+                        color: white;
+                        box-shadow: none;
+                        cursor: pointer;
+                    }
+                }
+            };
+            .card-custom.coming-soon{
+                border: 2px solid;
+                border-color: grey;
+                border-radius: .5rem;
+                box-sizing: border-box;
+                box-shadow: none;
+                padding: .5rem;
+                max-width: 15%;
+                height: auto;
+                display: grid;
+                grid-template-rows: 10rem 1fr;
+                background-color: grey;
+                .card-img{
+                    margin: auto;
+                    height: 100%;
+                    img{
+                        width: 100%;
+                        height: 100%;
+                        border: none;
+                        box-shadow: none;
+                        &:hover{
+                            cursor: not-allowed;
+                            transition-duration: unset;
+                            border: none;
+                            box-shadow: none;
+                            color: none;
+                        }
+                    }
+                };
+                .card-content{
+                    p{
+                        margin: 0 0 1rem 0;
+                        text-align: center;
+                        color: black;
+                        font-weight: bold;
+                    }
+                };
+                button{
+                    background-color: grey; 
+                    color: white; 
+                    border: 2px solid;
+                    font-size: var(--main-font-size);
+                    height: 2.5rem;
+                    width: 100%;
+                    box-shadow: none;
+                    &:hover{
+                        cursor: not-allowed;
+                        background-color: grey;
+                    }
+                }
+            }   
+        }
+    };
+    .video-container{
+        .video-content{
+            position: relative;
+            bottom: 90%;
+            margin-left: 2rem;
+            max-width: 40%;
+            height: 80%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            .video-content-detail{
+                margin-left: 2rem;
+                h2{
+                    margin: 3rem 0 0 2rem;
+                };
+                li{
+                    list-style: none;
+                    color: white;
+                    font-size: var(--main-font-size);
+                    padding: .3rem;
+                };
+                .goals{
+                    i{
+                        color: green;
+                        margin-right: .3rem;
+                    }
+                };
+                p{
+                    margin-left: 2.8rem;
+                }
+                
+            }
+        }
+    };
+    .form{
+        margin: 0 0 0 1.2rem;
+        display: flex;
+        flex-direction: column;
+        p{
+            color: var(--main-p-text-color);
+            font-size: var(--main-font-size);
+            margin: 0;
+        };
+        label{
+            margin: 1rem 1rem 1rem 1rem;
+        };
+        .subscription{
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            flex-wrap: wrap;
+            input{
+                height: 1.2rem;
+                margin-left: 1rem;
+                margin-top: .3rem;
+            }
+        };
+        input[type="file"]{
+            max-width: fit-content;
+        }
+    };
+    input, select, textarea{
+        margin-top: .6rem;
+        color: var(--header-background-color-2);
+        border: 2px solid;
+        padding: .3rem .6rem;
+        border-radius: .5rem;
+        box-sizing: border-box;
+        resize: none;
+    };
+    input[type="submit"]{
+        margin: 1rem 0 1rem 1rem;
+        transition-duration: all 0.4s linear; 
+        background-color: white; 
+        color: var(--header-background-color-2); 
+        border: 2px solid;
+        box-shadow: 0px .3rem .6rem;
+        height: 2.5rem;
+        width: 5rem;
+        &:hover{
+            background-color: var(--header-background-color-1);
+            color: white;
+            cursor: pointer;
+            box-shadow: 0px .6rem 1.2rem;
+            transform: translateY(-2px);
+        }
+    };
+    .fieldset{
+        width: fit-content;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        border: 3px solid;
+        border-color: white;
+        border-radius: 1rem;
+        background-color: var(--header-background-color-1);
+        legend{
+            color: white;
+            font-size: 2rem;
+            float: unset;
+            width: auto;
+            padding: 0 .5rem 0 .5rem;
+            margin: 0 .5rem 0 1rem;
+        };
+        p{
+            color: white;
+        };
+        input[type="submit"]{
+            transition-duration: all 0.4s linear; 
+            background-color: white; 
+            color: var(--header-background-color-3); 
+            border: 2px solid;
+            font-size: var(--main-font-size);
+            box-shadow: 0px .3rem .6rem;
+            &:hover{
+                background-color: var(--header-background-color-4);
+                color: white;
+                box-shadow: none;
+                cursor: pointer;
+            }
+        }
+    };
+    .bold{
+        color: var(--header-background-color-1);
+        font-weight: bold;
+    }
+    
+}

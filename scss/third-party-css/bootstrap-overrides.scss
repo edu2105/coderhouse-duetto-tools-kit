@@ -1,0 +1,83 @@
+.list-group{
+    --bs-list-group-action-hover-color: white;
+    --bs-list-group-action-hover-bg: var(--header-background-color-4);
+    width: fit-content;
+}
+
+.main .tools-section .cards-container .card{
+    max-width: 15%;
+    background-color: var(--header-background-color-1);
+}
+
+.main .tools-section .cards-container .card p{
+    color: var(--header-background-color-4);
+}
+
+.main .tools-section .cards-container .card h5{
+    color: white;
+}
+
+.main .tools-section .cards-container .card.coming-soon a{
+    background-color: grey; 
+    color: white; 
+    border: none;
+}
+
+.main .tools-section .cards-container .card.coming-soon a:hover{
+    cursor: not-allowed;
+    background-color: grey;
+}
+
+.main .tools-section .cards-container .card.coming-soon img:hover{
+    cursor: not-allowed;
+}
+
+.header .header-nav-bar .dropdown-menu{
+   background-color: var(--header-background-color-3);
+   color: white;
+}
+
+.header .header-nav-bar .dropdown-menu li{
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+}
+
+.header .header-nav-bar .dropdown-menu li a{
+    color: unset;
+    padding-left: 1rem;
+    padding-right: 0;
+    width: 100%;
+}
+
+.header .header-nav-bar .dropdown-menu li a:hover{
+    color: var(--header-background-color-2);
+}
+
+.fieldset .btn.btn-primary,
+.form .btn.btn-primary{
+    border-radius: 9px;
+    width: fit-content;
+    margin: 1rem 0 1rem 1rem;
+}
+
+.form .btn.btn-primary.rate-sum{
+    margin-left: 0;
+}
+
+#floatingTextarea{
+    height: unset;
+}
+
+.form-control{
+    width: auto;
+}
+
+#formFile{
+    margin: 0;
+    max-width: 100%;
+}
+
+.main .sub-section-container .card{
+    max-width: 80%;
+}

@@ -1,0 +1,53 @@
+/* || VARIABLES - CSS Variables
+========================================================================*/
+@import './utilities/variables.scss';
+
+
+/* || RESET - Body level
+========================================================================*/
+@import './utilities/reset.scss';
+
+
+/* || LAYOUT STYLES
+========================================================================*/
+/* || HEADER */
+@import './layout/header.scss';
+
+/* || HEADER MOBILE */
+@import './layout/header-mobile.scss';
+
+/* || MAIN BODY */
+@import './layout/main-body.scss';
+
+/* || FOOTER */
+@import './layout/footer.scss';
+
+
+/* || PAGES STYLES
+========================================================================*/
+/* || CROSS PAGES */
+@import './layout/global.scss';
+
+/* || INDEX */
+@import './pages/index.scss';
+
+
+/* || THIRD PARTY CSS
+========================================================================*/
+/* || BOOTSTRAP OVERRIDES */
+@import './third-party-css/bootstrap-overrides.scss';
+
+
+/* || MEDIA QUERIES
+========================================================================*/
+/* || DESKTOP - LARGE SCREENS */
+@import './media-queries/desktop-large-screens.scss';
+
+/* || LAPTOPS - SMALL SCREENS */
+@import './media-queries/laptops-small-screens.scss';
+
+/* || IPADS - TABLETS */
+@import './media-queries/ipads-tablets.scss';
+
+/* || MOBILE DEVICES */
+@import './media-queries/mobile-devices.scss';
