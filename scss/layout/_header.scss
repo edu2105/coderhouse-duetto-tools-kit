@@ -1,6 +1,6 @@
 .header{
     grid-area: header;
-    background-image: linear-gradient(to right, var(--header-background-color-1), var(--header-background-color-2), var(--header-background-color-3), var(--header-background-color-4));
+    background-image: linear-gradient(to right, $headerBackgroundColor1, $headerBackgroundColor2, $headerBackgroundColor3, $headerBackgroundColor4);
     height: 100%;
     display: flex;
     justify-content: space-between;
@@ -10,7 +10,7 @@
     };
     .mobile-menu{
         color: white;
-        font-size: var(--header-font-size);
+        font-size: $headerFontSize;
         display: none;
     };
     img{
@@ -33,15 +33,17 @@
             margin: 0 1rem 0 1rem;
             a{
                 text-decoration: none;
-                color: var(--header-li-color);
-                font-size: var(--header-font-size);
+                color: $headerLiColor;
+                font-size: $headerFontSize;
                 padding: .6rem;
                 &:hover{
-                    color: var(--header-background-color-1);
+                    color: $headerBackgroundColor1;
                     transition: 0.4s ;
                 }
             }
+        };
+        .item-selected{
+            color: $headerBackgroundColor1;
         }
-        
     }
 }

@@ -1,5 +1,5 @@
 .footer{
-    background-color: var(--header-background-color-4);
+    background-color: $headerBackgroundColor4;
     width: 100%;
     grid-area: footer;
     .footer-nav-bar{
@@ -16,10 +16,10 @@
             list-style: none;
             a{
                 text-decoration: none;
-                font-size: var(--foter-font-size);
-                color: var(--footer-li-color);
+                font-size: $footerFontSize;
+                color: $footerLiColor;
                 &:hover{
-                    color: var(--header-background-color-1);
+                    color: $headerBackgroundColor1;
                     transition: 0.3s ;
                 }
             }

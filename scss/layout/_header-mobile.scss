@@ -1,7 +1,7 @@
 .header{
     .mobile-menu{
         color: white;
-        font-size: var(--header-font-size);
+        font-size: $headerFontSize;
         display: none;
         .mobile-menu-open-btn{
             margin-left: 1rem;
@@ -18,11 +18,11 @@
             margin: 3rem 0 3rem 0;
             a{
                 text-decoration: none;
-                color: var(--header-li-color);
-                font-size: var(--header-font-size);
+                color: $headerLiColor;
+                font-size: $headerFontSize;
                 padding: .6rem;
                 &:hover{
-                    color: var(--header-background-color-1);
+                    color: $headerBackgroundColor1;
                     transition: 0.4s ;
                 }
             }

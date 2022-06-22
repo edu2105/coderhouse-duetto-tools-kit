@@ -2,7 +2,7 @@
     .main .sub-section-container .table th,
     .main .sub-section-container .table td{
         padding: 0;
-        border: 2px solid var(--header-background-color-4);
+        border: 2px solid $headerBackgroundColor4;
     }
 
     .main textarea{

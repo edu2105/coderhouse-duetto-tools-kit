@@ -7,21 +7,21 @@
     flex-direction: column;
     p{
         margin-left: 1.2rem;
-        color: var(--main-p-text-color);
-        font-size: var(--main-font-size);
+        color: $mainPTextColor;
+        font-size: $mainFontSize;
     };
     h1{
-        color: var(--main-h1-text-color);
+        color: $mainH1TextColor;
     };
     h2{
-        color: var(--header-background-color-3);
+        color: $headerBackgroundColor3;
     };
     h3{
-        color: var(--header-background-color-4);
+        color: $headerBackgroundColor4;
         font-size: calc(1rem + .6vw);
     };
     mark{
-        background-color: var(--header-background-color-3);
+        background-color: $headerBackgroundColor3;
         padding: .3rem;
         border-radius: .5rem;
         color: whitesmoke;
@@ -55,8 +55,8 @@
                 margin-bottom: 1.5rem;
             };
             img{
-                width: var(--main-img-width);
-                height: var(--main-img-height);
+                width: $mainImgWidth;
+                height: $mainImgHeight;
             }
         };
         .aside{
@@ -72,7 +72,7 @@
         .tech-stack-list{
             padding-left: 0;
             li{
-                background-color: var(--header-background-color-4);
+                background-color: $headerBackgroundColor4;
                 padding: 1.2rem 1.2rem 1.2rem 0;
                 margin: 1.2rem 1.2rem 1.2rem 0;
                 width: 12.5rem;
@@ -81,9 +81,9 @@
                 a{
                     text-decoration: none;
                     color: white;
-                    font-size: var(--main-font-size);
+                    font-size: $mainFontSize;
                     &:hover{
-                        color: var(--header-background-color-1);
+                        color: $headerBackgroundColor1;
                         transition: 0.4s;
                     }
                 }
@@ -93,14 +93,14 @@
             display: none;
         };
         .collapsible-code-label{
-            background-color: var(--header-background-color-4);
+            background-color: $headerBackgroundColor4;
             color: white;
-            font-size: var(--main-font-size);
+            font-size: $mainFontSize;
             display: inline-block;
             padding: .9rem;
             cursor: pointer;
             &:hover{
-                color: var(--header-background-color-1);
+                color: $headerBackgroundColor1;
                 transition: 0.4s;
             }
         };
@@ -108,7 +108,7 @@
             visibility: collapse;
             display: none;
             margin-top: .6rem;
-            border: 2px solid var(--header-background-color-1);
+            border: 2px solid $headerBackgroundColor1;
             padding: .3rem .6rem;
             border-radius: .5rem;
             box-sizing: border-box;
@@ -129,8 +129,8 @@
             flex-wrap: wrap;
         };
         span{
-            font-size: var(--main-font-size);
-            color: var(--header-background-color-3);
+            font-size: $mainFontSize;
+            color: $headerBackgroundColor3;
         }
     };
     .tools-section{
@@ -146,7 +146,7 @@
         .cards-title{
             text-align: center;
             h2{
-                color: var(--main-tools-section-text-color);
+                color: $mainToolsSectionTextColor;
             }
         };
         .cards-container{
@@ -156,9 +156,9 @@
             flex-wrap: wrap;
             margin-bottom: 4rem;
             .card-custom{
-                box-shadow: 0 .25rem .5rem 0 var(--header-background-color-4);
+                box-shadow: 0 .25rem .5rem 0 $headerBackgroundColor4;
                 border: 2px solid;
-                border-color: var(--header-background-color-4);
+                border-color: $headerBackgroundColor4;
                 border-radius: .5rem;
                 box-sizing: border-box;
                 padding: .5rem;
@@ -166,7 +166,7 @@
                 height: auto;
                 display: grid;
                 grid-template-rows: 10rem 1fr;
-                background-color: var(--header-background-color-1);
+                background-color: $headerBackgroundColor1;
                 .card-img{
                     margin: auto;
                     height: 100%;
@@ -176,14 +176,14 @@
                         display: block;
                         margin: auto;
                         transition-duration: all 0.4s linear; 
-                        color: var(--header-background-color-3); 
+                        color: $headerBackgroundColor3; 
                         border: 2px solid;
                         box-shadow: 0px .3rem .6rem;
                         background-color: white;
                         &:hover{
                             width: 95%;
                             height: 95%;
-                            background-color: var(--header-background-color-4);
+                            background-color: $headerBackgroundColor4;
                             color: white;
                             box-shadow: none;
                         }
@@ -191,13 +191,13 @@
                 };
                 .card-content{
                     h3{
-                        color: var(--main-tools-section-text-color);
+                        color: $mainToolsSectionTextColor;
                         text-align: center;
                     };
                     p{
                         margin: 0 0 1rem 0;
                         text-align: center;
-                        color: var(--header-background-color-4);
+                        color: $headerBackgroundColor4;
                         font-weight: bold;
                         word-wrap: break-word;
                         font-size: 1rem;
@@ -206,14 +206,14 @@
                 button{
                     transition-duration: all 0.4s linear; 
                     background-color: white; 
-                    color: var(--header-background-color-3); 
+                    color: $headerBackgroundColor3; 
                     border: 2px solid;
-                    font-size: var(--main-font-size);
+                    font-size: $mainFontSize;
                     box-shadow: 0px .3rem .6rem;
                     height: 2.5rem;
                     width: 100%;
                     &:hover{
-                        background-color: var(--header-background-color-4);
+                        background-color: $headerBackgroundColor4;
                         color: white;
                         box-shadow: none;
                         cursor: pointer;
@@ -261,7 +261,7 @@
                     background-color: grey; 
                     color: white; 
                     border: 2px solid;
-                    font-size: var(--main-font-size);
+                    font-size: $mainFontSize;
                     height: 2.5rem;
                     width: 100%;
                     box-shadow: none;
@@ -291,7 +291,7 @@
                 li{
                     list-style: none;
                     color: white;
-                    font-size: var(--main-font-size);
+                    font-size: $mainFontSize;
                     padding: .3rem;
                 };
                 .goals{
@@ -312,8 +312,8 @@
         display: flex;
         flex-direction: column;
         p{
-            color: var(--main-p-text-color);
-            font-size: var(--main-font-size);
+            color: $mainPTextColor;
+            font-size: $mainFontSize;
             margin: 0;
         };
         label{
@@ -336,7 +336,7 @@
     };
     input, select, textarea{
         margin-top: .6rem;
-        color: var(--header-background-color-2);
+        color: $headerBackgroundColor2;
         border: 2px solid;
         padding: .3rem .6rem;
         border-radius: .5rem;
@@ -347,13 +347,13 @@
         margin: 1rem 0 1rem 1rem;
         transition-duration: all 0.4s linear; 
         background-color: white; 
-        color: var(--header-background-color-2); 
+        color: $headerBackgroundColor2; 
         border: 2px solid;
         box-shadow: 0px .3rem .6rem;
         height: 2.5rem;
         width: 5rem;
         &:hover{
-            background-color: var(--header-background-color-1);
+            background-color: $headerBackgroundColor1;
             color: white;
             cursor: pointer;
             box-shadow: 0px .6rem 1.2rem;
@@ -369,7 +369,7 @@
         border: 3px solid;
         border-color: white;
         border-radius: 1rem;
-        background-color: var(--header-background-color-1);
+        background-color: $headerBackgroundColor1;
         legend{
             color: white;
             font-size: 2rem;
@@ -384,12 +384,12 @@
         input[type="submit"]{
             transition-duration: all 0.4s linear; 
             background-color: white; 
-            color: var(--header-background-color-3); 
+            color: $headerBackgroundColor3; 
             border: 2px solid;
-            font-size: var(--main-font-size);
+            font-size: $mainFontSize;
             box-shadow: 0px .3rem .6rem;
             &:hover{
-                background-color: var(--header-background-color-4);
+                background-color: $headerBackgroundColor4;
                 color: white;
                 box-shadow: none;
                 cursor: pointer;
@@ -397,7 +397,7 @@
         }
     };
     .bold{
-        color: var(--header-background-color-1);
+        color: $headerBackgroundColor1;
         font-weight: bold;
     }
     

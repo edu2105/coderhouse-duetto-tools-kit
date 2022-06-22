@@ -22,7 +22,7 @@
         height: 100%;
         top: 6vh;
         opacity: .95;
-        background-color: var(--header-background-color-3);
+        background-color: $headerBackgroundColor3;
         transition: 0.6s;
         z-index: 1;
         overflow-y: auto;

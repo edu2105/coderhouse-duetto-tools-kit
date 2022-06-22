@@ -1,16 +1,16 @@
 .list-group{
     --bs-list-group-action-hover-color: white;
-    --bs-list-group-action-hover-bg: var(--header-background-color-4);
+    --bs-list-group-action-hover-bg: $headerBackgroundColor4;
     width: fit-content;
 }
 
 .main .tools-section .cards-container .card{
     max-width: 15%;
-    background-color: var(--header-background-color-1);
+    background-color: $headerBackgroundColor1;
 }
 
 .main .tools-section .cards-container .card p{
-    color: var(--header-background-color-4);
+    color: $headerBackgroundColor4;
 }
 
 .main .tools-section .cards-container .card h5{
@@ -33,7 +33,7 @@
 }
 
 .header .header-nav-bar .dropdown-menu{
-   background-color: var(--header-background-color-3);
+   background-color: $headerBackgroundColor3;
    color: white;
 }
 
@@ -51,7 +51,7 @@
 }
 
 .header .header-nav-bar .dropdown-menu li a:hover{
-    color: var(--header-background-color-2);
+    color: $headerBackgroundColor2;
 }
 
 .fieldset .btn.btn-primary,
