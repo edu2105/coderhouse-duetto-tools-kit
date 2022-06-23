@@ -1,0 +1,21 @@
+@mixin parallax($isEnabled){
+    @if ($isEnabled){
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 100%;
+    }@else{
+        background-attachment: scroll;
+    }
+}
+
+@mixin flex-column{
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin flex-row{
+    display: flex;
+    flex-direction: row;
+}

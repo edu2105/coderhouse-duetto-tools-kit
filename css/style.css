@@ -11,6 +11,10 @@ body {
   margin: 0;
   padding: 0; }
 
+/* || MIXIN - Body level
+========================================================================*/
+/* || EXTEND - Body level
+========================================================================*/
 /* || LAYOUT STYLES
 ========================================================================*/
 /* || HEADER */
@@ -491,7 +495,6 @@ body {
   width: 100%;
   height: auto; }
   .main.feedback p {
-    margin-left: 1.2rem;
     color: white;
     font-size: 1.2rem; }
   .main.feedback h1 {
