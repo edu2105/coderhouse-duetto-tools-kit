@@ -11,16 +11,14 @@
     }
 
     .main .form .subscription{
-        display: flex;
-        flex-direction: column;
+        @include flex-column;
         align-items: flex-start;
     }
 
     .main .sub-section-container.index,
     .main .sub-section-container{
         margin-left: 1rem;
-        display: flex;
-        flex-direction: column;
+        @include flex-column;
     }
 
     .main .sub-section-container .aside{

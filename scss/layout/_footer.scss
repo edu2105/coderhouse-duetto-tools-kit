@@ -5,7 +5,7 @@
     .footer-nav-bar{
         height: 100%;
         ul{
-            display: flex;
+            @include flex-row;
             justify-content: space-around;
             align-items: center;
             height: 100%;

@@ -34,7 +34,7 @@
     };
     .sub-section-container.index{
         margin: 1.2rem 1.2rem 1.2rem 1.2rem;
-        display: flex;
+        @include flex-row;
         justify-content: center;
     }
 }

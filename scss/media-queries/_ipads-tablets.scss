@@ -45,8 +45,7 @@
 
     .main .sub-section-container.index,
     .main .sub-section-container{
-        display: flex;
-        flex-direction: column;
+        @include flex-column;
         margin-left: 1.2rem;
     }
 

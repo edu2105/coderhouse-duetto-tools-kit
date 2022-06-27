@@ -3,8 +3,7 @@
     width: 100%;
     height: 100%;
     overflow-y: scroll;
-    display: flex;
-    flex-direction: column;
+    @include flex-column;
     p{
         margin-left: 1.2rem;
         color: $mainPTextColor;
@@ -29,7 +28,7 @@
         width: fit-content;
     };
     .start-section{
-        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../images/hotel-view-nyc.jpg");
+        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("https://app-demo.duettoresearch.com/assets/insecure/img/loginNewYorkCityUSA1.jpg?v=7864668");
         @include parallax(true);
         @include flex-column;
         justify-content: space-around;
@@ -115,12 +114,10 @@
         };
         .payload-container{
             margin-right: 1.2rem;
-            display: flex;
-            flex-direction: column;
+            @include flex-column;
         };
         .converter-container{
-            display: flex;
-            flex-direction: row;
+            @include flex-row;
             flex-wrap: wrap;
         };
         span{
@@ -129,15 +126,10 @@
         }
     };
     .tools-section{
-        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../images/hotel-view-wdc.jpg");
-        background-size: cover;
-        background-attachment: fixed;
-        background-position: center;
-        background-repeat: no-repeat;
-        display: flex;
-        flex-direction: column;
+        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://app-demo.duettoresearch.com/assets/insecure/img/loginWashingtonDCUSA.jpg?v=6571967');
+        @include parallax(true);
+        @include flex-column;
         justify-content: space-around;
-        height: 100%;
         .cards-title{
             text-align: center;
             h2{
@@ -145,8 +137,7 @@
             }
         };
         .cards-container{
-            display: flex;
-            flex-direction: row;
+            @include flex-row;
             justify-content: space-around;
             flex-wrap: wrap;
             margin-bottom: 4rem;
@@ -199,19 +190,9 @@
                     }
                 };
                 button{
-                    transition-duration: all 0.4s linear; 
-                    background-color: white; 
-                    color: $headerBackgroundColor3; 
-                    border: 2px solid;
-                    font-size: $mainFontSize;
-                    box-shadow: 0px .3rem .6rem;
-                    height: 2.5rem;
-                    width: 100%;
+                    @extend %card-button;
                     &:hover{
-                        background-color: $headerBackgroundColor4;
-                        color: white;
-                        box-shadow: none;
-                        cursor: pointer;
+                      @extend %card-button-hover;
                     }
                 }
             };
@@ -235,6 +216,7 @@
                         height: 100%;
                         border: none;
                         box-shadow: none;
+                        content: url("../../images/coming-soon-min.png");
                         &:hover{
                             cursor: not-allowed;
                             transition-duration: unset;
@@ -253,16 +235,9 @@
                     }
                 };
                 button{
-                    background-color: grey; 
-                    color: white; 
-                    border: 2px solid;
-                    font-size: $mainFontSize;
-                    height: 2.5rem;
-                    width: 100%;
-                    box-shadow: none;
+                    @extend %card-button-coming-soon;
                     &:hover{
-                        cursor: not-allowed;
-                        background-color: grey;
+                        @extend %card-button-coming-soon-hover;
                     }
                 }
             }   
@@ -275,8 +250,7 @@
             margin-left: 2rem;
             max-width: 40%;
             height: 80%;
-            display: flex;
-            flex-direction: column;
+            @include flex-column;
             justify-content: center;
             .video-content-detail{
                 margin-left: 2rem;
@@ -304,8 +278,7 @@
     };
     .form{
         margin: 0 0 0 1.2rem;
-        display: flex;
-        flex-direction: column;
+        @include flex-column;
         p{
             color: $mainPTextColor;
             font-size: $mainFontSize;
@@ -315,7 +288,7 @@
             margin: 1rem 1rem 1rem 1rem;
         };
         .subscription{
-            display: flex;
+            @include flex-row;
             justify-content: flex-start;
             align-items: center;
             flex-wrap: wrap;
@@ -358,8 +331,7 @@
     .fieldset{
         width: fit-content;
         height: auto;
-        display: flex;
-        flex-direction: column;
+        @include flex-column;
         justify-content: center;
         border: 3px solid;
         border-color: white;

@@ -4,13 +4,11 @@
     }
 
     .main .start-section{
-        background-attachment: scroll;
-        background-size: cover;
+        @include parallax(false);
     }
 
     .main .tools-section{
-        background-size: cover;
-        background-attachment: scroll;
+        @include parallax(false);
     }
 
     .main .video-container .video-content{

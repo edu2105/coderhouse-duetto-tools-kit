@@ -1,6 +1,4 @@
-/* || VARIABLES - CSS Variables
-========================================================================*/
-/* || RESET - Body level
+/* || UTILITIES
 ========================================================================*/
 body {
   position: fixed;
@@ -11,10 +9,37 @@ body {
   margin: 0;
   padding: 0; }
 
-/* || MIXIN - Body level
+/* || CARD
 ========================================================================*/
-/* || EXTEND - Body level
-========================================================================*/
+.main .tools-section .cards-container .card-custom button {
+  transition-duration: all 0.4s linear;
+  background-color: white;
+  color: #3A79BD;
+  border: 2px solid;
+  font-size: 1.2rem;
+  box-shadow: 0px .3rem .6rem;
+  height: 2.5rem;
+  width: 100%; }
+
+.main .tools-section .cards-container .card-custom.coming-soon button {
+  background-color: grey;
+  color: white;
+  border: 2px solid;
+  font-size: 1.2rem;
+  height: 2.5rem;
+  width: 100%;
+  box-shadow: none; }
+
+.main .tools-section .cards-container .card-custom button:hover {
+  background-color: #44ADE2;
+  color: white;
+  box-shadow: none;
+  cursor: pointer; }
+
+.main .tools-section .cards-container .card-custom.coming-soon button:hover {
+  cursor: not-allowed;
+  background-color: grey; }
+
 /* || LAYOUT STYLES
 ========================================================================*/
 /* || HEADER */
@@ -23,6 +48,7 @@ body {
   background-image: linear-gradient(to right, #0C395A, #0257A3, #3A79BD, #44ADE2);
   height: 100%;
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center; }
   .header .mobile-placeholder {
@@ -38,6 +64,7 @@ body {
     box-sizing: content-box; }
   .header .header-nav-bar {
     display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: space-around;
     flex-wrap: nowrap; }
@@ -111,7 +138,7 @@ body {
     margin-bottom: 0;
     width: fit-content; }
   .main .start-section {
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../images/hotel-view-nyc.jpg");
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("https://app-demo.duettoresearch.com/assets/insecure/img/loginNewYorkCityUSA1.jpg?v=7864668");
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
@@ -193,15 +220,15 @@ body {
       font-size: 1.2rem;
       color: #3A79BD; }
   .main .tools-section {
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../images/hotel-view-wdc.jpg");
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("https://app-demo.duettoresearch.com/assets/insecure/img/loginWashingtonDCUSA.jpg?v=6571967");
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
+    height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    height: 100%; }
+    justify-content: space-around; }
     .main .tools-section .cards-title {
       text-align: center; }
       .main .tools-section .cards-title h2 {
@@ -253,20 +280,6 @@ body {
           font-weight: bold;
           word-wrap: break-word;
           font-size: 1rem; }
-        .main .tools-section .cards-container .card-custom button {
-          transition-duration: all 0.4s linear;
-          background-color: white;
-          color: #3A79BD;
-          border: 2px solid;
-          font-size: 1.2rem;
-          box-shadow: 0px .3rem .6rem;
-          height: 2.5rem;
-          width: 100%; }
-          .main .tools-section .cards-container .card-custom button:hover {
-            background-color: #44ADE2;
-            color: white;
-            box-shadow: none;
-            cursor: pointer; }
       .main .tools-section .cards-container .card-custom.coming-soon {
         border: 2px solid;
         border-color: grey;
@@ -286,7 +299,8 @@ body {
             width: 100%;
             height: 100%;
             border: none;
-            box-shadow: none; }
+            box-shadow: none;
+            content: url("../../images/coming-soon-min.png"); }
             .main .tools-section .cards-container .card-custom.coming-soon .card-img img:hover {
               cursor: not-allowed;
               transition-duration: unset;
@@ -298,17 +312,6 @@ body {
           text-align: center;
           color: black;
           font-weight: bold; }
-        .main .tools-section .cards-container .card-custom.coming-soon button {
-          background-color: grey;
-          color: white;
-          border: 2px solid;
-          font-size: 1.2rem;
-          height: 2.5rem;
-          width: 100%;
-          box-shadow: none; }
-          .main .tools-section .cards-container .card-custom.coming-soon button:hover {
-            cursor: not-allowed;
-            background-color: grey; }
   .main .video-container .video-content {
     position: relative;
     bottom: 90%;
@@ -344,6 +347,7 @@ body {
       margin: 1rem 1rem 1rem 1rem; }
     .main .form .subscription {
       display: flex;
+      flex-direction: row;
       justify-content: flex-start;
       align-items: center;
       flex-wrap: wrap; }
@@ -420,6 +424,7 @@ body {
     height: 100%; }
     .footer .footer-nav-bar ul {
       display: flex;
+      flex-direction: row;
       justify-content: space-around;
       align-items: center;
       height: 100%;
@@ -480,6 +485,7 @@ body {
 .main .sub-section-container.index {
   margin: 1.2rem 1.2rem 1.2rem 1.2rem;
   display: flex;
+  flex-direction: row;
   justify-content: center; }
 
 .footer.index {
@@ -490,7 +496,7 @@ body {
 
 /* || FEEDBACK */
 .main.feedback {
-  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../images/hotel-view-duss.jpg");
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("https://app-demo.duettoresearch.com/assets/insecure/img/loginDusseldorfGermany1.jpg?v=2407631");
   background-size: cover;
   width: 100%;
   height: auto; }
@@ -585,10 +591,8 @@ body {
   html {
     font-size: 14px; }
   .main .start-section {
-    background-attachment: scroll;
-    background-size: cover; }
+    background-attachment: scroll; }
   .main .tools-section {
-    background-size: cover;
     background-attachment: scroll; }
   .main .video-container .video-content {
     max-width: 75%; } }
