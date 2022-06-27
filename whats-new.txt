@@ -54,6 +54,7 @@
 - Se han comprimido todas las imágenes .png y .jpg restantes para reducir su peso.
 - El video del final de la página "Index" se ha eliminado del proyecto y ahora se usa una url del video alojado en otro sitio.
 - Se ha agregado el archivo "sitemap.xml".
+- Los encabezados no han sido modificados ya que tenían el nombre apropiado en versiones anteriores.
 
 ## SASS II 
 - Se han renombrado todos los archivos .scss distintos a "main.scss" poniendo un "_" delante.
