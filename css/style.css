@@ -511,7 +511,7 @@ body {
 /* || BOOTSTRAP OVERRIDES */
 .list-group {
   --bs-list-group-action-hover-color: white;
-  --bs-list-group-action-hover-bg: $headerBackgroundColor4;
+  --bs-list-group-action-hover-bg: #44ADE2;
   width: fit-content; }
 
 .main .tools-section .cards-container .card {
