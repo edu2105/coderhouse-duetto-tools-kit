@@ -143,9 +143,9 @@
             margin-bottom: 4rem;
             .card-custom{
                 box-shadow: 0 .25rem .5rem 0 $headerBackgroundColor4;
-                border: 2px solid;
+                border: 1px solid;
                 border-color: $headerBackgroundColor4;
-                border-radius: .5rem;
+                border-radius: .4rem;
                 box-sizing: border-box;
                 padding: .5rem;
                 max-width: 15%;
@@ -153,6 +153,27 @@
                 display: grid;
                 grid-template-rows: 10rem 1fr;
                 background-color: $headerBackgroundColor1;
+                overflow: hidden;
+                z-index: 1;
+                &::before{
+                    content: '';
+                    position: absolute;
+                    height: 200%;
+                    width: 60%;
+                    background: linear-gradient(#66FF66, #50BFE6);
+                    animation: animate 5s linear infinite;
+                    align-self: center;
+                    justify-self: center;
+                    z-index: -2;
+                }
+                &::after{
+                    content: '';
+                    position: absolute;
+                    background: $headerBackgroundColor1;
+                    inset: 4px;
+                    border-radius: .2rem;
+                    z-index: -1;
+                }
                 .card-img{
                     margin: auto;
                     height: 100%;
@@ -208,6 +229,12 @@
                 display: grid;
                 grid-template-rows: 10rem 1fr;
                 background-color: grey;
+                &::before{
+                    display: none;
+                };
+                &::after{
+                    display: none;
+                }
                 .card-img{
                     margin: auto;
                     height: 100%;
@@ -368,4 +395,9 @@
         font-weight: bold;
     }
     
+}
+
+@keyframes animate{
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
