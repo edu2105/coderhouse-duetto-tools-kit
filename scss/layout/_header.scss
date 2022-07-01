@@ -20,30 +20,59 @@
         box-sizing: content-box;
     };
     .header-nav-bar{
-        @include flex-row;
-        align-items: center;
-        justify-content: space-around;
-        flex-wrap: nowrap;
-        ul{
+        ul:not(.dropdown-menu){
             margin: 0;
-            padding: 0;
+            padding: 1rem;
+            width: 100%;
+            @include flex-row;
+            align-items: center;
+            justify-content: space-around;
+            flex-wrap: wrap;
         };
         li{
             display: inline-block;
             margin: 0 1rem 0 1rem;
-            a{
+            .dropdown-item{
+                font-size: $headerFontSize;
+            };
+            a:not(.dropdown-item){
                 text-decoration: none;
                 color: $headerLiColor;
                 font-size: $headerFontSize;
-                padding: .6rem;
+                &:not(.nav-link.dropdown-toggle)::after{
+                    content: "";
+                    display: block;
+                    height: 3px;
+                    width: 0;
+                    background: transparent;
+                    transition: transform 0.5s;
+                    transform: scaleX(0);
+                    transform-origin: center;
+                };
                 &:hover{
                     color: $headerBackgroundColor1;
                     transition: 0.4s ;
-                }
+                    &:not(.nav-link.dropdown-toggle)::after{
+                        width: 100%;
+                        transform: scaleX(1);
+                        background: $highlightColor;
+                    };
+                };
             }
         };
-        .item-selected{
+        #item-selected{
             color: $headerBackgroundColor1;
+            &>a{
+                color: $headerBackgroundColor1;
+            };
+            &::after{
+                content: "";
+                display: block;
+                height: 3px;
+                width: 100%;
+                background: $highlightColor;
+                transform: unset;
+            }
         }
     }
 }

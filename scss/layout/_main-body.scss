@@ -360,10 +360,7 @@
         height: auto;
         @include flex-column;
         justify-content: center;
-        border: 3px solid;
-        border-color: white;
-        border-radius: 1rem;
-        background-color: $headerBackgroundColor1;
+        @include glass-efect;
         legend{
             color: white;
             font-size: 2rem;
