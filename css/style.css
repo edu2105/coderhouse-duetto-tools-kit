@@ -273,7 +273,6 @@ body {
         height: auto;
         display: grid;
         grid-template-rows: 10rem 1fr;
-        background-color: #0C395A;
         overflow: hidden;
         z-index: 1; }
         .main .tools-section .cards-container .card-custom::before {
@@ -285,7 +284,7 @@ body {
           animation: animate 5s linear infinite;
           align-self: center;
           justify-self: center;
-          z-index: -2; }
+          z-index: -1; }
         .main .tools-section .cards-container .card-custom::after {
           content: '';
           position: absolute;
@@ -507,7 +506,8 @@ body {
 
 /* || FOOTER */
 .footer {
-  background-color: #44ADE2;
+  background-color: #045de9;
+  background-image: linear-gradient(to left, #045de9 0%, #09c6f9 74%);
   width: 100%;
   grid-area: footer; }
   .footer .footer-nav-bar {
@@ -521,7 +521,8 @@ body {
       padding: 0;
       margin: 0; }
     .footer .footer-nav-bar li {
-      list-style: none; }
+      list-style: none;
+      -webkit-box-reflect: below 0px linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4)); }
       .footer .footer-nav-bar li a {
         text-decoration: none;
         font-size: 1.2rem;
@@ -604,45 +605,20 @@ body {
   --bs-list-group-action-hover-bg: #44ADE2;
   width: fit-content; }
 
-.main .tools-section .cards-container .card {
-  max-width: 15%;
-  background-color: #0C395A; }
-
-.main .tools-section .cards-container .card p {
-  color: #44ADE2; }
-
-.main .tools-section .cards-container .card h5 {
-  color: white; }
-
-.main .tools-section .cards-container .card.coming-soon a {
-  background-color: grey;
-  color: white;
-  border: none; }
-
-.main .tools-section .cards-container .card.coming-soon a:hover {
-  cursor: not-allowed;
-  background-color: grey; }
-
-.main .tools-section .cards-container .card.coming-soon img:hover {
-  cursor: not-allowed; }
-
 .header .header-nav-bar .dropdown-menu {
   background-color: #3A79BD;
   color: white; }
-
-.header .header-nav-bar .dropdown-menu li {
-  margin-left: 0;
-  margin-right: 0;
-  width: 100%; }
-
-.header .header-nav-bar .dropdown-menu li a {
-  color: unset;
-  padding-left: 1rem;
-  padding-right: 0;
-  width: 100%; }
-
-.header .header-nav-bar .dropdown-menu li a:hover {
-  color: #0257A3; }
+  .header .header-nav-bar .dropdown-menu li {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%; }
+    .header .header-nav-bar .dropdown-menu li a {
+      color: unset;
+      padding-left: 1rem;
+      padding-right: 0;
+      width: 100%; }
+      .header .header-nav-bar .dropdown-menu li a:hover {
+        color: #0257A3; }
 
 .fieldset .btn.btn-primary,
 .form .btn.btn-primary {
@@ -695,16 +671,6 @@ body {
     justify-self: flex-start; }
   .main.index {
     grid-template-rows: auto; }
-  #mobile-menu-check:checked ~ .mobile-menu-nav {
-    visibility: visible;
-    width: 100%;
-    height: 100%;
-    top: 6vh;
-    opacity: .95;
-    background-color: #3A79BD;
-    transition: 0.6s;
-    z-index: 1;
-    overflow-y: auto; }
   .main .tools-section .cards-title {
     margin-top: 2rem; }
   .main .tools-section .cards-container .card-custom,
@@ -723,14 +689,20 @@ body {
     width: calc(100% - 3rem);
     height: auto; }
   .main .video-container .video-content {
-    max-width: 75%; } }
+    max-width: 75%; }
+  #mobile-menu-check:checked ~ .mobile-menu-nav {
+    visibility: visible;
+    width: 100%;
+    height: 100%;
+    top: 6vh;
+    opacity: .95;
+    background-color: #3A79BD;
+    transition: 0.6s;
+    z-index: 1;
+    overflow-y: auto; } }
 
 /* || MOBILE DEVICES */
 @media (max-width: 480px) {
-  .main .sub-section-container .table th,
-  .main .sub-section-container .table td {
-    padding: 0;
-    border: 2px solid #44ADE2; }
   .main textarea {
     width: calc(100% - 3rem);
     height: auto; }
@@ -750,9 +722,9 @@ body {
   .main .tools-section .cards-container {
     flex-direction: column;
     align-items: center; }
-  .main .tools-section .cards-container .card-custom,
-  .main .tools-section .cards-container .card-custom.coming-soon {
-    max-width: 80%;
-    margin: 1rem 0 1rem 0; }
+    .main .tools-section .cards-container .card-custom,
+    .main .tools-section .cards-container .card-custom.coming-soon {
+      max-width: 80%;
+      margin: 1rem 0 1rem 0; }
   .main .video-container .video-content {
     max-width: 75%; } }

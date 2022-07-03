@@ -152,7 +152,6 @@
                 height: auto;
                 display: grid;
                 grid-template-rows: 10rem 1fr;
-                background-color: $headerBackgroundColor1;
                 overflow: hidden;
                 z-index: 1;
                 &::before{
@@ -164,7 +163,7 @@
                     animation: animate 5s linear infinite;
                     align-self: center;
                     justify-self: center;
-                    z-index: -2;
+                    z-index: -1;
                 }
                 &::after{
                     content: '';
@@ -173,7 +172,7 @@
                     inset: 4px;
                     border-radius: .2rem;
                     z-index: -1;
-                }
+                };
                 .card-img{
                     margin: auto;
                     height: 100%;
@@ -193,8 +192,8 @@
                             background-color: $headerBackgroundColor4;
                             color: white;
                             box-shadow: none;
-                        }
-                    }
+                        };
+                    };
                 };
                 .card-content{
                     h3{

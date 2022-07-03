@@ -3,15 +3,17 @@
         font-size: 14px;
     }
 
-    .main .start-section{
-        @include parallax(false);
-    }
-
-    .main .tools-section{
-        @include parallax(false);
-    }
-
-    .main .video-container .video-content{
-        max-width: 75%;
+    .main{
+        .start-section{
+            @include parallax(false);
+        };
+        .tools-section{
+            @include parallax(false);
+        };
+        .video-container{
+            .video-content{
+                max-width: 75%;
+            }
+        }
     }
 }

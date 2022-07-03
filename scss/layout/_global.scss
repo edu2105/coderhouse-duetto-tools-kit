@@ -14,7 +14,11 @@
     object-fit: cover;
 }
 
-#collapsible:checked ~.htng-code{
-    visibility: visible;
-    display: block;
+#collapsible{
+    &:checked{
+        &~.htng-code{
+            visibility: visible;
+            display: block;
+        }
+    }   
 }
