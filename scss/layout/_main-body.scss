@@ -306,13 +306,60 @@
     .form{
         margin: 0 0 0 1.2rem;
         @include flex-column;
+        .floating-label-container{
+            margin: 1.7rem 1rem 1rem 1rem;
+            position: relative;
+            max-width: fit-content;
+            .floating-label{
+                color: $headerBackgroundColor2; 
+                font-size: 1rem;
+                font-weight: normal;
+                position: absolute;
+                pointer-events: none;
+                left: .1rem;
+                background: transparent;
+                transition: 0.2s ease all;
+                &.feedback{
+                    top: 2.7rem;
+                    &::after{
+                        content: " here...";
+                    }
+                }
+            };
+            .floating-label-input{
+                &:focus{
+                        outline: none;
+                        ~.floating-label{
+                        top: -2.5rem;
+                        font-size: 1.2rem;
+                        color: white;
+                        background: transparent;
+                        margin-left: 0;
+                        padding-left: 0;
+                        &.feedback::after{
+                            content: "";
+                        }
+                    }
+                };
+                &:not(:placeholder-shown) ~.floating-label{
+                    top: -2.5rem;
+                    font-size: 1.2rem;
+                    color: white;
+                    margin-left: 0;
+                    padding-left: 0;
+                    &.feedback::after{
+                        content: "";
+                    };
+                }
+            };
+        };
         p{
             color: $mainPTextColor;
             font-size: $mainFontSize;
             margin: 0;
         };
         label{
-            margin: 1rem 1rem 1rem 1rem;
+            margin: 1rem;
         };
         .subscription{
             @include flex-row;

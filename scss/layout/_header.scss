@@ -25,7 +25,7 @@
             padding: 1rem;
             width: 100%;
             @include flex-row;
-            align-items: center;
+            align-items: flex-start;
             justify-content: space-around;
             flex-wrap: wrap;
         };

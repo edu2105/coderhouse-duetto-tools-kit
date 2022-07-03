@@ -68,7 +68,7 @@ body {
     width: 100%;
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-around;
     flex-wrap: wrap; }
   .header .header-nav-bar li {
@@ -385,12 +385,48 @@ body {
     margin: 0 0 0 1.2rem;
     display: flex;
     flex-direction: column; }
+    .main .form .floating-label-container {
+      margin: 1.7rem 1rem 1rem 1rem;
+      position: relative;
+      max-width: fit-content; }
+      .main .form .floating-label-container .floating-label {
+        color: #0257A3;
+        font-size: 1rem;
+        font-weight: normal;
+        position: absolute;
+        pointer-events: none;
+        left: .1rem;
+        background: transparent;
+        transition: 0.2s ease all; }
+        .main .form .floating-label-container .floating-label.feedback {
+          top: 2.7rem; }
+          .main .form .floating-label-container .floating-label.feedback::after {
+            content: " here..."; }
+      .main .form .floating-label-container .floating-label-input:focus {
+        outline: none; }
+        .main .form .floating-label-container .floating-label-input:focus ~ .floating-label {
+          top: -2.5rem;
+          font-size: 1.2rem;
+          color: white;
+          background: transparent;
+          margin-left: 0;
+          padding-left: 0; }
+          .main .form .floating-label-container .floating-label-input:focus ~ .floating-label.feedback::after {
+            content: ""; }
+      .main .form .floating-label-container .floating-label-input:not(:placeholder-shown) ~ .floating-label {
+        top: -2.5rem;
+        font-size: 1.2rem;
+        color: white;
+        margin-left: 0;
+        padding-left: 0; }
+        .main .form .floating-label-container .floating-label-input:not(:placeholder-shown) ~ .floating-label.feedback::after {
+          content: ""; }
     .main .form p {
       color: #767779;
       font-size: 1.2rem;
       margin: 0; }
     .main .form label {
-      margin: 1rem 1rem 1rem 1rem; }
+      margin: 1rem; }
     .main .form .subscription {
       display: flex;
       flex-direction: row;
