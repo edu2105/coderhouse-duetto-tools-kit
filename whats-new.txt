@@ -1,69 +1,80 @@
 # Cambios
+- 27-Junio-2022
+    ## SEO
+    - Se ha agregado el elemento meta keywords y meta description en todas las páginas del proyecto.
+    - A continuación el detalle de las keywords y descripciones agregadas por página (expandir por si está colpasado).
+        + index
+            - keywords
+                + duetto, duetto tools, rms, open pricing
+            - description
+                + Tools desgined to provide Duetto's team  different solutions for the daily work
 
-## SEO
-- Se ha agregado el elemento meta keywords y meta description en todas las páginas del proyecto.
-- A continuación el detalle de las keywords y descripciones agregadas por página (expandir por si está colpasado).
-    + index
-        - keywords
-            + duetto, duetto tools, rms, open pricing
-        - description
-            + Tools desgined to provide Duetto's team  different solutions for the daily work
+        + documentation
+            - keywords
+                + duetto, duetto tools, duetto documentation, nifi, htng
+            - description
+                + Find all the related documentation for our current Tools
 
-    + documentation
-        - keywords
-            + duetto, duetto tools, duetto documentation, nifi, htng
-        - description
-            + Find all the related documentation for our current Tools
+        + feedback
+            - keywords
+                + duetto tools, feedback, contact duetto, comment duetto, recommend duetto
+            - description
+                + Let us know how can we improve this site, contact us.
 
-    + feedback
-        - keywords
-            + duetto tools, feedback, contact duetto, comment duetto, recommend duetto
-        - description
-            + Let us know how can we improve this site, contact us.
+        + how-it-works
+            - keywords
+                + duetto tools, knowledge base, how it works
+            - description
+                + A detail description about how we made the tools including code snippets.
 
-    + how-it-works
-        - keywords
-            + duetto tools, knowledge base, how it works
-        - description
-            + A detail description about how we made the tools including code snippets.
+        + tools
+            - keywords
+                + duetto tools, rate sum, rates, xml to csv, converter, htng, htng validator, ota
+            - description
+                + All our supported tools up to day.
 
-    + tools
-        - keywords
-            + duetto tools, rate sum, rates, xml to csv, converter, htng, htng validator, ota
-        - description
-            + All our supported tools up to day.
+        + converter
+            - keywords
+                + duetto tools, xml to csv, converter
+            - description
+                + This tool will let you transform an XML payload to a CSV file that you can copy or download.
 
-    + converter
-        - keywords
-            + duetto tools, xml to csv, converter
-        - description
-            + This tool will let you transform an XML payload to a CSV file that you can copy or download.
+        + validator
+            - keywords
+                + duetto tools, htng, htng validator, ota
+            - description
+                + This tool will compare any HTNG message type vs Duetto API.
 
-    + validator
-        - keywords
-            + duetto tools, htng, htng validator, ota
-        - description
-            + This tool will compare any HTNG message type vs Duetto API.
+        + rate-sum
+            - keywords
+                + duetto tools, rate sum, rates
+            - description
+                + This tool wll make the rate calculation for you. You just need to upload any booking stay-day file.
+    - Las imágenes de fondo de las páginas "Index" y "Feedback" se han eliminado del proyecto y ahora se usan urls de las imágenes alojadas en otro sitio.
+    - Se han comprimido todas las imágenes .png y .jpg restantes para reducir su peso.
+    - El video del final de la página "Index" se ha eliminado del proyecto y ahora se usa una url del video alojado en otro sitio.
+    - Se ha agregado el archivo "sitemap.xml".
+    - Los encabezados no han sido modificados ya que tenían el nombre apropiado en versiones anteriores.
 
-    + rate-sum
-        - keywords
-            + duetto tools, rate sum, rates
-        - description
-            + This tool wll make the rate calculation for you. You just need to upload any booking stay-day file.
-- Las imágenes de fondo de las páginas "Index" y "Feedback" se han eliminado del proyecto y ahora se usan urls de las imágenes alojadas en otro sitio.
-- Se han comprimido todas las imágenes .png y .jpg restantes para reducir su peso.
-- El video del final de la página "Index" se ha eliminado del proyecto y ahora se usa una url del video alojado en otro sitio.
-- Se ha agregado el archivo "sitemap.xml".
-- Los encabezados no han sido modificados ya que tenían el nombre apropiado en versiones anteriores.
+    ## SASS II 
+    - Se han renombrado todos los archivos .scss distintos a "main.scss" poniendo un "_" delante.
+    - Se han agregado los archivos "_extend.scss" y "_mixin.scss".
+    - Se han implementado 4 clases en "_extend.scss"
+    - Se han implementado 3 mixin en "_mixin.scss" (expandir)
+        + 1 mixin admite parámetros y es para determinar si se usa o no el efecto parallax.
+        + 2 mixins sin parámetros para configurar flex orientado en row o en columna.
+    - Se ha ordenado un poco mejor el archivo "main.scss".
 
-## SASS II 
-- Se han renombrado todos los archivos .scss distintos a "main.scss" poniendo un "_" delante.
-- Se han agregado los archivos "_extend.scss" y "_mixin.scss".
-- Se han implementado 4 clases en "_extend.scss"
-- Se han implementado 3 mixin en "_mixin.scss" (expandir)
-    + 1 mixin admite parámetros y es para determinar si se usa o no el efecto parallax.
-    + 2 mixins sin parámetros para configurar flex orientado en row o en columna.
-- Se ha ordenado un poco mejor el archivo "main.scss".
-
-## OTROS
-- Se ha creado el archivo "whats-new.txt" con contenido en formato markdown para declarar los cambios realizados.
+    ## OTROS
+    - Se ha creado el archivo "whats-new.txt" con contenido en formato markdown para declarar los cambios realizados.
+- 7-Julio-2022
+    ## SASS
+        - Se corrigieron algunos archivos .scss para que incluyan el modelo SASS.
+    ## INTERFAZ
+        - Se agregó un nuevo efecto en los items de la barra de navegación. Ahora aparece una línea al hacer hover y ésta queda fija en la página actual.
+        - Se agregó un nuevo efecto en las tarjetas de la sección index. Ahora aparecen 2 lineas que se mueven alrededor de la tarjeta.
+        - Se agregó un nuevo efecto en el footer. Ahora todos los items tienen una reflección.
+        - Se cambió el color del footer y se agregó un gradiente.
+        - Se agregó un nuevo efecto en la sección "Feedback". Ahora el background del formulario es de tipo "glass" o vidriado. Además los campos del formulario ahora tienen un efecto al hacer click.
+    ## SEO
+        - Se mantienen todos los cambios aplicados anteriormente.
