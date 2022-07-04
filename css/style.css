@@ -452,7 +452,7 @@ body {
     background-color: white;
     color: #0257A3;
     border: 2px solid;
-    box-shadow: 0px .3rem .6rem;
+    box-shadow: 0 .3rem .3rem 0;
     height: 2.5rem;
     width: 5rem; }
     .main input[type="submit"]:hover {
@@ -472,7 +472,7 @@ body {
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, 0.3); }
+    /*border: 2px solid rgba(255, 255, 255, 0.3);*/ }
     .main .fieldset legend {
       color: white;
       font-size: 2rem;
@@ -484,15 +484,17 @@ body {
       color: white; }
     .main .fieldset input[type="submit"] {
       transition-duration: all 0.4s linear;
-      background-color: white;
-      color: #3A79BD;
+      background-color: rgba(255, 255, 255, 0.1);
+      color: white;
       border: 2px solid;
-      font-size: 1.2rem;
-      box-shadow: 0px .3rem .6rem; }
+      border-color: transparent;
+      font-size: 1rem;
+      box-shadow: 0.3rem 0.3rem 0.4rem 0.3rem rgba(0, 0, 0, 0.4); }
       .main .fieldset input[type="submit"]:hover {
-        background-color: #44ADE2;
+        background-color: rgba(255, 255, 255, 0.1);
         color: white;
-        box-shadow: none;
+        border-color: transparent;
+        box-shadow: 0 -0.2rem 0.1rem rgba(0, 0, 0, 0.9);
         cursor: pointer; }
   .main .bold {
     color: #0C395A;
