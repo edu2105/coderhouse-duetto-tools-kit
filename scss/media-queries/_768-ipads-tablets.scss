@@ -13,8 +13,33 @@
     }
 
     .main{
+        .sub-section-container{
+            &.documentation{
+                .accordion{
+                    width: 100%;
+                }
+            };
+            .workaround-container{
+                @include flex-column;
+                .workaround-logs{
+                    margin-top: 3rem;
+                    .logs-container{
+                        margin-left: 0;
+                        align-items: center;
+                    };
+                };
+            };
+        };
         &.index{
             grid-template-rows: auto;
+            .sub-section-container{
+                .aside{
+                    max-width: 60%;
+                    .placeholder{
+                        height: 0;
+                    };
+                };
+            };
         };
         .tools-section{
             .cards-title{

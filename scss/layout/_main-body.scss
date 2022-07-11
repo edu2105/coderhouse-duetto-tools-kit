@@ -25,7 +25,7 @@
         border-radius: .5rem;
         color: whitesmoke;
         margin-bottom: 0;
-        width: fit-content;
+        max-width: fit-content;
     };
     .start-section{
         background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("https://app-demo.duettoresearch.com/assets/insecure/img/loginNewYorkCityUSA1.jpg?v=7864668");
@@ -56,7 +56,6 @@
         .aside{
             max-width: 60%;
             text-align: start;
-            align-self: center;
             a{
                 &:visited{
                     color: grey;
@@ -129,7 +128,7 @@
         background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://app-demo.duettoresearch.com/assets/insecure/img/loginWashingtonDCUSA.jpg?v=6571967');
         @include parallax(true);
         @include flex-column;
-        justify-content: space-around;
+        justify-content: space-evenly;
         .cards-title{
             text-align: center;
             h2{
@@ -306,7 +305,7 @@
         margin: 0 0 0 1.2rem;
         @include flex-column;
         .floating-label-container{
-            margin: 1.7rem 1rem 1rem 1rem;
+            margin: 1rem 1rem 1rem 1rem;
             position: relative;
             max-width: fit-content;
             .floating-label{
@@ -317,6 +316,7 @@
                 pointer-events: none;
                 left: .1rem;
                 background: transparent;
+                margin: 1rem;
                 transition: 0.2s ease all;
                 &.feedback{
                     top: 2.7rem;
@@ -357,13 +357,9 @@
             font-size: $mainFontSize;
             margin: 0;
         };
-        label{
-            margin: 1rem;
-        };
         .subscription{
             @include flex-row;
             justify-content: flex-start;
-            align-items: center;
             flex-wrap: wrap;
             input{
                 height: 1.2rem;
@@ -373,16 +369,20 @@
         };
         input[type="file"]{
             max-width: fit-content;
-        }
+        };
+        .button{
+            @include button-std;
+        };
     };
     input, select, textarea{
-        margin-top: .6rem;
+        margin: .6rem 0;
         color: $headerBackgroundColor2;
         border: 2px solid;
         padding: .3rem .6rem;
         border-radius: .5rem;
         box-sizing: border-box;
         resize: none;
+        width: fit-content;
     };
     input[type="submit"]{
         margin: 1rem 0 1rem 1rem;
@@ -413,11 +413,14 @@
             float: unset;
             width: auto;
             padding: 0 .5rem 0 .5rem;
-            margin: 0 .5rem 0 1rem;
+            margin: 0 .5rem 1rem 1rem;
         };
         p{
             color: white;
         };
+        label{
+            margin-left: 1rem;
+        }
         input[type="submit"]{
             transition-duration: all 0.4s linear; 
             background-color: rgba(255, 255, 255, 0.1);

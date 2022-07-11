@@ -1,0 +1,48 @@
+.main{
+    .workaround-container{
+        @include flex-row;
+        justify-content: space-around;
+        align-items: center;
+        position: relative;
+    };
+    .workaround-form,
+    .workaround-logs{
+        label{
+            margin-top: 1.2rem;
+        };
+        input{
+            color: $headerBackgroundColor4;
+            border-color: $headerBackgroundColor2;
+            font-weight: 600;
+        };
+        input[type="submit"]{
+            margin: 2rem 0 0 0;
+            box-shadow: -.2rem .2rem .3rem .1rem $headerBackgroundColor4;
+            &:hover{
+                box-shadow: .3rem 0 .5rem .2rem;
+            };
+        };
+        button{
+            @include button-std;
+        }
+    };
+    .workaround-logs{
+        .logs-container{
+            @include flex-column;
+            margin-left: 4rem;
+            .logs-title{
+                align-self: center;
+                margin-top: 0;
+                font-size: 2rem;
+            };
+            .session-id-input{
+                margin-left: 1rem;
+            };
+            textarea{
+                resize: both;
+                color: black;
+                width: calc(100% - 3rem);
+            };
+        };
+    };
+}
