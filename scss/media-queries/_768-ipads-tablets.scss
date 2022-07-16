@@ -41,7 +41,11 @@
                 };
             };
         };
+        .start-section{
+            position: unset;
+        };
         .tools-section{
+            position: unset;
             .cards-title{
                 margin-top: 2rem;
             };
@@ -67,6 +71,7 @@
             height: auto;
         };
         .video-container{
+            position: unset;
             .video-content{
                 max-width: 75%;
             };
