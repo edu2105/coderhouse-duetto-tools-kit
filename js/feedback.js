@@ -1,26 +1,218 @@
-function loopChallenge(){
-    let questions = [
-        "Have you ever been intersting in the Integrations team?\n(Yes/No)",
-        "How many years you have been working at Duetto?",
-        "Do you want to be updated of our last changes?\n(Yes/No)",
-        "Which is the integration you worked the most?"
-    ];
-    let responses = new Array();
-    let do_questionnaire = prompt("Hi! before sending us feedback we'd like to ask you some questions.\n" +
-    "Would you like to continue?\n(Y/N)").toLowerCase();
+//Constants that will define the bias for the trivia difficulty.
+const EASY = 6;
+const MEDIUM = 3;
+const HARD = 0;
 
-    console.log(`Use response to taking questionnaire: <${do_questionnaire}>`);
-    if(do_questionnaire == "yes" || do_questionnaire == "y"){
-        for(question in questions){
-            responses[question] = prompt(questions[question]);
+/**
+ * Request the user to take a trivia using sweetalert2.
+ * @param {const} difficulty - The bias used for making the trivia less or more difficult.
+ * Default value is EASY.
+ */
+function triviaRequest(difficulty = EASY){
+    Swal.fire({
+        title: 'Trivia Time',
+        html: "Would you like to take a quick trivia?" +
+        "<br>" +
+        "You'll be prompted to write any integration name you have in mind and hit ENTER. Type 'quit', 'QUIT' or click 'Cancel' when you are done to get your score." +
+        "<br>" +
+        "<br>" +
+        "<i>We will be ranking you based on your speed (this makes the big difference), which integrations you can name (if they are not common the more points you can get) and how many matches you can make.</i>",
+        imageUrl: "https://i.postimg.cc/VLwTp3vB/lenny-pensando.jpg",
+        imageWidth: 300,
+        imageHeight: 200,
+        imageAlt: 'Lenny thinking',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: "Yes, I'm ready!"
+      }).then((result) => {
+        if(result.isConfirmed) {
+            triviaStart(difficulty);
+        }else{
+            triviaDismiss();
         };
-        console.log(`Questionnaire responses are: ${responses}`);
-        alert("Thank you for your time! :)");
-    }else{
-        alert("We understand your time is valuable.\n" +
-        "If you change your mind please refresh this page\n" +
-        "Thank you!");
+      });
+};
+
+/**
+ * Start the trivia using a prompt for user input.
+ * @param {const} difficulty - The bias used for making the trivia less or more difficult.
+ */
+function triviaStart(difficulty){
+    //Message to be prompt
+    let question = "Type an integration name and press ENTER. Type 'quit', 'QUIT' or click 'Cancel' to get your score.";
+    //Object array containing all the possible answers with their weights.
+    let triviaData = [
+        {"integration": "amadeus", "weight": 0.04},
+        {"integration": "avalon", "weight": 0.08},
+        {"integration": "cambridge", "weight": 0.05},
+        {"integration": "comanche", "weight": 0.09},
+        {"integration": "guestcentric", "weight": 0.04},
+        {"integration": "h world", "weight": 0.09},
+        {"integration": "hms", "weight": 0.04},
+        {"integration": "ihotelier", "weight": 0.04},
+        {"integration": "lms", "weight": 0.02},
+        {"integration": "maestro", "weight": 0.04},
+        {"integration": "mews", "weight": 0.02},
+        {"integration": "opera", "weight": 0.01},
+        {"integration": "prestige", "weight": 0.06},
+        {"integration": "protel", "weight": 0.04},
+        {"integration": "rguest", "weight": 0.03},
+        {"integration": "rms", "weight": 0.03},
+        {"integration": "sihot", "weight": 0.03},
+        {"integration": "siteminder", "weight": 0.03},
+        {"integration": "sms", "weight": 0.04},
+        {"integration": "tca", "weight": 0.03},
+        {"integration": "tms", "weight": 0.04},
+        {"integration": "v1", "weight": 0.02},
+        {"integration": "winks", "weight": 0.09}
+    ];
+    let input = new String;
+    let points = 0;
+    let matches = new Array;
+    let startTime = performance.now();
+    
+    while(input !== "quit"){
+        input = prompt(question);
+        //Check if user hits "Cancel"
+        input = input != null ? input.toLowerCase() : "quit";
+        //Check if the user input it is present in the object array with the possible answers.
+        let response = triviaData.find(element => element.integration === input);
+        if(response){
+            points = points + response.weight;
+            //Avoid the same valid answer more than one time.
+            if(!matches.includes(input)){
+                matches.push(response.integration);
+            };
+        };
+    };
+
+    let endTime = performance.now();
+    //Trivia time in seconds.
+    let time = (endTime - startTime) / 1000;
+    let score = calculateScore(points, matches.length, triviaData.length, time, difficulty);
+
+    //Evaluate the score returned to show an alert with the final result.
+    switch(true) {
+        case (score <= 0):
+            Swal.fire({
+                title: "Let me call an expert",
+                html: "Seems like you are new in the company or you don't want to take this trivia seriously." +
+                "<br>"+
+                "Better luck next time!",
+                imageUrl: 'https://i.postimg.cc/PJbMLzDB/Pawn-Stars-640x367.jpg',
+                imageWidth: 300,
+                imageHeight: 200,
+                imageAlt: 'Pawned Star',
+              });
+            break;
+        case (score > 0 && score < 0.4):
+            Swal.fire({
+                title: "Little Yoda",
+                html: "Your Score is: <b>" + (score * 10).toFixed(1) + "</b> out of 10." +
+                "<br>" +
+                `${matches.length} Matches --> ${matches}` +
+                "<br>" +
+                "<br>" +
+                "Good job! you've type a few of all of the integrations we currently have." +
+                "<br>"+
+                "If you are interested please check our Documentation section to find out all of our integrations.",
+                imageUrl: 'https://i.postimg.cc/MH965gJx/little-yoda.jpg',
+                imageWidth: 300,
+                imageHeight: 200,
+                imageAlt: 'Little Yoda',
+              });
+            break;
+        case (score >= 0.4 && score < 0.7):
+            Swal.fire({
+                title: "Cristiano",
+                html: "Your Score is: <b>" + (score * 10).toFixed(1) + "</b> out of 10." +
+                "<br>" +
+                `${matches.length} Matches --> ${matches}` +
+                "<br>" +
+                "<br>" +
+                "It is evident that you work with integrations every day, however, you'll need a little more to be the best!" +
+                "<br>"+
+                "You can still learn more about us in our Documentation section whenever you want.",
+                imageUrl: 'https://i.postimg.cc/BZm4rWRf/cristiano-ronaldo-655x368.jpg',
+                imageWidth: 300,
+                imageHeight: 200,
+                imageAlt: 'Cristiano Ronaldo',
+              });
+            break;
+        case (score >= 0.7 && score <= 1):
+            Swal.fire({
+                title: "Animal",
+                html: "Your Score is: <b>" + (score * 10).toFixed(1) + "</b> out of 10." +
+                "<br>" +
+                `${matches.length} Matches --> ${matches}` +
+                "<br>" +
+                "<br>" +
+                "You are a black panther from the african savannah. Integrations fear you!" +
+                "<br>"+
+                "Congratulations, your feedback will be highly appreciate it.",
+                imageUrl: 'https://i.postimg.cc/7LJ56P8z/black-panther1.jpg',
+                imageWidth: 300,
+                imageHeight: 200,
+                imageAlt: 'Black Panther',
+              });
+            break;
+        default:
+            break;
     };
 };
 
-loopChallenge();
+/**
+ * Alert for trivia declined.
+ */
+function triviaDismiss(){
+    Swal.fire({
+        title: "That's Ok!",
+        html: "No problem, we understand your time is valuable!" +
+        "<br>"+
+        "If you change your mind please refresh this page or send us any feedback by completing the form.",
+        imageUrl: 'https://i.postimg.cc/JhPcy8n5/homer-sad-ok.jpg',
+        imageWidth: 300,
+        imageHeight: 200,
+        imageAlt: 'Homer sad',
+      })
+};
+
+/**
+ * Calculate the final score
+ * @param {float} points - The sum of the weights from the valid inputs.
+ * @param {number} numberOfInputs - Number of matches.
+ * @param {number} numberOfPossibleAnswers  - Number of possible answers.
+ * @param {number} time - Trivia time in seconds.
+ * @param {const} difficulty - The bias used for making the trivia less or more difficult.
+ * @returns {float}
+ */
+function calculateScore(points, numberOfInputs, numberOfPossibleAnswers, time, difficulty){
+    const TIME_WEIGHT = 0.65;
+    const POINTS_WEIGHT = 0.25;
+    const INPUTS_WEIGHT = 0.1;
+
+    const TIME_BIAS = difficulty;
+    const INPUTS_BIAS = difficulty;
+
+    let score = 0;
+    let timeBonus = numberOfInputs / (time - TIME_BIAS);
+    let numberOfInputsBonus = numberOfInputs / (numberOfPossibleAnswers - INPUTS_BIAS);
+
+    if(timeBonus < 0 || timeBonus > 1){
+        timeBonus = 1;
+    };
+
+    if(numberOfInputsBonus > 1){
+        numberOfInputsBonus = 1;
+    };
+
+    if(numberOfInputs >= 0){
+        score = (points * POINTS_WEIGHT) + (numberOfInputsBonus * INPUTS_WEIGHT) + (timeBonus * TIME_WEIGHT);
+    };
+
+    return score;
+};
+
+//Run the trivia in EASY mode.
+triviaRequest(HARD);
