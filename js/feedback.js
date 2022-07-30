@@ -215,4 +215,4 @@ function calculateScore(points, numberOfInputs, numberOfPossibleAnswers, time, d
 };
 
 //Run the trivia in EASY mode.
-triviaRequest(HARD);
+triviaRequest();
