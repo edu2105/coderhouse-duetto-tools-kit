@@ -1,14 +1,11 @@
-//Constants that will define the bias for the trivia difficulty.
-const EASY = 6;
-const MEDIUM = 3;
-const HARD = 0;
+import Score from './classes/score.js';
 
 /**
  * Request the user to take a trivia using sweetalert2.
  * @param {const} difficulty - The bias used for making the trivia less or more difficult.
  * Default value is EASY.
  */
-function triviaRequest(difficulty = EASY){
+function triviaRequest(){
     Swal.fire({
         title: 'Trivia Time',
         html: "Would you like to take a quick trivia?" +
@@ -27,7 +24,7 @@ function triviaRequest(difficulty = EASY){
         confirmButtonText: "Yes, I'm ready!"
       }).then((result) => {
         if(result.isConfirmed) {
-            triviaStart(difficulty);
+            triviaStart();
         }else{
             triviaDismiss();
         };
@@ -38,7 +35,12 @@ function triviaRequest(difficulty = EASY){
  * Start the trivia using a prompt for user input.
  * @param {const} difficulty - The bias used for making the trivia less or more difficult.
  */
-function triviaStart(difficulty){
+function triviaStart(){
+    //Constants that will define the bias for the trivia difficulty.
+    const EASY = 6;
+    const MEDIUM = 3;
+    const HARD = 0;
+
     //Message to be prompt
     let question = "Type an integration name and press ENTER. Type 'quit', 'QUIT' or click 'Cancel' to get your score.";
     //Object array containing all the possible answers with their weights.
@@ -90,11 +92,21 @@ function triviaStart(difficulty){
     let endTime = performance.now();
     //Trivia time in seconds.
     let time = (endTime - startTime) / 1000;
-    let score = calculateScore(points, matches.length, triviaData.length, time, difficulty);
+    //Create score object with EASY difficulty.
+    let result = new Score(points, matches.length, triviaData.length, time, EASY);
+    console.log("Trivia Mode");
+    console.log(`Difficulty: <${result.getDifficulty()}>`);
+    let weights = result.getWeights();
+    for(const weight of weights) {
+        console.log(`<${weight.type}> weight: ${weight.points}`);
+    }
+
+    //Get final score
+    let finalScore = result.score;
 
     //Evaluate the score returned to show an alert with the final result.
     switch(true) {
-        case (score <= 0):
+        case (finalScore <= 0):
             Swal.fire({
                 title: "Let me call an expert",
                 html: "Seems like you are new in the company or you don't want to take this trivia seriously." +
@@ -106,10 +118,10 @@ function triviaStart(difficulty){
                 imageAlt: 'Pawned Star',
               });
             break;
-        case (score > 0 && score < 0.4):
+        case (finalScore > 0 && finalScore < 0.4):
             Swal.fire({
                 title: "Little Yoda",
-                html: "Your Score is: <b>" + (score * 10).toFixed(1) + "</b> out of 10." +
+                html: "Your Score is: <b>" + (finalScore * 10).toFixed(1) + "</b> out of 10." +
                 "<br>" +
                 `${matches.length} Matches --> ${matches}` +
                 "<br>" +
@@ -123,10 +135,10 @@ function triviaStart(difficulty){
                 imageAlt: 'Little Yoda',
               });
             break;
-        case (score >= 0.4 && score < 0.7):
+        case (finalScore >= 0.4 && finalScore < 0.7):
             Swal.fire({
                 title: "Cristiano",
-                html: "Your Score is: <b>" + (score * 10).toFixed(1) + "</b> out of 10." +
+                html: "Your Score is: <b>" + (finalScore * 10).toFixed(1) + "</b> out of 10." +
                 "<br>" +
                 `${matches.length} Matches --> ${matches}` +
                 "<br>" +
@@ -140,10 +152,10 @@ function triviaStart(difficulty){
                 imageAlt: 'Cristiano Ronaldo',
               });
             break;
-        case (score >= 0.7 && score <= 1):
+        case (finalScore >= 0.7 && finalScore <= 1):
             Swal.fire({
                 title: "Animal",
-                html: "Your Score is: <b>" + (score * 10).toFixed(1) + "</b> out of 10." +
+                html: "Your Score is: <b>" + (finalScore * 10).toFixed(1) + "</b> out of 10." +
                 "<br>" +
                 `${matches.length} Matches --> ${matches}` +
                 "<br>" +
@@ -178,41 +190,5 @@ function triviaDismiss(){
       })
 };
 
-/**
- * Calculate the final score
- * @param {float} points - The sum of the weights from the valid inputs.
- * @param {number} numberOfInputs - Number of matches.
- * @param {number} numberOfPossibleAnswers  - Number of possible answers.
- * @param {number} time - Trivia time in seconds.
- * @param {const} difficulty - The bias used for making the trivia less or more difficult.
- * @returns {float}
- */
-function calculateScore(points, numberOfInputs, numberOfPossibleAnswers, time, difficulty){
-    const TIME_WEIGHT = 0.65;
-    const POINTS_WEIGHT = 0.25;
-    const INPUTS_WEIGHT = 0.1;
-
-    const TIME_BIAS = difficulty;
-    const INPUTS_BIAS = difficulty;
-
-    let score = 0;
-    let timeBonus = numberOfInputs / (time - TIME_BIAS);
-    let numberOfInputsBonus = numberOfInputs / (numberOfPossibleAnswers - INPUTS_BIAS);
-
-    if(timeBonus < 0 || timeBonus > 1){
-        timeBonus = 1;
-    };
-
-    if(numberOfInputsBonus > 1){
-        numberOfInputsBonus = 1;
-    };
-
-    if(numberOfInputs >= 0){
-        score = (points * POINTS_WEIGHT) + (numberOfInputsBonus * INPUTS_WEIGHT) + (timeBonus * TIME_WEIGHT);
-    };
-
-    return score;
-};
-
-//Run the trivia in EASY mode.
+//Run the trivia.
 triviaRequest();
