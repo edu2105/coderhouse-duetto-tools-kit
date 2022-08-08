@@ -62,7 +62,7 @@ function triviaStart(){
     //Trivia time in seconds.
     let time = (endTime - startTime) / 1000;
     //Create score object with EASY difficulty.
-    let result = new Score(points, matches.length, triviaData.length, time, EASY);
+    let result = new Score(points, matches.length, triviaData.length, time, HARD);
     console.log("Trivia Mode");
     console.log(`Difficulty: <${result.getDifficulty()}>`);
     let weights = result.getWeights();
