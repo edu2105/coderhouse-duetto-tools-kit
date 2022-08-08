@@ -1,3 +1,6 @@
+ /**
+  * Class Score that will contain the logic to calculate a final score based on different attributes.
+  */
  export default class Score{
 
     constructor(points, numberOfInputs, numberOfPossibleAnswers, time, difficulty = 6, timeWeight = 0.65, pointsWeight = 0.25, inputsWeight = 0.1){

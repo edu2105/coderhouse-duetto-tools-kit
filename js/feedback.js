@@ -1,39 +1,8 @@
 import Score from './classes/score.js';
 
 /**
- * Request the user to take a trivia using sweetalert2.
- * @param {const} difficulty - The bias used for making the trivia less or more difficult.
- * Default value is EASY.
- */
-function triviaRequest(){
-    Swal.fire({
-        title: 'Trivia Time',
-        html: "Would you like to take a quick trivia?" +
-        "<br>" +
-        "You'll be prompted to write any integration name you have in mind and hit ENTER. Type 'quit', 'QUIT' or click 'Cancel' when you are done to get your score." +
-        "<br>" +
-        "<br>" +
-        "<i>We will be ranking you based on your speed (this makes the big difference), which integrations you can name (if they are not common the more points you can get) and how many matches you can make.</i>",
-        imageUrl: "https://i.postimg.cc/VLwTp3vB/lenny-pensando.jpg",
-        imageWidth: 300,
-        imageHeight: 200,
-        imageAlt: 'Lenny thinking',
-        showCancelButton: true,
-        confirmButtonColor: '#3085d6',
-        cancelButtonColor: '#d33',
-        confirmButtonText: "Yes, I'm ready!"
-      }).then((result) => {
-        if(result.isConfirmed) {
-            triviaStart();
-        }else{
-            triviaDismiss();
-        };
-      });
-};
-
-/**
  * Start the trivia using a prompt for user input.
- * @param {const} difficulty - The bias used for making the trivia less or more difficult.
+ * Difficulty can be changed here, default is EASY.
  */
 function triviaStart(){
     //Constants that will define the bias for the trivia difficulty.
@@ -190,5 +159,34 @@ function triviaDismiss(){
       })
 };
 
+/**
+ * Request the user to take a trivia using sweetalert2.
+ */
+ let runTrivia = () => {
+    Swal.fire({
+        title: 'Trivia Time',
+        html: "Would you like to take a quick trivia?" +
+        "<br>" +
+        "You'll be prompted to write any integration name you have in mind and hit ENTER. Type 'quit', 'QUIT' or click 'Cancel' when you are done to get your score." +
+        "<br>" +
+        "<br>" +
+        "<i>We will be ranking you based on your speed (this makes the big difference), which integrations you can name (if they are not common the more points you can get) and how many matches you can make.</i>",
+        imageUrl: "https://i.postimg.cc/VLwTp3vB/lenny-pensando.jpg",
+        imageWidth: 300,
+        imageHeight: 200,
+        imageAlt: 'Lenny thinking',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: "Yes, I'm ready!"
+      }).then((result) => {
+        if(result.isConfirmed) {
+            triviaStart();
+        }else{
+            triviaDismiss();
+        };
+      });
+};
+
 //Run the trivia.
-triviaRequest();
+runTrivia();
