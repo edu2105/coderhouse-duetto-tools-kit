@@ -12,7 +12,6 @@ function feedbackFormListener(){
     //Empty object that will populate based on each input value
     let feedbackContent = {};
 
-    console.log(feedbackForm);
     feedbackForm.addEventListener("submit", (e) => {
         e.preventDefault();
 
@@ -37,7 +36,7 @@ function feedbackFormListener(){
             timer: 2500
         });
         console.log("Feedback Form responses object: ");
-        console.log(feedbackContent);
+        console.log({feedbackContent});
     });
 };
 
@@ -166,13 +165,11 @@ function triviaStart(trivia){
  * @param {Scoring} score - calculates the final result
  */
 function triviaFinish(score){
-    console.log("Trivia Mode");
-    console.log(`Difficulty: <${score.getDifficulty()}>`);
     let matches = score.getInputs;
-    let weights = score.getWeights();
-    for(const weight of weights) {
-        console.log(`<${weight.type}> weight: ${weight.points}`);
-    }
+    let triviaMode = score.getWeights();
+    console.log("Trivia Mode");
+    triviaMode.push({type: "difficulty", points: score.getDifficulty()});
+    console.table(triviaMode);
 
     //Get final score
     let finalScore = score.getScore;
