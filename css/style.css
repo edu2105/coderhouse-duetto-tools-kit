@@ -483,7 +483,7 @@ body {
         cursor: pointer;
         box-shadow: 0px .6rem 1.2rem;
         transform: translateY(-2px); }
-  .main input, .main select, .main textarea {
+  .main input, .main select, .main textarea, .main .trBtn {
     margin: .6rem 0;
     color: #0257A3;
     border: 2px solid;
@@ -492,7 +492,8 @@ body {
     box-sizing: border-box;
     resize: none;
     width: fit-content; }
-  .main input[type="submit"] {
+  .main input[type="submit"],
+  .main .trBtn {
     margin: 1rem 0 1rem 1rem;
     transition-duration: all 0.4s linear;
     background-color: white;
@@ -501,7 +502,8 @@ body {
     box-shadow: 0 .3rem .3rem 0;
     height: 2.5rem;
     width: 5rem; }
-    .main input[type="submit"]:hover {
+    .main input[type="submit"]:hover,
+    .main .trBtn:hover {
       background-color: #0C395A;
       color: white;
       cursor: pointer;
@@ -530,7 +532,8 @@ body {
       color: white; }
     .main .fieldset label {
       margin-left: 1rem; }
-    .main .fieldset input[type="submit"] {
+    .main .fieldset input[type="submit"],
+    .main .fieldset .trBtn {
       transition-duration: all 0.4s linear;
       background-color: rgba(255, 255, 255, 0.1);
       color: white;
@@ -538,7 +541,8 @@ body {
       border-color: transparent;
       font-size: 1rem;
       box-shadow: 0.3rem 0.3rem 0.4rem 0.3rem rgba(0, 0, 0, 0.4); }
-      .main .fieldset input[type="submit"]:hover {
+      .main .fieldset input[type="submit"]:hover,
+      .main .fieldset .trBtn:hover {
         background-color: rgba(255, 255, 255, 0.1);
         color: white;
         border-color: transparent;
@@ -679,6 +683,50 @@ body {
     align-items: center; }
     .main.feedback .form label {
       margin: 1rem; }
+  .main.feedback .sub-section-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center; }
+    .main.feedback .sub-section-container.justify-trivia {
+      justify-content: space-around; }
+    .main.feedback .sub-section-container .trivia-results-container {
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 25%; }
+      .main.feedback .sub-section-container .trivia-results-container img {
+        width: 100%;
+        height: auto;
+        border-radius: .4rem; }
+      .main.feedback .sub-section-container .trivia-results-container .trBody {
+        text-align: center;
+        padding-top: 1rem; }
+        .main.feedback .sub-section-container .trivia-results-container .trBody .trTitle {
+          color: #44ADE2; }
+        .main.feedback .sub-section-container .trivia-results-container .trBody .trScore {
+          margin: 1rem .2rem; }
+        .main.feedback .sub-section-container .trivia-results-container .trBody .trDescription {
+          font-size: 1rem;
+          margin: 0 .2rem; }
+      .main.feedback .sub-section-container .trivia-results-container .trMatchItems {
+        padding: 0;
+        margin: 1rem 0; }
+        .main.feedback .sub-section-container .trivia-results-container .trMatchItems .trMatchItem {
+          list-style: none;
+          padding: .3rem 0;
+          margin-top: 1px;
+          text-align: center;
+          color: white;
+          background-color: #44ADE2;
+          border: 1px solid #0C395A;
+          border-radius: .4rem; }
+      .main.feedback .sub-section-container .trivia-results-container .trInputDiv {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between; }
+        .main.feedback .sub-section-container .trivia-results-container .trInputDiv .trBtn {
+          margin-right: 1rem; }
 
 /* || MEWS */
 .main .workaround-container {

@@ -17,5 +17,58 @@
                 margin: 1rem;
             };
         };
+        .sub-section-container{
+            @include flex-row;
+            &.justify-trivia{
+                justify-content: space-around;
+            };
+            justify-content: center;
+            .trivia-results-container{
+                height: auto;
+                @include flex-column;
+                align-items: center;
+                max-width: 25%;
+                img{
+                    width: 100%;
+                    height: auto;
+                    border-radius: .4rem;
+                };
+                .trBody{
+                    text-align: center;
+                    padding-top: 1rem;
+                    .trTitle{
+                        color: $headerBackgroundColor4;
+                    };
+                    .trScore{
+                        margin: 1rem .2rem;
+                    };
+                    .trDescription{
+                        font-size: 1rem;
+                        margin: 0 .2rem;
+                    };
+                };
+                .trMatchItems{
+                    padding: 0;
+                    margin: 1rem 0;
+                    .trMatchItem{
+                        list-style: none;
+                        padding: .3rem 0;
+                        margin-top: 1px;
+                        text-align: center;
+                        color: white;
+                        background-color: $headerBackgroundColor4;
+                        border: 1px solid $headerBackgroundColor1;
+                        border-radius: .4rem;
+                    };
+                };
+                .trInputDiv{
+                    @include flex-row;
+                    justify-content: space-between;
+                    .trBtn{
+                        margin-right: 1rem;
+                    };
+                };
+            };
+        };
     };
 }

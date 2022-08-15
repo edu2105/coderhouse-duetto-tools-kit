@@ -1,12 +1,12 @@
  /**
   * Class Score that will contain the logic to calculate a final score based on different attributes.
   */
- export default class Score{
+ export default class Scoring{
 
-    constructor(points, numberOfInputs, numberOfPossibleAnswers, time, difficulty = 6, timeWeight = 0.65, pointsWeight = 0.25, inputsWeight = 0.1){
+    constructor(points, inputs, possibleAnswers, time, difficulty = 3, timeWeight = 0.65, pointsWeight = 0.25, inputsWeight = 0.1){
         this.points = points;
-        this.numberOfInputs = numberOfInputs;
-        this.numberOfPossibleAnswers = numberOfPossibleAnswers;
+        this.inputs = inputs;
+        this.possibleAnswers = possibleAnswers;
         this.time = time;
         this.difficulty = difficulty;
         this.timeWeight = timeWeight;
@@ -25,8 +25,12 @@
     getDifficulty(){
         return this.difficulty;
     };
+
+    get getInputs(){
+        return this.inputs;
+    };
     
-    get score(){
+    get getScore(){
         return this.calculateScore();
     };
     
@@ -49,8 +53,10 @@
         const INPUTS_BIAS = this.difficulty;
 
         let score = 0;
-        let timeBonus = this.numberOfInputs / (this.time - TIME_BIAS);
-        let numberOfInputsBonus = this.numberOfInputs / (this.numberOfPossibleAnswers - INPUTS_BIAS);
+        let numberOfInputs = this.inputs.length;
+        let numberOfPossibleAnswers = this.possibleAnswers.length;
+        let timeBonus = numberOfInputs / (this.time - TIME_BIAS);
+        let numberOfInputsBonus = numberOfInputs / (numberOfPossibleAnswers - INPUTS_BIAS);
 
         if(timeBonus < 0 || timeBonus > 1){
             timeBonus = 1;
@@ -60,7 +66,7 @@
             numberOfInputsBonus = 1;
         };
 
-        if(this.numberOfInputs >= 0){
+        if(numberOfInputs >= 0){
             score = (this.points * this.pointsWeight) + (numberOfInputsBonus * this.inputsWeight) + (timeBonus * this.timeWeight);
         };
 

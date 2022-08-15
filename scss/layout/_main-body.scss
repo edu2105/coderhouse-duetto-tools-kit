@@ -383,7 +383,7 @@
             @include button-std;
         };
     };
-    input, select, textarea{
+    input, select, textarea, .trBtn{
         margin: .6rem 0;
         color: $headerBackgroundColor2;
         border: 2px solid;
@@ -393,7 +393,8 @@
         resize: none;
         width: fit-content;
     };
-    input[type="submit"]{
+    input[type="submit"],
+    .trBtn{
         margin: 1rem 0 1rem 1rem;
         transition-duration: all 0.4s linear; 
         background-color: white; 
@@ -430,7 +431,8 @@
         label{
             margin-left: 1rem;
         }
-        input[type="submit"]{
+        input[type="submit"],
+        .trBtn{
             transition-duration: all 0.4s linear; 
             background-color: rgba(255, 255, 255, 0.1);
             color: white;
