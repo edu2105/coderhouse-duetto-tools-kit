@@ -14,6 +14,24 @@
             .video-content{
                 max-width: 75%;
             }
-        }
+        };
+        &.feedback{
+            .sub-section-container{
+                display: grid;
+                grid-template-rows: 1fr 1fr;
+                grid-template-columns: 70%;
+                form{
+                    margin-left: 0;
+                    width: 100%;
+                    .fieldset{
+                        width: 100%;
+                    };
+                };
+                .trivia-results-container{
+                    width: 100%;
+                    max-width: unset;
+                };
+            };
+        };
     }
 }

@@ -2,6 +2,13 @@ import Scoring from './classes/scoring.js';
 import Trivia from './classes/trivia.js';
 
 /**
+ * Saves a key and value to the local storage
+ * @param {string} key 
+ * @param {string} value 
+ */
+const saveLocal = (key, value) => { localStorage.setItem(key, value) };
+
+/**
  * Sets the main feedback form submit listener
  */
 function feedbackFormListener(){
@@ -333,7 +340,7 @@ function triviaDismiss(){
 /**
  * Requests the user to take a trivia using sweetalert2.
  */
- let triviaRequest = () => {
+const triviaRequest = () => {
     Swal.fire({
         title: 'Trivia Time',
         html: "Would you like to take a quick trivia?" +
@@ -347,21 +354,33 @@ function triviaDismiss(){
         imageHeight: 200,
         imageAlt: 'Lenny thinking',
         showCancelButton: true,
+        showDenyButton: true,
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
-        confirmButtonText: "Yes, I'm ready!"
+        denyButtonColor: '#B0B0B0',
+        confirmButtonText: "Yes, I'm ready!",
+        denyButtonText: "Don't ask me again"
       }).then((result) => {
         if(result.isConfirmed) {
             let trivia = createTrivia();
             triviaStart(trivia);
         }else{
             triviaDismiss();
+            if(result.isDenied){
+                saveLocal("triviaRequest", false.toString());
+            };
         };
       });
 };
 
+const checkTriviaSession = () => {
+    let requestTrivia = localStorage.getItem("triviaRequest");
+    if(requestTrivia !== "false"){
+        triviaRequest();
+    };
+};
 
 //Setting up the feedback form submit listener
 feedbackFormListener();
-//Run the trivia request.
-triviaRequest();
+//Check local storage and run trivia request if needed
+checkTriviaSession();

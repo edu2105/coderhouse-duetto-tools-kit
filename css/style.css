@@ -688,7 +688,8 @@ body {
     flex-direction: row;
     justify-content: center; }
     .main.feedback .sub-section-container.justify-trivia {
-      justify-content: space-around; }
+      justify-content: space-around;
+      margin-left: 0; }
     .main.feedback .sub-section-container .trivia-results-container {
       height: auto;
       display: flex;
@@ -698,7 +699,8 @@ body {
       .main.feedback .sub-section-container .trivia-results-container img {
         width: 100%;
         height: auto;
-        border-radius: .4rem; }
+        border-radius: .4rem;
+        margin: auto; }
       .main.feedback .sub-section-container .trivia-results-container .trBody {
         text-align: center;
         padding-top: 1rem; }
@@ -711,8 +713,14 @@ body {
           margin: 0 .2rem; }
       .main.feedback .sub-section-container .trivia-results-container .trMatchItems {
         padding: 0;
-        margin: 1rem 0; }
+        margin: 1rem 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        justify-items: flex-start; }
         .main.feedback .sub-section-container .trivia-results-container .trMatchItems .trMatchItem {
+          width: 5rem;
           list-style: none;
           padding: .3rem 0;
           margin-top: 1px;
@@ -916,7 +924,19 @@ body {
   .main .tools-section {
     background-attachment: scroll; }
   .main .video-container .video-content {
-    max-width: 75%; } }
+    max-width: 75%; }
+  .main.feedback .sub-section-container {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 70%; }
+    .main.feedback .sub-section-container form {
+      margin-left: 0;
+      width: 100%; }
+      .main.feedback .sub-section-container form .fieldset {
+        width: 100%; }
+    .main.feedback .sub-section-container .trivia-results-container {
+      width: 100%;
+      max-width: unset; } }
 
 /* || IPADS - TABLETS */
 @media (max-width: 768px) {
