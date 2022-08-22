@@ -1,0 +1,195 @@
+.sign-in,
+.sign-up{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 100%;
+    background-image: url("https://i.postimg.cc/d3Nh7m2g/white-background-style.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    .sign-in-form,
+    .sign-up-form{
+        height: 100%;
+        width: 100%;
+        border: solid 1px;
+        border-radius: 0 50% 50% 0;
+        background-image: linear-gradient(to bottom left, $headerBackgroundColor1, $headerBackgroundColor2, $headerBackgroundColor3);
+        .sign-in-set,
+        .sign-up-set{
+            @include flex-column;
+            justify-content: center;
+            align-items: center;
+            width: 80%;
+            height: 100%;
+            img{
+                max-width: 40vw;
+                max-height: 10vh;
+                justify-self: flex-start;
+                padding-bottom: 5rem;
+                background-color: transparent;
+            };
+            .login-form{
+                @include flex-column;
+                align-items: center;
+                width: fit-content;
+                .title{
+                    h2{
+                        color: white;
+                        margin-top: 0;
+                        font-size: 2rem;
+                    };
+                };
+                .input-frame{
+                    @include flex-column;
+                    .floating-icon{
+                        position: relative;
+                        .fa-login{
+                            position: absolute;
+                            top: calc(50% - 8px);
+                            left: 5%;
+                            color: $headerBackgroundColor4;
+                        };
+                        .input{
+                            font-family: Arial, "FontAwesome";
+                            font-size: 1rem;
+                            padding: .5rem;
+                            text-indent: 2rem;
+                        };
+                    };
+                    .button{
+                        margin: 2rem 0;
+                        align-self: center;
+                        width: 7vw;
+                        font-size: 1rem;
+                        font-weight: bold;
+                        &:hover{
+                            box-shadow: unset;
+                            background-color: $headerBackgroundColor4;
+                        };
+                    };
+                };
+                .social-medias{
+                    p{
+                        color: white;
+                        margin-top: 1rem;
+                    };
+                    .list{
+                        list-style: none;
+                        @include flex-row;
+                        justify-content: space-around;
+                        padding: 0;
+                        font-size: 2rem;
+                        li{
+                            .fa-brands{
+                                color: white;
+                                &.fa-facebook{
+                                    border-radius: 50%;
+                                    overflow: hidden;
+                                    &:hover{
+                                        color: #4267B2;
+                                        transition: .5s linear;
+                                        background-color: white;
+                                        cursor: pointer;
+                                    };
+                                };
+                                &.fa-twitter{
+                                    &:hover{
+                                        color: #1DA1F2;
+                                        transition: .5s linear;
+                                        cursor: pointer;
+                                    };
+                                };
+                                &.fa-google{
+                                    &:hover{
+                                        background: conic-gradient(from -45deg, #ea4335 110deg, #4285f4 90deg 180deg, #34a853 180deg 270deg, #fbbc05 270deg) 73% 55%/150% 150% no-repeat;
+                                        -webkit-background-clip: text;
+                                        background-clip: text;
+                                        color: transparent;
+                                        -webkit-text-fill-color: transparent;
+                                        transition: .5s linear;
+                                        cursor: pointer;
+                                    };
+                                };
+                                &.fa-linkedin{
+                                    overflow-y: hidden;
+                                    &:hover::before{
+                                        color: #0A66C2;
+                                        transition: .5s linear;
+                                        background: linear-gradient(180deg, rgba(58,121,189,1) 20%, rgba(242,244,247,1) 22%, rgba(242,244,247,1) 83%, rgba(58,121,189,1) 85%);
+                                        cursor: pointer;
+                                    };
+                                };
+                            };
+                        };
+                    };
+                };
+            };
+        };
+    };
+    .sign-in-form{
+        position: absolute;
+        left: 0;
+        width: 50%;
+        &.display-form{
+            transition: 1s linear;
+            visibility: visible;
+        };
+        &.hide-form{
+            transition: 1s linear;
+            border-radius: 0;
+            visibility: hidden;
+        };
+    }
+    .sign-up-form{
+        position: absolute;
+        visibility: hidden;
+        border-radius: 0;
+        width: 50%;
+        right: 0;
+        &.display-form{
+            transition: 1s linear;
+            border-radius: 50% 0 0 50%;
+            visibility: visible;
+        };
+        &.hide-form{
+            transition: 1s linear;
+            border-radius: 0;
+            visibility: hidden;
+        };
+    };
+    .sign-up-option,
+    .sign-in-option{
+        @include flex-column;
+        justify-content: center;
+        align-items: center;
+        padding-left: 1rem;
+        p{
+            margin: 1.5rem 0 0 0;
+            max-width: 60%;
+            text-align: center;
+        }
+        img{
+            max-width: 40vw;
+            max-height: 25vh;
+        };
+        button{
+            font-size: 1rem;
+            font-weight: bold;
+            margin-top: 3rem;
+            width: 10vw;
+            &:hover{
+                box-shadow: unset;
+                background-color: $headerBackgroundColor4;
+            };
+        };
+    };
+    .sign-up-option{
+        position: absolute;
+        right: 0;
+        width: 50%;
+        top: 50%;
+        bottom: 50%;
+    };
+    .sign-in-option{
+        display: none;
+    };
+};

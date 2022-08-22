@@ -93,11 +93,13 @@ body {
     margin: 0 1rem 0 1rem; }
     .header .header-nav-bar li .dropdown-item {
       font-size: 1.2rem; }
-    .header .header-nav-bar li a:not(.dropdown-item) {
+    .header .header-nav-bar li a:not(.dropdown-item),
+    .header .header-nav-bar li .mobile-logout {
       text-decoration: none;
       color: white;
       font-size: 1.2rem; }
-      .header .header-nav-bar li a:not(.dropdown-item):not(.nav-link.dropdown-toggle)::after {
+      .header .header-nav-bar li a:not(.dropdown-item):not(.nav-link.dropdown-toggle)::after,
+      .header .header-nav-bar li .mobile-logout:not(.nav-link.dropdown-toggle)::after {
         content: "";
         display: block;
         height: 3px;
@@ -106,10 +108,12 @@ body {
         transition: transform 0.5s;
         transform: scaleX(0);
         transform-origin: center; }
-      .header .header-nav-bar li a:not(.dropdown-item):hover {
+      .header .header-nav-bar li a:not(.dropdown-item):hover,
+      .header .header-nav-bar li .mobile-logout:hover {
         color: #0C395A;
         transition: 0.4s; }
-        .header .header-nav-bar li a:not(.dropdown-item):hover:not(.nav-link.dropdown-toggle)::after {
+        .header .header-nav-bar li a:not(.dropdown-item):hover:not(.nav-link.dropdown-toggle)::after,
+        .header .header-nav-bar li .mobile-logout:hover:not(.nav-link.dropdown-toggle)::after {
           width: 100%;
           transform: scaleX(1);
           background: aqua; }
@@ -604,6 +608,320 @@ body {
   visibility: visible;
   display: block; }
 
+/* || LOGIN */
+.sign-in,
+.sign-up {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 100%;
+  background-image: url("https://i.postimg.cc/d3Nh7m2g/white-background-style.jpg");
+  background-repeat: no-repeat;
+  background-size: cover; }
+  .sign-in .sign-in-form,
+  .sign-in .sign-up-form,
+  .sign-up .sign-in-form,
+  .sign-up .sign-up-form {
+    height: 100%;
+    width: 100%;
+    border: solid 1px;
+    border-radius: 0 50% 50% 0;
+    background-image: linear-gradient(to bottom left, #0C395A, #0257A3, #3A79BD); }
+    .sign-in .sign-in-form .sign-in-set,
+    .sign-in .sign-in-form .sign-up-set,
+    .sign-in .sign-up-form .sign-in-set,
+    .sign-in .sign-up-form .sign-up-set,
+    .sign-up .sign-in-form .sign-in-set,
+    .sign-up .sign-in-form .sign-up-set,
+    .sign-up .sign-up-form .sign-in-set,
+    .sign-up .sign-up-form .sign-up-set {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 80%;
+      height: 100%; }
+      .sign-in .sign-in-form .sign-in-set img,
+      .sign-in .sign-in-form .sign-up-set img,
+      .sign-in .sign-up-form .sign-in-set img,
+      .sign-in .sign-up-form .sign-up-set img,
+      .sign-up .sign-in-form .sign-in-set img,
+      .sign-up .sign-in-form .sign-up-set img,
+      .sign-up .sign-up-form .sign-in-set img,
+      .sign-up .sign-up-form .sign-up-set img {
+        max-width: 40vw;
+        max-height: 10vh;
+        justify-self: flex-start;
+        padding-bottom: 5rem;
+        background-color: transparent; }
+      .sign-in .sign-in-form .sign-in-set .login-form,
+      .sign-in .sign-in-form .sign-up-set .login-form,
+      .sign-in .sign-up-form .sign-in-set .login-form,
+      .sign-in .sign-up-form .sign-up-set .login-form,
+      .sign-up .sign-in-form .sign-in-set .login-form,
+      .sign-up .sign-in-form .sign-up-set .login-form,
+      .sign-up .sign-up-form .sign-in-set .login-form,
+      .sign-up .sign-up-form .sign-up-set .login-form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: fit-content; }
+        .sign-in .sign-in-form .sign-in-set .login-form .title h2,
+        .sign-in .sign-in-form .sign-up-set .login-form .title h2,
+        .sign-in .sign-up-form .sign-in-set .login-form .title h2,
+        .sign-in .sign-up-form .sign-up-set .login-form .title h2,
+        .sign-up .sign-in-form .sign-in-set .login-form .title h2,
+        .sign-up .sign-in-form .sign-up-set .login-form .title h2,
+        .sign-up .sign-up-form .sign-in-set .login-form .title h2,
+        .sign-up .sign-up-form .sign-up-set .login-form .title h2 {
+          color: white;
+          margin-top: 0;
+          font-size: 2rem; }
+        .sign-in .sign-in-form .sign-in-set .login-form .input-frame,
+        .sign-in .sign-in-form .sign-up-set .login-form .input-frame,
+        .sign-in .sign-up-form .sign-in-set .login-form .input-frame,
+        .sign-in .sign-up-form .sign-up-set .login-form .input-frame,
+        .sign-up .sign-in-form .sign-in-set .login-form .input-frame,
+        .sign-up .sign-in-form .sign-up-set .login-form .input-frame,
+        .sign-up .sign-up-form .sign-in-set .login-form .input-frame,
+        .sign-up .sign-up-form .sign-up-set .login-form .input-frame {
+          display: flex;
+          flex-direction: column; }
+          .sign-in .sign-in-form .sign-in-set .login-form .input-frame .floating-icon,
+          .sign-in .sign-in-form .sign-up-set .login-form .input-frame .floating-icon,
+          .sign-in .sign-up-form .sign-in-set .login-form .input-frame .floating-icon,
+          .sign-in .sign-up-form .sign-up-set .login-form .input-frame .floating-icon,
+          .sign-up .sign-in-form .sign-in-set .login-form .input-frame .floating-icon,
+          .sign-up .sign-in-form .sign-up-set .login-form .input-frame .floating-icon,
+          .sign-up .sign-up-form .sign-in-set .login-form .input-frame .floating-icon,
+          .sign-up .sign-up-form .sign-up-set .login-form .input-frame .floating-icon {
+            position: relative; }
+            .sign-in .sign-in-form .sign-in-set .login-form .input-frame .floating-icon .fa-login,
+            .sign-in .sign-in-form .sign-up-set .login-form .input-frame .floating-icon .fa-login,
+            .sign-in .sign-up-form .sign-in-set .login-form .input-frame .floating-icon .fa-login,
+            .sign-in .sign-up-form .sign-up-set .login-form .input-frame .floating-icon .fa-login,
+            .sign-up .sign-in-form .sign-in-set .login-form .input-frame .floating-icon .fa-login,
+            .sign-up .sign-in-form .sign-up-set .login-form .input-frame .floating-icon .fa-login,
+            .sign-up .sign-up-form .sign-in-set .login-form .input-frame .floating-icon .fa-login,
+            .sign-up .sign-up-form .sign-up-set .login-form .input-frame .floating-icon .fa-login {
+              position: absolute;
+              top: calc(50% - 8px);
+              left: 5%;
+              color: #44ADE2; }
+            .sign-in .sign-in-form .sign-in-set .login-form .input-frame .floating-icon .input,
+            .sign-in .sign-in-form .sign-up-set .login-form .input-frame .floating-icon .input,
+            .sign-in .sign-up-form .sign-in-set .login-form .input-frame .floating-icon .input,
+            .sign-in .sign-up-form .sign-up-set .login-form .input-frame .floating-icon .input,
+            .sign-up .sign-in-form .sign-in-set .login-form .input-frame .floating-icon .input,
+            .sign-up .sign-in-form .sign-up-set .login-form .input-frame .floating-icon .input,
+            .sign-up .sign-up-form .sign-in-set .login-form .input-frame .floating-icon .input,
+            .sign-up .sign-up-form .sign-up-set .login-form .input-frame .floating-icon .input {
+              font-family: Arial, "FontAwesome";
+              font-size: 1rem;
+              padding: .5rem;
+              text-indent: 2rem; }
+          .sign-in .sign-in-form .sign-in-set .login-form .input-frame .button,
+          .sign-in .sign-in-form .sign-up-set .login-form .input-frame .button,
+          .sign-in .sign-up-form .sign-in-set .login-form .input-frame .button,
+          .sign-in .sign-up-form .sign-up-set .login-form .input-frame .button,
+          .sign-up .sign-in-form .sign-in-set .login-form .input-frame .button,
+          .sign-up .sign-in-form .sign-up-set .login-form .input-frame .button,
+          .sign-up .sign-up-form .sign-in-set .login-form .input-frame .button,
+          .sign-up .sign-up-form .sign-up-set .login-form .input-frame .button {
+            margin: 2rem 0;
+            align-self: center;
+            width: 7vw;
+            font-size: 1rem;
+            font-weight: bold; }
+            .sign-in .sign-in-form .sign-in-set .login-form .input-frame .button:hover,
+            .sign-in .sign-in-form .sign-up-set .login-form .input-frame .button:hover,
+            .sign-in .sign-up-form .sign-in-set .login-form .input-frame .button:hover,
+            .sign-in .sign-up-form .sign-up-set .login-form .input-frame .button:hover,
+            .sign-up .sign-in-form .sign-in-set .login-form .input-frame .button:hover,
+            .sign-up .sign-in-form .sign-up-set .login-form .input-frame .button:hover,
+            .sign-up .sign-up-form .sign-in-set .login-form .input-frame .button:hover,
+            .sign-up .sign-up-form .sign-up-set .login-form .input-frame .button:hover {
+              box-shadow: unset;
+              background-color: #44ADE2; }
+        .sign-in .sign-in-form .sign-in-set .login-form .social-medias p,
+        .sign-in .sign-in-form .sign-up-set .login-form .social-medias p,
+        .sign-in .sign-up-form .sign-in-set .login-form .social-medias p,
+        .sign-in .sign-up-form .sign-up-set .login-form .social-medias p,
+        .sign-up .sign-in-form .sign-in-set .login-form .social-medias p,
+        .sign-up .sign-in-form .sign-up-set .login-form .social-medias p,
+        .sign-up .sign-up-form .sign-in-set .login-form .social-medias p,
+        .sign-up .sign-up-form .sign-up-set .login-form .social-medias p {
+          color: white;
+          margin-top: 1rem; }
+        .sign-in .sign-in-form .sign-in-set .login-form .social-medias .list,
+        .sign-in .sign-in-form .sign-up-set .login-form .social-medias .list,
+        .sign-in .sign-up-form .sign-in-set .login-form .social-medias .list,
+        .sign-in .sign-up-form .sign-up-set .login-form .social-medias .list,
+        .sign-up .sign-in-form .sign-in-set .login-form .social-medias .list,
+        .sign-up .sign-in-form .sign-up-set .login-form .social-medias .list,
+        .sign-up .sign-up-form .sign-in-set .login-form .social-medias .list,
+        .sign-up .sign-up-form .sign-up-set .login-form .social-medias .list {
+          list-style: none;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-around;
+          padding: 0;
+          font-size: 2rem; }
+          .sign-in .sign-in-form .sign-in-set .login-form .social-medias .list li .fa-brands,
+          .sign-in .sign-in-form .sign-up-set .login-form .social-medias .list li .fa-brands,
+          .sign-in .sign-up-form .sign-in-set .login-form .social-medias .list li .fa-brands,
+          .sign-in .sign-up-form .sign-up-set .login-form .social-medias .list li .fa-brands,
+          .sign-up .sign-in-form .sign-in-set .login-form .social-medias .list li .fa-brands,
+          .sign-up .sign-in-form .sign-up-set .login-form .social-medias .list li .fa-brands,
+          .sign-up .sign-up-form .sign-in-set .login-form .social-medias .list li .fa-brands,
+          .sign-up .sign-up-form .sign-up-set .login-form .social-medias .list li .fa-brands {
+            color: white; }
+            .sign-in .sign-in-form .sign-in-set .login-form .social-medias .list li .fa-brands.fa-facebook,
+            .sign-in .sign-in-form .sign-up-set .login-form .social-medias .list li .fa-brands.fa-facebook,
+            .sign-in .sign-up-form .sign-in-set .login-form .social-medias .list li .fa-brands.fa-facebook,
+            .sign-in .sign-up-form .sign-up-set .login-form .social-medias .list li .fa-brands.fa-facebook,
+            .sign-up .sign-in-form .sign-in-set .login-form .social-medias .list li .fa-brands.fa-facebook,
+            .sign-up .sign-in-form .sign-up-set .login-form .social-medias .list li .fa-brands.fa-facebook,
+            .sign-up .sign-up-form .sign-in-set .login-form .social-medias .list li .fa-brands.fa-facebook,
+            .sign-up .sign-up-form .sign-up-set .login-form .social-medias .list li .fa-brands.fa-facebook {
+              border-radius: 50%;
+              overflow: hidden; }
+              .sign-in .sign-in-form .sign-in-set .login-form .social-medias .list li .fa-brands.fa-facebook:hover,
+              .sign-in .sign-in-form .sign-up-set .login-form .social-medias .list li .fa-brands.fa-facebook:hover,
+              .sign-in .sign-up-form .sign-in-set .login-form .social-medias .list li .fa-brands.fa-facebook:hover,
+              .sign-in .sign-up-form .sign-up-set .login-form .social-medias .list li .fa-brands.fa-facebook:hover,
+              .sign-up .sign-in-form .sign-in-set .login-form .social-medias .list li .fa-brands.fa-facebook:hover,
+              .sign-up .sign-in-form .sign-up-set .login-form .social-medias .list li .fa-brands.fa-facebook:hover,
+              .sign-up .sign-up-form .sign-in-set .login-form .social-medias .list li .fa-brands.fa-facebook:hover,
+              .sign-up .sign-up-form .sign-up-set .login-form .social-medias .list li .fa-brands.fa-facebook:hover {
+                color: #4267B2;
+                transition: .5s linear;
+                background-color: white;
+                cursor: pointer; }
+            .sign-in .sign-in-form .sign-in-set .login-form .social-medias .list li .fa-brands.fa-twitter:hover,
+            .sign-in .sign-in-form .sign-up-set .login-form .social-medias .list li .fa-brands.fa-twitter:hover,
+            .sign-in .sign-up-form .sign-in-set .login-form .social-medias .list li .fa-brands.fa-twitter:hover,
+            .sign-in .sign-up-form .sign-up-set .login-form .social-medias .list li .fa-brands.fa-twitter:hover,
+            .sign-up .sign-in-form .sign-in-set .login-form .social-medias .list li .fa-brands.fa-twitter:hover,
+            .sign-up .sign-in-form .sign-up-set .login-form .social-medias .list li .fa-brands.fa-twitter:hover,
+            .sign-up .sign-up-form .sign-in-set .login-form .social-medias .list li .fa-brands.fa-twitter:hover,
+            .sign-up .sign-up-form .sign-up-set .login-form .social-medias .list li .fa-brands.fa-twitter:hover {
+              color: #1DA1F2;
+              transition: .5s linear;
+              cursor: pointer; }
+            .sign-in .sign-in-form .sign-in-set .login-form .social-medias .list li .fa-brands.fa-google:hover,
+            .sign-in .sign-in-form .sign-up-set .login-form .social-medias .list li .fa-brands.fa-google:hover,
+            .sign-in .sign-up-form .sign-in-set .login-form .social-medias .list li .fa-brands.fa-google:hover,
+            .sign-in .sign-up-form .sign-up-set .login-form .social-medias .list li .fa-brands.fa-google:hover,
+            .sign-up .sign-in-form .sign-in-set .login-form .social-medias .list li .fa-brands.fa-google:hover,
+            .sign-up .sign-in-form .sign-up-set .login-form .social-medias .list li .fa-brands.fa-google:hover,
+            .sign-up .sign-up-form .sign-in-set .login-form .social-medias .list li .fa-brands.fa-google:hover,
+            .sign-up .sign-up-form .sign-up-set .login-form .social-medias .list li .fa-brands.fa-google:hover {
+              background: conic-gradient(from -45deg, #ea4335 110deg, #4285f4 90deg 180deg, #34a853 180deg 270deg, #fbbc05 270deg) 73% 55%/150% 150% no-repeat;
+              -webkit-background-clip: text;
+              background-clip: text;
+              color: transparent;
+              -webkit-text-fill-color: transparent;
+              transition: .5s linear;
+              cursor: pointer; }
+            .sign-in .sign-in-form .sign-in-set .login-form .social-medias .list li .fa-brands.fa-linkedin,
+            .sign-in .sign-in-form .sign-up-set .login-form .social-medias .list li .fa-brands.fa-linkedin,
+            .sign-in .sign-up-form .sign-in-set .login-form .social-medias .list li .fa-brands.fa-linkedin,
+            .sign-in .sign-up-form .sign-up-set .login-form .social-medias .list li .fa-brands.fa-linkedin,
+            .sign-up .sign-in-form .sign-in-set .login-form .social-medias .list li .fa-brands.fa-linkedin,
+            .sign-up .sign-in-form .sign-up-set .login-form .social-medias .list li .fa-brands.fa-linkedin,
+            .sign-up .sign-up-form .sign-in-set .login-form .social-medias .list li .fa-brands.fa-linkedin,
+            .sign-up .sign-up-form .sign-up-set .login-form .social-medias .list li .fa-brands.fa-linkedin {
+              overflow-y: hidden; }
+              .sign-in .sign-in-form .sign-in-set .login-form .social-medias .list li .fa-brands.fa-linkedin:hover::before,
+              .sign-in .sign-in-form .sign-up-set .login-form .social-medias .list li .fa-brands.fa-linkedin:hover::before,
+              .sign-in .sign-up-form .sign-in-set .login-form .social-medias .list li .fa-brands.fa-linkedin:hover::before,
+              .sign-in .sign-up-form .sign-up-set .login-form .social-medias .list li .fa-brands.fa-linkedin:hover::before,
+              .sign-up .sign-in-form .sign-in-set .login-form .social-medias .list li .fa-brands.fa-linkedin:hover::before,
+              .sign-up .sign-in-form .sign-up-set .login-form .social-medias .list li .fa-brands.fa-linkedin:hover::before,
+              .sign-up .sign-up-form .sign-in-set .login-form .social-medias .list li .fa-brands.fa-linkedin:hover::before,
+              .sign-up .sign-up-form .sign-up-set .login-form .social-medias .list li .fa-brands.fa-linkedin:hover::before {
+                color: #0A66C2;
+                transition: .5s linear;
+                background: linear-gradient(180deg, #3a79bd 20%, #f2f4f7 22%, #f2f4f7 83%, #3a79bd 85%);
+                cursor: pointer; }
+  .sign-in .sign-in-form,
+  .sign-up .sign-in-form {
+    position: absolute;
+    left: 0;
+    width: 50%; }
+    .sign-in .sign-in-form.display-form,
+    .sign-up .sign-in-form.display-form {
+      transition: 1s linear;
+      visibility: visible; }
+    .sign-in .sign-in-form.hide-form,
+    .sign-up .sign-in-form.hide-form {
+      transition: 1s linear;
+      border-radius: 0;
+      visibility: hidden; }
+  .sign-in .sign-up-form,
+  .sign-up .sign-up-form {
+    position: absolute;
+    visibility: hidden;
+    border-radius: 0;
+    width: 50%;
+    right: 0; }
+    .sign-in .sign-up-form.display-form,
+    .sign-up .sign-up-form.display-form {
+      transition: 1s linear;
+      border-radius: 50% 0 0 50%;
+      visibility: visible; }
+    .sign-in .sign-up-form.hide-form,
+    .sign-up .sign-up-form.hide-form {
+      transition: 1s linear;
+      border-radius: 0;
+      visibility: hidden; }
+  .sign-in .sign-up-option,
+  .sign-in .sign-in-option,
+  .sign-up .sign-up-option,
+  .sign-up .sign-in-option {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-left: 1rem; }
+    .sign-in .sign-up-option p,
+    .sign-in .sign-in-option p,
+    .sign-up .sign-up-option p,
+    .sign-up .sign-in-option p {
+      margin: 1.5rem 0 0 0;
+      max-width: 60%;
+      text-align: center; }
+    .sign-in .sign-up-option img,
+    .sign-in .sign-in-option img,
+    .sign-up .sign-up-option img,
+    .sign-up .sign-in-option img {
+      max-width: 40vw;
+      max-height: 25vh; }
+    .sign-in .sign-up-option button,
+    .sign-in .sign-in-option button,
+    .sign-up .sign-up-option button,
+    .sign-up .sign-in-option button {
+      font-size: 1rem;
+      font-weight: bold;
+      margin-top: 3rem;
+      width: 10vw; }
+      .sign-in .sign-up-option button:hover,
+      .sign-in .sign-in-option button:hover,
+      .sign-up .sign-up-option button:hover,
+      .sign-up .sign-in-option button:hover {
+        box-shadow: unset;
+        background-color: #44ADE2; }
+  .sign-in .sign-up-option,
+  .sign-up .sign-up-option {
+    position: absolute;
+    right: 0;
+    width: 50%;
+    top: 50%;
+    bottom: 50%; }
+  .sign-in .sign-in-option,
+  .sign-up .sign-in-option {
+    display: none; }
+
 /* || INDEX */
 .main-layout.index {
   display: grid;
@@ -844,7 +1162,7 @@ body {
     .main .sub-section-container .collapse .card.card-body {
       margin-right: 0; }
 
-/* || Tools */
+/* || TOOLS */
 .main .sub-section-container.tools {
   display: flex;
   flex-direction: column;
@@ -919,6 +1237,18 @@ body {
 @media (max-width: 840px) {
   html {
     font-size: 14px; }
+  .header .header-nav-bar {
+    display: none; }
+  .header .mobile-placeholder {
+    display: block; }
+    .header .mobile-placeholder .mobile-logout {
+      text-decoration: none;
+      color: white;
+      font-size: 1.2rem;
+      margin-right: 1rem; }
+  .header .mobile-menu {
+    display: block;
+    justify-self: flex-start; }
   .main .start-section {
     background-attachment: scroll; }
   .main .tools-section {
@@ -936,7 +1266,17 @@ body {
         width: 100%; }
     .main.feedback .sub-section-container .trivia-results-container {
       width: 100%;
-      max-width: unset; } }
+      max-width: unset; }
+  #mobile-menu-check:checked ~ .mobile-menu-nav {
+    visibility: visible;
+    width: 100%;
+    height: 100%;
+    top: 6vh;
+    opacity: .95;
+    background-color: #3A79BD;
+    transition: 0.6s;
+    z-index: 2;
+    overflow-y: auto; } }
 
 /* || IPADS - TABLETS */
 @media (max-width: 768px) {

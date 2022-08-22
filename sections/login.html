@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Animate CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <!-- Custom Style -->
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- Fav Icon -->
+    <link rel="shortcut icon" href="./images/favicon.ico">
+    <!-- Fontawesome -->
+    <script src="https://kit.fontawesome.com/3e54838a37.js" crossorigin="anonymous"></script>
+    <!-- Bcrypt -->
+    <script src="https://cdn.jsdelivr.net/npm/bcryptjs@2.4.3/dist/bcrypt.js"></script>
+     <!-- SweetAlert2 -->
+     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.23/dist/sweetalert2.all.min.js"></script>
+    <title>Login</title>
+</head>
+<body>
+    <main class="main">
+        <div class="sign-in">
+            <div class="sign-in-form animate__animated animate__fadeInLeft" id="sign-in-form-page">
+                <div class="sign-in-set">
+                    <img src="../images/duetto-logo-min.png" alt="Duetto Logo">
+                    <form class="login-form" id="login-form">
+                        <div class="title">
+                            <h2>Sign In</h2>
+                        </div>
+                        <div class="input-frame">
+                            <div class="floating-icon">
+                                <i class="fa-login fa-solid fa-user"></i>
+                                <input class="input" type="text" placeholder="Username" id="login-username" required>
+                            </div>
+                            <div class="floating-icon">
+                                <i class="fa-login fa-solid fa-lock"></i>
+                                <input class="input" type="password" placeholder="Password" id="login-password" required>
+                            </div>
+                            <div class="message" id="login-message">
+                            </div>
+                            <input type="submit" class="button" value="Login">
+                        </div>
+                        <div class="social-medias">
+                            <p>You can also access using your favorite social media</p>
+                            <ul class="list">
+                                <li><i class="fa-brands fa-facebook"></i></li>
+                                <li><i class="fa-brands fa-twitter"></i></li>
+                                <li><i class="fa-brands fa-google"></i></li>
+                                <li><i class="fa-brands fa-linkedin"></i></li>
+                            </ul>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="sign-in-option animate__animated animate__fadeInLeft" id="sign-in-option-page">
+                <h1>Do you have an account?</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima mollitia expedita corrupti perspiciatis vero laboriosam recusandae dolorem? Corporis praesentium voluptatibus minima in odio veritatis a impedit aspernatur tenetur officia laborum eveniet et, soluta magni perferendis vero culpa aperiam officiis repudiandae!</p>
+                <img src="https://i.postimg.cc/tgnw8Xv6/evolutionblogheader-removebg-preview.png" alt="Revenue Management">
+                <button class="trBtn" id="sign-in-btn">Sign In</button>
+            </div>
+
+            <div class="sign-up-option animate__animated animate__fadeInRight" id="sign-up-option-page">
+                <h1>New here?</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima mollitia expedita corrupti perspiciatis vero laboriosam recusandae dolorem? Corporis praesentium voluptatibus minima in odio veritatis a impedit aspernatur tenetur officia laborum eveniet et, soluta magni perferendis vero culpa aperiam officiis repudiandae!</p>
+                <img src="https://i.postimg.cc/tgnw8Xv6/evolutionblogheader-removebg-preview.png" alt="Revenue Management">
+                <button class="trBtn" id="sign-up-btn">Sign Up</button>
+            </div>
+             <div class="sign-up-form animate__animated animate__fadeInRight" id="sign-up-form-page">
+                <div class="sign-up-set">
+                    <img src="../images/duetto-logo-min.png" alt="Duetto Logo">
+                    <form class="login-form" id="sign-up-form">
+                        <div class="title">
+                            <h2>Sign Up</h2>
+                        </div>
+                        <div class="input-frame">
+                            <div class="floating-icon">
+                                <i class="fa-login fa-solid fa-signature"></i>
+                                <input class="input" type="text" placeholder="Name" id="sign-up-name" required>
+                            </div>
+                            <div class="floating-icon">
+                                <i class="fa-login fa-solid fa-user"></i>
+                                <input class="input" type="text" placeholder="Username" id="sign-up-username" required>
+                            </div>
+                            <div class="floating-icon">
+                                <i class="fa-login fa-solid fa-lock"></i>
+                                <input class="input" type="password" placeholder="Password" id="sign-up-password" required>
+                            </div>
+                            <div class="floating-icon">
+                                <i class="fa-login fa-solid fa-lock"></i>
+                                <input class="input" type="password" placeholder="Repeat Password" required>
+                            </div>
+                            <div class="message" id="sign-up-message">
+                            </div>
+                            <input type="submit" class="button" value="Register">
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+        </div>
+    </main>
+
+    <script src="../js/login.js"></script>
+</body>
+</html>
