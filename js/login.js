@@ -94,12 +94,7 @@ const loginListeners = () => {
                 });
             });
 
-            Swal.fire({
-                icon: 'success',
-                title: 'Your user has been created',
-                showConfirmButton: false,
-                timer: 2500
-            });
+            signInBtn.click();
         };
     });
 

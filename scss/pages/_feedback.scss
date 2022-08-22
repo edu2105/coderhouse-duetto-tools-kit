@@ -24,6 +24,25 @@
                 margin-left: 0;
             };
             justify-content: center;
+            .trUi-form{
+                display: none;
+                width: fit-content;
+                .trUi-fieldset{
+                    align-items: center;
+                };
+                p{
+                    text-align: center;
+                    max-width: 70%;
+                };
+                .trui-input{
+                    margin: .5rem .5rem;
+                };
+                .trui-buttons-container{
+                    @include flex-row;
+                    justify-content: space-evenly;
+                    width: 100%;
+                };
+            };
             .trivia-results-container{
                 height: auto;
                 @include flex-column;

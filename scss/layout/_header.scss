@@ -57,8 +57,7 @@
             .dropdown-item{
                 font-size: $headerFontSize;
             };
-            a:not(.dropdown-item),
-            .mobile-logout{
+            a:not(.dropdown-item){
                 text-decoration: none;
                 color: $headerLiColor;
                 font-size: $headerFontSize;

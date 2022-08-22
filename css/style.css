@@ -93,13 +93,11 @@ body {
     margin: 0 1rem 0 1rem; }
     .header .header-nav-bar li .dropdown-item {
       font-size: 1.2rem; }
-    .header .header-nav-bar li a:not(.dropdown-item),
-    .header .header-nav-bar li .mobile-logout {
+    .header .header-nav-bar li a:not(.dropdown-item) {
       text-decoration: none;
       color: white;
       font-size: 1.2rem; }
-      .header .header-nav-bar li a:not(.dropdown-item):not(.nav-link.dropdown-toggle)::after,
-      .header .header-nav-bar li .mobile-logout:not(.nav-link.dropdown-toggle)::after {
+      .header .header-nav-bar li a:not(.dropdown-item):not(.nav-link.dropdown-toggle)::after {
         content: "";
         display: block;
         height: 3px;
@@ -108,12 +106,10 @@ body {
         transition: transform 0.5s;
         transform: scaleX(0);
         transform-origin: center; }
-      .header .header-nav-bar li a:not(.dropdown-item):hover,
-      .header .header-nav-bar li .mobile-logout:hover {
+      .header .header-nav-bar li a:not(.dropdown-item):hover {
         color: #0C395A;
         transition: 0.4s; }
-        .header .header-nav-bar li a:not(.dropdown-item):hover:not(.nav-link.dropdown-toggle)::after,
-        .header .header-nav-bar li .mobile-logout:hover:not(.nav-link.dropdown-toggle)::after {
+        .header .header-nav-bar li a:not(.dropdown-item):hover:not(.nav-link.dropdown-toggle)::after {
           width: 100%;
           transform: scaleX(1);
           background: aqua; }
@@ -1008,6 +1004,21 @@ body {
     .main.feedback .sub-section-container.justify-trivia {
       justify-content: space-around;
       margin-left: 0; }
+    .main.feedback .sub-section-container .trUi-form {
+      display: none;
+      width: fit-content; }
+      .main.feedback .sub-section-container .trUi-form .trUi-fieldset {
+        align-items: center; }
+      .main.feedback .sub-section-container .trUi-form p {
+        text-align: center;
+        max-width: 70%; }
+      .main.feedback .sub-section-container .trUi-form .trui-input {
+        margin: .5rem .5rem; }
+      .main.feedback .sub-section-container .trUi-form .trui-buttons-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        width: 100%; }
     .main.feedback .sub-section-container .trivia-results-container {
       height: auto;
       display: flex;
@@ -1280,13 +1291,6 @@ body {
 
 /* || IPADS - TABLETS */
 @media (max-width: 768px) {
-  .header .header-nav-bar {
-    display: none; }
-  .header .mobile-placeholder {
-    display: block; }
-  .header .mobile-menu {
-    display: block;
-    justify-self: flex-start; }
   .main .sub-section-container.documentation .accordion {
     width: 100%; }
   .main .sub-section-container .workaround-container {
@@ -1327,17 +1331,7 @@ body {
   .main .video-container {
     position: unset; }
     .main .video-container .video-content {
-      max-width: 75%; }
-  #mobile-menu-check:checked ~ .mobile-menu-nav {
-    visibility: visible;
-    width: 100%;
-    height: 100%;
-    top: 6vh;
-    opacity: .95;
-    background-color: #3A79BD;
-    transition: 0.6s;
-    z-index: 2;
-    overflow-y: auto; } }
+      max-width: 75%; } }
 
 /* || MOBILE DEVICES */
 @media (max-width: 480px) {

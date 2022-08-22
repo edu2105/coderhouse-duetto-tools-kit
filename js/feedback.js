@@ -91,7 +91,7 @@ function createTrivia(){
     console.log("Trivia accepted");
     let trivia = new Trivia();
     //Message to be prompt
-    trivia.setPromptMessage = "Type an integration name and press ENTER. Type 'quit', 'QUIT' or click 'Cancel' to get your score.";
+    trivia.setPromptMessage = "Type an integration name and press ENTER or click 'Submit'. Click 'Finish' or type 'quit' to abort or get your score.";
     //Object array containing all the possible answers with their weights.
     trivia.setResponses = [
         {"integration": "amadeus", "weight": 0.04},
@@ -132,7 +132,10 @@ function triviaStart(trivia){
     const MEDIUM = 3;
     const HARD = 0;
 
-    let input = new String;
+    let trMainDiv = document.getElementById("tr-main-div");
+    let trUiForm = document.getElementById("trui-form");
+    let trUiMessage = document.getElementById("trui-message");
+    let trUiFinish = document.getElementById("trui-finish");
     let points = 0;
     let matches = [];
     //Get trivia possible responses
@@ -140,30 +143,43 @@ function triviaStart(trivia){
     //Get initial message to be prompted
     let question = trivia.getPromptMessage;
     console.log("Trivia started");
+    trMainDiv.classList.add("justify-trivia");
+    trUiMessage.innerHTML = question;
+    trUiForm.style.display = "flex";
     let startTime = performance.now();
     
-    while(input !== "quit"){
-        input = prompt(question);
-        //Check if user hits "Cancel"
-        input = input != null ? input.toLowerCase() : "quit";
+    trUiForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        
+        let input = document.getElementById("trui-input");
+        let inputValue = input.value.toLowerCase();
+        if(inputValue === "quit"){
+            trUiFinish.click();
+        };
+        input.value = "";
         //Check if the user input it is present in the object array with the possible answers.
-        let response = triviaResponses.find(element => element.integration === input);
+        let response = triviaResponses.find(element => element.integration === inputValue);
         if(response){
             points = points + response.weight;
             //Avoid the same valid answer more than one time
-            if(!matches.includes(input)){
+            if(!matches.includes(inputValue)){
                 matches.push(response.integration);
             };
         };
-    };
+    });
 
-    console.log("Trivia finished/quit");
-    let endTime = performance.now();
-    //Trivia time in seconds
-    let time = (endTime - startTime) / 1000;
-    //Create scoring object and call triviaFinish
-    let score = new Scoring(points, matches, triviaResponses, time);
-    triviaFinish(score);
+    trUiFinish.addEventListener("click", (e) => {
+        e.preventDefault();
+
+        console.log("Trivia finished/quit");
+        trUiForm.style.display = "none";
+        let endTime = performance.now();
+        //Trivia time in seconds
+        let time = (endTime - startTime) / 1000;
+        //Create scoring object and call triviaFinish
+        let score = new Scoring(points, matches, triviaResponses, time);
+        triviaFinish(score);
+    });
 };
 
 /**
