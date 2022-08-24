@@ -4,12 +4,27 @@
         background-size: cover;
         width: 100%;
         height: auto;
-        p{
-            color: white;
-            font-size: $mainFontSize;
-        };
-        h1{
-            color: $headerBackgroundColor4;
+        .main-section-container{
+            @include flex-row;
+            justify-content: space-between;
+            p{
+                color: white;
+                font-size: $mainFontSize;
+            };
+            h1{
+                color: $headerBackgroundColor4;
+            };
+            .take-trivia-btn{
+                width: fit-content;
+                height: fit-content;
+                margin-right: 2rem;
+                font-size: large;
+                border: 2px solid aqua;
+                background-color: $headerBackgroundColor4;
+                color: white;
+                align-self: center;
+                display: none;
+            };
         };
         .form{
             align-items: center;

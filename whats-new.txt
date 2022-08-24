@@ -78,3 +78,4 @@
         - Se agregó un nuevo efecto en la sección "Feedback". Ahora el background del formulario es de tipo "glass" o vidriado. Además los campos del formulario ahora tienen un efecto al hacer click.
     ## SEO
         - Se mantienen todos los cambios aplicados anteriormente.
+- 23-Agosto-2022

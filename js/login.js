@@ -1,9 +1,17 @@
+//bcrypt for hashing passwords with salt
 let bcrypt = dcodeIO.bcrypt;
 
+/**
+ * Removes any active session
+ */
 const initializeState = () => {
-    sessionStorage.clear();
+    sessionStorage.removeItem("userLoggedIn");
+    localStorage.removeItem("keepLoggedIn");
 };
 
+/**
+ * Functionallity for all inputs available
+ */
 const loginListeners = () => {
     let signUpBtn = document.getElementById("sign-up-btn");
     let signInBtn = document.getElementById("sign-in-btn");
@@ -15,12 +23,14 @@ const loginListeners = () => {
     let signUpOptionPage = document.getElementById("sign-up-option-page");
     let transitionFromClick = false;
 
+    //Hide sign in form when sign up button is clicked
     signUpBtn.addEventListener("click", (e) => {
         console.log("Sign Up button clicked");
         transitionFromClick = true;
         signInFormPage.classList.add("hide-form");
     });
 
+    //Hide sign up form when sign in button is clicked
     signInBtn.addEventListener("click", (e) => {
         console.log("Sign In button clicked");
         transitionFromClick = true;
@@ -33,18 +43,23 @@ const loginListeners = () => {
 
         let username = document.getElementById("login-username").value;
         let password = document.getElementById("login-password").value;
+        let keepLogged = document.getElementById("keep-logged").checked;
         let loginMessage = document.getElementById("login-message");
+        //Get all users saved in localStorage, if no users are found then return empty array
         let currentUsers = JSON.parse(localStorage.getItem("users") || "[]");
+        //Find and return user
         let userFound = currentUsers.find( (user) => {
             if(user.username === username){
                 return user;
             };
         });;
 
+        //If user was found then compare plain password vs password hashed
         if(userFound){
             bcrypt.compare(password, userFound.password, function(err, result){
                 if(result){
-                    sessionStorage.setItem("userLoggedIn", "true");
+                    keepLogged && localStorage.setItem("keepLoggedIn", keepLogged.toString());
+                    sessionStorage.setItem("userLoggedIn", true.toString());
                     window.location.replace('../index.html');
                 }else{
                     loginMessage.innerHTML = "Incorrect Password";
@@ -64,12 +79,12 @@ const loginListeners = () => {
         let username = document.getElementById("sign-up-username").value;
         let password = document.getElementById("sign-up-password").value;
         let signUpMessage = document.getElementById("sign-up-message");
+        //Get all users saved in localStorage, if no users are found then return empty array
         let currentUsers = JSON.parse(localStorage.getItem("users") || "[]");
         let userPresent = currentUsers.find( (user) => {
-            if(user.username === username){
+           if(user.username === username){
                 return true;
-            };
-            return false;
+           };
         });
 
         if(userPresent){
@@ -83,6 +98,7 @@ const loginListeners = () => {
                 "isActive": true
             };
 
+            //Hash plain password and save user in localStorage
             bcrypt.genSalt(5, (err, salt) => {
                 bcrypt.hash(password, salt, function(err, hash) {
                     newUser.password = hash;

@@ -715,6 +715,26 @@ body {
               font-size: 1rem;
               padding: .5rem;
               text-indent: 2rem; }
+          .sign-in .sign-in-form .sign-in-set .login-form .input-frame .keep-logged-container,
+          .sign-in .sign-in-form .sign-up-set .login-form .input-frame .keep-logged-container,
+          .sign-in .sign-up-form .sign-in-set .login-form .input-frame .keep-logged-container,
+          .sign-in .sign-up-form .sign-up-set .login-form .input-frame .keep-logged-container,
+          .sign-up .sign-in-form .sign-in-set .login-form .input-frame .keep-logged-container,
+          .sign-up .sign-in-form .sign-up-set .login-form .input-frame .keep-logged-container,
+          .sign-up .sign-up-form .sign-in-set .login-form .input-frame .keep-logged-container,
+          .sign-up .sign-up-form .sign-up-set .login-form .input-frame .keep-logged-container {
+            margin-left: .4rem; }
+            .sign-in .sign-in-form .sign-in-set .login-form .input-frame .keep-logged-container label,
+            .sign-in .sign-in-form .sign-up-set .login-form .input-frame .keep-logged-container label,
+            .sign-in .sign-up-form .sign-in-set .login-form .input-frame .keep-logged-container label,
+            .sign-in .sign-up-form .sign-up-set .login-form .input-frame .keep-logged-container label,
+            .sign-up .sign-in-form .sign-in-set .login-form .input-frame .keep-logged-container label,
+            .sign-up .sign-in-form .sign-up-set .login-form .input-frame .keep-logged-container label,
+            .sign-up .sign-up-form .sign-in-set .login-form .input-frame .keep-logged-container label,
+            .sign-up .sign-up-form .sign-up-set .login-form .input-frame .keep-logged-container label {
+              color: white;
+              font-size: 1.2rem;
+              margin-left: .5rem; }
           .sign-in .sign-in-form .sign-in-set .login-form .input-frame .button,
           .sign-in .sign-in-form .sign-up-set .login-form .input-frame .button,
           .sign-in .sign-up-form .sign-in-set .login-form .input-frame .button,
@@ -847,11 +867,11 @@ body {
     width: 50%; }
     .sign-in .sign-in-form.display-form,
     .sign-up .sign-in-form.display-form {
-      transition: 1s linear;
+      transition: .4s linear;
       visibility: visible; }
     .sign-in .sign-in-form.hide-form,
     .sign-up .sign-in-form.hide-form {
-      transition: 1s linear;
+      transition: .4s linear;
       border-radius: 0;
       visibility: hidden; }
   .sign-in .sign-up-form,
@@ -863,12 +883,12 @@ body {
     right: 0; }
     .sign-in .sign-up-form.display-form,
     .sign-up .sign-up-form.display-form {
-      transition: 1s linear;
+      transition: .4s linear;
       border-radius: 50% 0 0 50%;
       visibility: visible; }
     .sign-in .sign-up-form.hide-form,
     .sign-up .sign-up-form.hide-form {
-      transition: 1s linear;
+      transition: .4s linear;
       border-radius: 0;
       visibility: hidden; }
   .sign-in .sign-up-option,
@@ -988,11 +1008,25 @@ body {
   background-size: cover;
   width: 100%;
   height: auto; }
-  .main.feedback p {
-    color: white;
-    font-size: 1.2rem; }
-  .main.feedback h1 {
-    color: #44ADE2; }
+  .main.feedback .main-section-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; }
+    .main.feedback .main-section-container p {
+      color: white;
+      font-size: 1.2rem; }
+    .main.feedback .main-section-container h1 {
+      color: #44ADE2; }
+    .main.feedback .main-section-container .take-trivia-btn {
+      width: fit-content;
+      height: fit-content;
+      margin-right: 2rem;
+      font-size: large;
+      border: 2px solid aqua;
+      background-color: #44ADE2;
+      color: white;
+      align-self: center;
+      display: none; }
   .main.feedback .form {
     align-items: center; }
     .main.feedback .form label {

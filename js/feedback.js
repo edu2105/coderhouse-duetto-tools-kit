@@ -11,13 +11,23 @@ const saveLocal = (key, value) => { localStorage.setItem(key, value) };
 /**
  * Sets the main feedback form submit listener
  */
-function feedbackFormListener(){
+function setListeners(){
+    let retakeTriviaBtn = document.getElementById("take-trivia-btn");
     let feedbackForm = document.getElementById("feedback-form");
     let inputsRegex = '[id ^= "ff"]';
     //Gets all the inputs that starts with id "ff-"
     let inputsArray = document.querySelectorAll(inputsRegex);
     //Empty object that will populate based on each input value
     let feedbackContent = {};
+
+    //Trivia will start and Trivia button will be hidden from the DOM
+    retakeTriviaBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+
+        let trivia = createTrivia();
+        triviaStart(trivia);
+        triviaButton("none");
+    });
 
     feedbackForm.addEventListener("submit", (e) => {
         e.preventDefault();
@@ -45,6 +55,15 @@ function feedbackFormListener(){
         console.log("Feedback Form responses object: ");
         console.log({feedbackContent});
     });
+};
+
+/**
+ * Changes the Trivia button display in the DOM
+ * @param {String} display - Indicates the display state
+ */
+function triviaButton(display){
+    let retakeTriviaBtn = document.getElementById("take-trivia-btn");
+    retakeTriviaBtn.style.display = display;
 };
 
 /**
@@ -136,6 +155,7 @@ function triviaStart(trivia){
     let trUiForm = document.getElementById("trui-form");
     let trUiMessage = document.getElementById("trui-message");
     let trUiFinish = document.getElementById("trui-finish");
+    let input = document.getElementById("trui-input");
     let points = 0;
     let matches = [];
     //Get trivia possible responses
@@ -147,15 +167,12 @@ function triviaStart(trivia){
     trUiMessage.innerHTML = question;
     trUiForm.style.display = "flex";
     let startTime = performance.now();
-    
+   
     trUiForm.addEventListener("submit", (e) => {
         e.preventDefault();
-        
-        let input = document.getElementById("trui-input");
+
         let inputValue = input.value.toLowerCase();
-        if(inputValue === "quit"){
-            trUiFinish.click();
-        };
+        inputValue === "quit" && trUiFinish.click();
         input.value = "";
         //Check if the user input it is present in the object array with the possible answers.
         let response = triviaResponses.find(element => element.integration === inputValue);
@@ -173,6 +190,7 @@ function triviaStart(trivia){
 
         console.log("Trivia finished/quit");
         trUiForm.style.display = "none";
+        input.value = "";
         let endTime = performance.now();
         //Trivia time in seconds
         let time = (endTime - startTime) / 1000;
@@ -254,6 +272,7 @@ function triviaFinish(score){
 function showTriviaResult(uiResult, matches){
     let trMainDiv = document.getElementById("tr-main-div");
     let trDiv = document.getElementById("trivia-results");
+    trDiv.innerHTML = "";
 
     let trForm = document.createElement("form");
     let trFieldSet = document.createElement("fieldset");
@@ -307,6 +326,7 @@ function showTriviaResult(uiResult, matches){
 
     trForm.appendChild(trFieldSet)
     trDiv.appendChild(trForm);
+    trDiv.style.display = "flex";
 
     console.log("Trivia result displayed in DOM");
 
@@ -383,20 +403,28 @@ const triviaRequest = () => {
         }else{
             triviaDismiss();
             if(result.isDenied){
+                triviaButton("inline-block");
                 saveLocal("triviaRequest", false.toString());
             };
         };
       });
 };
 
+/**
+ * Check the local storage, if the user cancel the trivia then will pop-up again
+ * If the user denied the alert then a trivia button will be shown
+ */
 const checkTriviaSession = () => {
     let requestTrivia = localStorage.getItem("triviaRequest");
     if(requestTrivia !== "false"){
         triviaRequest();
+    }else{
+        triviaButton("inline-block");
     };
 };
 
+
 //Setting up the feedback form submit listener
-feedbackFormListener();
+setListeners();
 //Check local storage and run trivia request if needed
 checkTriviaSession();

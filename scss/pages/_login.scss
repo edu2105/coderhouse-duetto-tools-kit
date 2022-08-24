@@ -55,6 +55,14 @@
                             text-indent: 2rem;
                         };
                     };
+                    .keep-logged-container{
+                        margin-left: .4rem;
+                        label{
+                            color: white;
+                            font-size: 1.2rem;
+                            margin-left: .5rem;
+                        };
+                    };
                     .button{
                         margin: 2rem 0;
                         align-self: center;
@@ -130,11 +138,11 @@
         left: 0;
         width: 50%;
         &.display-form{
-            transition: 1s linear;
+            transition: .4s linear;
             visibility: visible;
         };
         &.hide-form{
-            transition: 1s linear;
+            transition: .4s linear;
             border-radius: 0;
             visibility: hidden;
         };
@@ -146,12 +154,12 @@
         width: 50%;
         right: 0;
         &.display-form{
-            transition: 1s linear;
+            transition: .4s linear;
             border-radius: 50% 0 0 50%;
             visibility: visible;
         };
         &.hide-form{
-            transition: 1s linear;
+            transition: .4s linear;
             border-radius: 0;
             visibility: hidden;
         };
