@@ -40,11 +40,7 @@ function setListeners(){
         **/ 
         inputsArray.forEach(input => {
             let id = input.id.split('-')[1];
-            if(input.type == "checkbox"){
-                feedbackContent[id] = input.checked;    
-            }else{
-                feedbackContent[id] = input.value;
-            };
+            input.type == "checkbox" ? feedbackContent[id] = input.checked : feedbackContent[id] = input.value;
         });
         Swal.fire({
             icon: 'success',
@@ -179,9 +175,7 @@ function triviaStart(trivia){
         if(response){
             points = points + response.weight;
             //Avoid the same valid answer more than one time
-            if(!matches.includes(inputValue)){
-                matches.push(response.integration);
-            };
+            !matches.includes(inputValue) && matches.push(response.integration);
         };
     });
 
@@ -194,6 +188,7 @@ function triviaStart(trivia){
         let endTime = performance.now();
         //Trivia time in seconds
         let time = (endTime - startTime) / 1000;
+        console.log("Time elapsed: " + time);
         //Create scoring object and call triviaFinish
         let score = new Scoring(points, matches, triviaResponses, time);
         triviaFinish(score);
@@ -269,7 +264,7 @@ function triviaFinish(score){
  * @param {object} uiResult 
  * @param {array} matches 
  */
-function showTriviaResult(uiResult, matches){
+function showTriviaResult({imageUrl, imageAlt, scoreText, titleText, descriptionText}, matches){
     let trMainDiv = document.getElementById("tr-main-div");
     let trDiv = document.getElementById("trivia-results");
     trDiv.innerHTML = "";
@@ -287,33 +282,33 @@ function showTriviaResult(uiResult, matches){
     let trBtnSave = document.createElement("input");
     let trBtnDiscard = document.createElement("button");
 
-    trForm.setAttribute("class", "trForm");
+    trForm.classList.add("trForm");
 
-    trLegend.setAttribute("class", "trLegend");
+    trLegend.classList.add("trLegend");
     trLegend.innerHTML = "Trivia Result";
-    trFieldSet.setAttribute("class", "fieldset");
+    trFieldSet.classList.add("fieldset");
 
-    trImage.setAttribute("src", uiResult.imageUrl);
-    trImage.setAttribute("alt", uiResult.imageAlt);
-    trImage.setAttribute("class", "trImage");
+    trImage.setAttribute("src", imageUrl);
+    trImage.setAttribute("alt", imageAlt);
+    trImage.classList.add("trImage");
     
-    trBody.setAttribute("class", "trBody");
-    trScore.setAttribute("class", "trScore");
-    trScore.innerHTML = uiResult.scoreText;
-    trTitle.setAttribute("class", "trTitle");
-    trTitle.innerHTML = uiResult.titleText;
-    trDescription.setAttribute("class", "trDescription");
-    trDescription.innerHTML = uiResult.descriptionText;
+    trBody.classList.add("trBody");
+    trScore.classList.add("trScore");
+    trScore.innerHTML = scoreText;
+    trTitle.classList.add("trTitle");
+    trTitle.innerHTML = titleText;
+    trDescription.classList.add("trDescription");
+    trDescription.innerHTML = descriptionText;
     trBody.appendChild(trTitle);
     trBody.appendChild(trScore);
     trBody.appendChild(trDescription);
 
-    trUl.setAttribute("class", "trMatchItems");
+    trUl.classList.add("trMatchItems");
 
-    trInputDiv.setAttribute("class", "trInputDiv");
-    trBtnSave.setAttribute("class", "trBtn");
+    trInputDiv.classList.add("trInputDiv");
+    trBtnSave.classList.add("trBtn");
     trBtnSave.setAttribute("type", "submit");
-    trBtnDiscard.setAttribute("class", "trBtn");
+    trBtnDiscard.classList.add("trBtn");
     trBtnDiscard.innerHTML = "Hide";
     trInputDiv.appendChild(trBtnSave);
     trInputDiv.appendChild(trBtnDiscard);
@@ -416,11 +411,7 @@ const triviaRequest = () => {
  */
 const checkTriviaSession = () => {
     let requestTrivia = localStorage.getItem("triviaRequest");
-    if(requestTrivia !== "false"){
-        triviaRequest();
-    }else{
-        triviaButton("inline-block");
-    };
+    requestTrivia !== "false" ? triviaRequest() : triviaButton("inline-block");
 };
 
 

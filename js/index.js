@@ -4,9 +4,7 @@
 const checkLoggedIn = () => {
     let loggedIn = sessionStorage.getItem("userLoggedIn");
     let keepLoggedIn = localStorage.getItem("keepLoggedIn");
-    if((loggedIn !== "true") && (keepLoggedIn !== "true")){
-        window.location.replace('../sections/login.html');
-    };
+    ((loggedIn !== "true") && (keepLoggedIn !== "true")) && window.location.replace('../sections/login.html');
 };
 
 checkLoggedIn();

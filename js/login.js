@@ -49,9 +49,7 @@ const loginListeners = () => {
         let currentUsers = JSON.parse(localStorage.getItem("users") || "[]");
         //Find and return user
         let userFound = currentUsers.find( (user) => {
-            if(user.username === username){
-                return user;
-            };
+            return user.username === username && user;
         });;
 
         //If user was found then compare plain password vs password hashed
@@ -82,9 +80,7 @@ const loginListeners = () => {
         //Get all users saved in localStorage, if no users are found then return empty array
         let currentUsers = JSON.parse(localStorage.getItem("users") || "[]");
         let userPresent = currentUsers.find( (user) => {
-           if(user.username === username){
-                return true;
-           };
+            return user.username === username && true;
         });
 
         if(userPresent){
