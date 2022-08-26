@@ -158,7 +158,7 @@ function triviaStart(trivia){
     let triviaResponses = trivia.getResponses;
     //Get initial message to be prompted
     let question = trivia.getPromptMessage;
-    console.log("Trivia started");
+    console.log('%c Trivia started', 'color: #00D100');
     trMainDiv.classList.add("justify-trivia");
     trUiMessage.innerHTML = question;
     trUiForm.style.display = "flex";
@@ -203,6 +203,8 @@ function triviaStart(trivia){
 function triviaFinish(score){
     let matches = score.getInputs;
     let triviaMode = score.getWeights();
+    console.log("Matches: ");
+    console.log(...matches);
     console.log("Trivia Mode");
     triviaMode.push({type: "difficulty", points: score.getDifficulty()});
     console.table(triviaMode);
