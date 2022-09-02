@@ -22,14 +22,14 @@ async function converter(json, textarea){
 
     const response = await fetch(endpoint, requestOptions);
     console.log(response);
-    const data = await response.text();
-    console.log(data);
     if(response.ok){
+        const data = await response.text();
         textarea.value = data;
     }else{
+        const data = await response.json();
         Swal.fire({
             icon: 'error',
-            html: `Error`,
+            html: `${data.Message}`,
             showConfirmButton: false
         });
         console.log(response.status);
