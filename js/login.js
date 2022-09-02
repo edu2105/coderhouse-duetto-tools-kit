@@ -21,7 +21,23 @@ const loginListeners = () => {
     let signUpFormPage = document.getElementById("sign-up-form-page");
     let signInOptionPage = document.getElementById("sign-in-option-page");
     let signUpOptionPage = document.getElementById("sign-up-option-page");
+    let password = document.getElementById("sign-up-ff-password");
+    let rPassword = document.getElementById("sign-up-ff-rpassword");
+    let passwordMessage = document.getElementById("sign-up-message-password");
     let transitionFromClick = false;
+    let typeMaxInterval = 1100;
+    let typeTimer;
+    const checkPassRepetead = () => {
+        if(password.value !== rPassword.value){
+            password.classList.add("error-pass");
+            rPassword.classList.add("error-pass");
+            passwordMessage.innerHTML = "Password does not match";
+        }else{
+            password.classList.remove("error-pass");
+            rPassword.classList.remove("error-pass");
+            passwordMessage.innerHTML = "";
+        };
+    };
 
     //Hide sign in form when sign up button is clicked
     signUpBtn.addEventListener("click", (e) => {
@@ -61,26 +77,30 @@ const loginListeners = () => {
                     window.location.replace('../index.html');
                 }else{
                     loginMessage.innerHTML = "Incorrect Password";
-                    loginMessage.style.color = "red";
                 };
             });
         }else{
             loginMessage.innerHTML = "User does not exist";
-            loginMessage.style.color = "red";
         };
     });
 
     registerForm.addEventListener("submit", (e) => {
         e.preventDefault();
 
-        let name = document.getElementById("sign-up-name").value;
-        let username = document.getElementById("sign-up-username").value;
-        let password = document.getElementById("sign-up-password").value;
+        let inputsRegex = '[id  ^= "sign-up-ff"]';
+        let inputsArray = document.querySelectorAll(inputsRegex);
+        let signUpFormInput = {};
         let signUpMessage = document.getElementById("sign-up-message");
+
+        inputsArray.forEach(input => {
+            let id = input.id.split('sign-up-ff-')[1];
+            signUpFormInput[id] = input.value;
+        });
+        
         //Get all users saved in localStorage, if no users are found then return empty array
         let currentUsers = JSON.parse(localStorage.getItem("users") || "[]");
         let userPresent = currentUsers.find( (user) => {
-            return user.username === username && true;
+            return user.username === signUpFormInput.username && true;
         });
 
         if(userPresent){
@@ -88,15 +108,15 @@ const loginListeners = () => {
             signUpMessage.style.color = "red";
         }else{
             let newUser = {
-                "name": name,
-                "username": username,
-                "password": password,
+                "name": signUpFormInput.name,
+                "username": signUpFormInput.username,
+                "password": signUpFormInput.password,
                 "isActive": true
             };
 
             //Hash plain password and save user in localStorage
             bcrypt.genSalt(5, (err, salt) => {
-                bcrypt.hash(password, salt, function(err, hash) {
+                bcrypt.hash(signUpFormInput.password, salt, function(err, hash) {
                     newUser.password = hash;
                     currentUsers.push(newUser);
                     console.log(currentUsers);
@@ -131,6 +151,16 @@ const loginListeners = () => {
             transitionFromClick = false;
         };
     });
+
+    rPassword.addEventListener("keyup", () => {
+        clearTimeout(typeTimer);
+        typeTimer = setTimeout(checkPassRepetead, typeMaxInterval);
+    });
+
+    rPassword.addEventListener("keydown", () => {
+        clearTimeout(typeTimer);
+    });
+
 };
 
 initializeState();

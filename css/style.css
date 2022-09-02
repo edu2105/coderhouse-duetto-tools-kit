@@ -251,7 +251,7 @@ body {
     .main .sub-section-container .validator-result {
       display: none; }
     .main .sub-section-container .payload-container {
-      margin-right: 1.2rem;
+      margin: 1rem 1.2rem 1rem 0;
       display: flex;
       flex-direction: column; }
     .main .sub-section-container .converter-container {
@@ -492,6 +492,8 @@ body {
     box-sizing: border-box;
     resize: none;
     width: fit-content; }
+  .main .form-control {
+    height: 100%; }
   .main input[type="submit"],
   .main .trBtn {
     margin: 1rem 0 1rem 1rem;
@@ -715,6 +717,25 @@ body {
               font-size: 1rem;
               padding: .5rem;
               text-indent: 2rem; }
+              .sign-in .sign-in-form .sign-in-set .login-form .input-frame .floating-icon .input.error-pass,
+              .sign-in .sign-in-form .sign-up-set .login-form .input-frame .floating-icon .input.error-pass,
+              .sign-in .sign-up-form .sign-in-set .login-form .input-frame .floating-icon .input.error-pass,
+              .sign-in .sign-up-form .sign-up-set .login-form .input-frame .floating-icon .input.error-pass,
+              .sign-up .sign-in-form .sign-in-set .login-form .input-frame .floating-icon .input.error-pass,
+              .sign-up .sign-in-form .sign-up-set .login-form .input-frame .floating-icon .input.error-pass,
+              .sign-up .sign-up-form .sign-in-set .login-form .input-frame .floating-icon .input.error-pass,
+              .sign-up .sign-up-form .sign-up-set .login-form .input-frame .floating-icon .input.error-pass {
+                border: 2px solid red; }
+          .sign-in .sign-in-form .sign-in-set .login-form .input-frame .message,
+          .sign-in .sign-in-form .sign-up-set .login-form .input-frame .message,
+          .sign-in .sign-up-form .sign-in-set .login-form .input-frame .message,
+          .sign-in .sign-up-form .sign-up-set .login-form .input-frame .message,
+          .sign-up .sign-in-form .sign-in-set .login-form .input-frame .message,
+          .sign-up .sign-in-form .sign-up-set .login-form .input-frame .message,
+          .sign-up .sign-up-form .sign-in-set .login-form .input-frame .message,
+          .sign-up .sign-up-form .sign-up-set .login-form .input-frame .message {
+            color: #cc0000;
+            font-size: 1.1rem; }
           .sign-in .sign-in-form .sign-in-set .login-form .input-frame .keep-logged-container,
           .sign-in .sign-in-form .sign-up-set .login-form .input-frame .keep-logged-container,
           .sign-in .sign-up-form .sign-in-set .login-form .input-frame .keep-logged-container,

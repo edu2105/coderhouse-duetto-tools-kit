@@ -115,7 +115,7 @@
             display: none;
         };
         .payload-container{
-            margin-right: 1.2rem;
+            margin: 1rem 1.2rem 1rem 0;
             @include flex-column;
         };
         .converter-container{
@@ -392,6 +392,9 @@
         box-sizing: border-box;
         resize: none;
         width: fit-content;
+    };
+    .form-control{
+        height: 100%;
     };
     input[type="submit"],
     .trBtn{

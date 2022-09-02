@@ -14,6 +14,8 @@
     <link rel="stylesheet" href="../css/style.css">
     <!-- Fav Icon -->
     <link rel="shortcut icon" href="../images/favicon.ico">
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.23/dist/sweetalert2.all.min.js"></script>
     <!-- Fontawesome -->
     <script src="https://kit.fontawesome.com/3e54838a37.js" crossorigin="anonymous"></script>
     <title>HTNG Validator</title>
@@ -38,7 +40,7 @@
                                 <!-- Sub-Menu -->
                                 <ul class="mobile-sub-nav-content">
                                     <li><a href="./validator.html">HTNG Validator</a></li>
-                                    <li><a href="./converter.html">XML To CSV</a></li>
+                                    <li><a href="./converter.html">JSON To CSV</a></li>
                                     <li><a href="./rate-sum.html">Rate Sum</a></li>
                                     <li><a href="./mews.html">Mews</a></li>
                                 </ul>
@@ -59,7 +61,7 @@
                         <!-- Sub-Menu -->
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li><a href="../tools-kit/validator.html" class="dropdown-item">HTNG Validator</a></li>
-                            <li><a href="../tools-kit/converter.html" class="dropdown-item">XML To CSV</a></li>
+                            <li><a href="../tools-kit/converter.html" class="dropdown-item">JSON To CSV</a></li>
                             <li><a href="../tools-kit/rate-sum.html" class="dropdown-item">Rate Sum</a></li>
                             <li><a href="../tools-kit/mews.html" class="dropdown-item">Mews</a></li>
                         </ul>                    
@@ -92,12 +94,7 @@
                             <label for="floatingTextarea">Paste your HTNG message here...</label>
                         </div>
                      </label>
-                    <button type="button" class="button">Validate</button>
-                    <label class="validator-result">
-                        <span>Result</span>
-                        <br>
-                        <textarea name="result" cols="30" rows="5" placeholder="Result will be shown here..."></textarea>
-                    </label>
+                    <button type="button" class="button" id="validator-btn">Validate</button>
                 </form>
             </div>
         </main>
@@ -115,6 +112,7 @@
     </div>
 
     <script src="../js/index.js" defer></script>
+    <script src="../js/validator.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 </body>
 </html>

@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="duetto tools, xml to csv, converter">
-    <meta name="description" content="This tool will let you transform an XML payload to a CSV file that you can copy or download.">
+    <meta name="keywords" content="duetto tools, json to csv, converter">
+    <meta name="description" content="This tool will let you transform an JSON payload to a CSV file that you can copy or download.">
     <!-- Bootstrap CSS-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <!-- Animate CSS -->
@@ -16,7 +16,7 @@
     <link rel="shortcut icon" href="../images/favicon.ico">
     <!-- Fontawesome -->
     <script src="https://kit.fontawesome.com/3e54838a37.js" crossorigin="anonymous"></script>
-    <title>XML To CSV</title>
+    <title>JSON To CSV</title>
 </head>
 <body>
     <div class="main-layout">
@@ -38,7 +38,7 @@
                                 <!-- Sub-Menu -->
                                 <ul class="mobile-sub-nav-content">
                                     <li><a href="./validator.html">HTNG Validator</a></li>
-                                    <li><a href="./converter.html">XML To CSV</a></li>
+                                    <li><a href="./converter.html">JSON To CSV</a></li>
                                     <li><a href="./rate-sum.html">Rate Sum</a></li>
                                     <li><a href="./mews.html">Mews</a></li>
                                 </ul>
@@ -59,7 +59,7 @@
                         <!-- Sub-Menu -->
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li><a href="../tools-kit/validator.html" class="dropdown-item">HTNG Validator</a></li>
-                            <li><a href="../tools-kit/converter.html" class="dropdown-item">XML To CSV</a></li>
+                            <li><a href="../tools-kit/converter.html" class="dropdown-item">JSON To CSV</a></li>
                             <li><a href="../tools-kit/rate-sum.html" class="dropdown-item">Rate Sum</a></li>
                             <li><a href="../tools-kit/mews.html" class="dropdown-item">Mews</a></li>
                         </ul>                    
@@ -78,30 +78,30 @@
         <main class="main">
             <!-- Main Section -->
             <div class="main-section-container">
-                <h1>XML To CSV Converter</h1>
-                <p>Converts your XML payload to CSV format.</p>
+                <h1>JSON To CSV Converter</h1>
+                <p>Converts your JSON payload to CSV format.</p>
             </div>
     
             <!-- Secondary Sections  -->
             <div class="sub-section-container">
                 <form action="#" method="POST" class="form">
                     <div class="converter-container">
-                        <label class="payload-container">
-                            <mark>XML</mark>
+                        <div class="payload-container">
+                            <mark>JSON</mark>
                             <div class="form-floating">
-                                <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea" cols="80" rows="20"></textarea>
-                                <label for="floatingTextarea">Copy your XML here..</label>
+                                <textarea class="form-control" placeholder="Leave a comment here" id="payload-json" cols="80" rows="20"></textarea>
+                                <label for="floatingTextarea">Copy your JSON here..</label>
                             </div>
-                        </label>
-                        <label class="payload-container">
+                        </div>
+                        <div class="payload-container">
                             <mark>CSV</mark>
                             <div class="form-floating">
-                                <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea" cols="80" rows="20" readonly></textarea>
+                                <textarea class="form-control" placeholder="Leave a comment here" id="payload-csv" cols="80" rows="20" readonly></textarea>
                                 <label for="floatingTextarea">CSV output...</label>
                             </div>
-                        </label>
+                        </div>
                     </div>
-                    <button type="button" class="button">Convert</button>
+                    <button type="button" class="button" id="converter-btn">Convert</button>
                 </form>
             </div>
         </main>
@@ -119,6 +119,7 @@
     </div>
 
     <script src="../js/index.js" defer></script>
+    <script src="../js/converter.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 </body>
 </html>
