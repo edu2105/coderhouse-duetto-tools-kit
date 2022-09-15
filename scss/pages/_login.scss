@@ -73,7 +73,7 @@
                     .button{
                         margin: 2rem 0;
                         align-self: center;
-                        width: 7vw;
+                        width: 80%;
                         font-size: 1rem;
                         font-weight: bold;
                         &:hover{
@@ -139,6 +139,9 @@
                 };
             };
         };
+        .sign-up-set{
+            width: auto;
+        };
     };
     .sign-in-form{
         position: absolute;
@@ -190,7 +193,7 @@
             font-size: 1rem;
             font-weight: bold;
             margin-top: 3rem;
-            width: 10vw;
+            width: 40%;
             &:hover{
                 box-shadow: unset;
                 background-color: $headerBackgroundColor4;

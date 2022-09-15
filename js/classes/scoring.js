@@ -45,7 +45,7 @@
     };
 
     /**
-     * 
+     * Calculates the final score using weights
      * @returns The final score calculated based on all the properties of this class.
      */
     calculateScore(){
@@ -55,16 +55,18 @@
         let score = 0;
         let numberOfInputs = this.inputs.length;
         let numberOfPossibleAnswers = this.possibleAnswers.length;
+        /**
+         * We are assuming that the best case scenario will be 1 correct answer per second
+         * so essentially the time bonus is calculated as the numberOfInputs divided by the bonus based on the difficulty
+         */
         let timeBonus = numberOfInputs / (this.time - TIME_BIAS);
         let numberOfInputsBonus = numberOfInputs / (numberOfPossibleAnswers - INPUTS_BIAS);
+        
+        //If for any reason the time bonus is greater than 1 we forced it to the max value (1)
+        timeBonus = (timeBonus < 0 || timeBonus > 1) && 1;
 
-        if(timeBonus < 0 || timeBonus > 1){
-            timeBonus = 1;
-        };
-
-        if(numberOfInputsBonus > 1){
-            numberOfInputsBonus = 1;
-        };
+        //If for any reason the number of inputs bonus is greater than 1 we forced it to the max value (1)
+        numberOfInputsBonus = numberOfInputsBonus > 1 && 1;
 
         if(numberOfInputs >= 0){
             score = (this.points * this.pointsWeight) + (numberOfInputsBonus * this.inputsWeight) + (timeBonus * this.timeWeight);

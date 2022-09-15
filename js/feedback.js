@@ -158,12 +158,12 @@ function triviaStart(trivia){
     let triviaResponses = trivia.getResponses;
     //Get initial message to be prompted
     let question = trivia.getPromptMessage;
-    console.log('%c Trivia started', 'color: #00D100');
     trMainDiv.classList.add("justify-trivia");
     trUiMessage.innerHTML = question;
     trUiForm.style.display = "flex";
+    console.log('%c Trivia started', 'color: #00D100');
     let startTime = performance.now();
-   
+
     trUiForm.addEventListener("submit", (e) => {
         e.preventDefault();
 
@@ -190,7 +190,7 @@ function triviaStart(trivia){
         let time = (endTime - startTime) / 1000;
         console.log("Time elapsed: " + time);
         //Create scoring object and call triviaFinish
-        let score = new Scoring(points, matches, triviaResponses, time);
+        let score = new Scoring(points, matches, triviaResponses, EASY);
         triviaFinish(score);
     });
 };

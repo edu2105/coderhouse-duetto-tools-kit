@@ -44,6 +44,13 @@ const loginListeners = () => {
         console.log("Sign Up button clicked");
         transitionFromClick = true;
         signInFormPage.classList.add("hide-form");
+        if(window.innerWidth <= 768){
+            signUpOptionPage.style.display = "none";
+            signUpFormPage.classList.remove("hide-form");
+            signUpFormPage.classList.add("display-form");
+            signInOptionPage.style.display = "flex";
+            transitionFromClick = false;
+        };
     });
 
     //Hide sign up form when sign in button is clicked
@@ -51,6 +58,13 @@ const loginListeners = () => {
         console.log("Sign In button clicked");
         transitionFromClick = true;
         signUpFormPage.classList.add("hide-form");
+        if(window.innerWidth <= 768){
+            signInOptionPage.style.display = "none";
+            signInFormPage.classList.remove("hide-form");
+            signInFormPage.classList.add("display-form");
+            signUpOptionPage.style.display = "flex";
+            transitionFromClick = false;
+        };
     });
 
     loginForm.addEventListener("submit", (e) => {

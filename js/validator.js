@@ -1,3 +1,6 @@
+/**
+ * Add on click listener to trigger the page functionallity
+ */
 function startListeners(){
     let validatorBtn = document.getElementById("validator-btn");
 
@@ -7,6 +10,10 @@ function startListeners(){
     });
 };
 
+/**
+ * Send an XML payload to an external API which will validate the structure based on an XSD
+ * @param {String} payload - XML body to validate
+ */
 async function htngValidator(payload){
     let endpoint = "https://g2q49hzy5e.execute-api.sa-east-1.amazonaws.com/default/htngValidator";
     let requestHeaders = {

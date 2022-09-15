@@ -1,3 +1,6 @@
+/**
+ * Add on click listener to trigger the page functionallity
+ */
 function startListeners(){
     let converterBtn = document.getElementById("converter-btn");
 
@@ -9,8 +12,13 @@ function startListeners(){
     });
 };
 
+/**
+ * Convert JSON payload to CSV using an external endpoint
+ * @param {object} json - Well formed JSON payload to be converted 
+ * @param {object} textarea - Html element to display the CSV result
+ */
 async function converter(json, textarea){
-    let endpoint = "https://enifi.stage.duettosystems.com/tools/jsontocsv";
+    let endpoint = "https://enifi.stage.duettosystems.com/nifi-tools/jsontocsv";
     let requestHeaders = {
         'Content-Type': 'application/json'
     };

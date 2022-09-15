@@ -1,5 +1,6 @@
 @media(max-width: 768px){
     .main{
+        overflow-x: hidden;
         .sub-section-container{
             &.documentation{
                 .accordion{
@@ -61,6 +62,66 @@
             position: unset;
             .video-content{
                 max-width: 75%;
+            };
+        };
+        .sign-in{
+            @include flex-column;
+            background-image: unset;
+            grid-template-columns: unset;
+            grid-template-rows: 1fr 1fr;
+            .sign-in-form{
+                position: relative;
+                width: 100%;
+                border-radius: unset;
+                .sign-in-set{
+                    width: 100%;
+                    margin-top: 1rem;
+                };
+                &.display-form{
+                    transition: .4s linear;
+                    display: flex;
+                    visibility: visible;
+                };
+                &.hide-form{
+                    transition: .4s linear;
+                    border-radius: unset;
+                    display: none;  
+                    visibility: hidden;
+                };
+            };
+            .sign-up-option{
+                position: relative;
+                width: 100%;
+                top: unset;
+                bottom: unset;
+                right: unset;
+                margin: 1rem 0;
+            };
+            .sign-up-form{
+                position: relative;
+                display: none;
+                width: 100%;
+                .sign-up-set{
+                    width: 100%;
+                    margin-top: 1rem;
+                };
+                &.display-form{
+                    transition: .4s linear;
+                    border-radius: unset;
+                    display: flex;
+                    visibility: visible;
+                };
+                &.hide-form{
+                    transition: .4s linear;
+                    border-radius: unset;
+                    display: none;
+                    visibility: hidden;
+                };
+            };
+            .sign-in-option{
+                position: relative;
+                display: none;
+                margin: 1rem 0;
             };
         };
     }

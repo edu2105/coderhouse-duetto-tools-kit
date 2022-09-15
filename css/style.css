@@ -766,7 +766,7 @@ body {
           .sign-up .sign-up-form .sign-up-set .login-form .input-frame .button {
             margin: 2rem 0;
             align-self: center;
-            width: 7vw;
+            width: 80%;
             font-size: 1rem;
             font-weight: bold; }
             .sign-in .sign-in-form .sign-in-set .login-form .input-frame .button:hover,
@@ -881,6 +881,11 @@ body {
                 transition: .5s linear;
                 background: linear-gradient(180deg, #3a79bd 20%, #f2f4f7 22%, #f2f4f7 83%, #3a79bd 85%);
                 cursor: pointer; }
+    .sign-in .sign-in-form .sign-up-set,
+    .sign-in .sign-up-form .sign-up-set,
+    .sign-up .sign-in-form .sign-up-set,
+    .sign-up .sign-up-form .sign-up-set {
+      width: auto; }
   .sign-in .sign-in-form,
   .sign-up .sign-in-form {
     position: absolute;
@@ -941,7 +946,7 @@ body {
       font-size: 1rem;
       font-weight: bold;
       margin-top: 3rem;
-      width: 10vw; }
+      width: 40%; }
       .sign-in .sign-up-option button:hover,
       .sign-in .sign-in-option button:hover,
       .sign-up .sign-up-option button:hover,
@@ -1346,47 +1351,99 @@ body {
 
 /* || IPADS - TABLETS */
 @media (max-width: 768px) {
-  .main .sub-section-container.documentation .accordion {
-    width: 100%; }
-  .main .sub-section-container .workaround-container {
-    display: flex;
-    flex-direction: column; }
-    .main .sub-section-container .workaround-container .workaround-logs {
-      margin-top: 3rem; }
-      .main .sub-section-container .workaround-container .workaround-logs .logs-container {
-        margin-left: 0;
-        align-items: center; }
-  .main.index {
-    grid-template-rows: auto; }
-    .main.index .sub-section-container .aside {
-      max-width: 60%; }
-      .main.index .sub-section-container .aside .placeholder {
-        height: 0; }
-  .main .start-section {
-    position: unset; }
-  .main .tools-section {
-    position: unset; }
-    .main .tools-section .cards-title {
-      margin-top: 2rem; }
-    .main .tools-section .cards-container .card-custom,
-    .main .tools-section .cards-container .card-custom.coming-soon {
-      max-width: 40%;
-      margin: 1rem 0 1rem 0; }
-    .main .tools-section .cards-container .card {
-      max-width: 40%;
-      margin: 1rem 0 1rem 0; }
-  .main .sub-section-container.index,
-  .main .sub-section-container {
-    display: flex;
-    flex-direction: column;
-    margin-left: 1.2rem; }
-  .main textarea {
-    width: calc(100% - 3rem);
-    height: auto; }
-  .main .video-container {
-    position: unset; }
-    .main .video-container .video-content {
-      max-width: 75%; } }
+  .main {
+    overflow-x: hidden; }
+    .main .sub-section-container.documentation .accordion {
+      width: 100%; }
+    .main .sub-section-container .workaround-container {
+      display: flex;
+      flex-direction: column; }
+      .main .sub-section-container .workaround-container .workaround-logs {
+        margin-top: 3rem; }
+        .main .sub-section-container .workaround-container .workaround-logs .logs-container {
+          margin-left: 0;
+          align-items: center; }
+    .main.index {
+      grid-template-rows: auto; }
+      .main.index .sub-section-container .aside {
+        max-width: 60%; }
+        .main.index .sub-section-container .aside .placeholder {
+          height: 0; }
+    .main .start-section {
+      position: unset; }
+    .main .tools-section {
+      position: unset; }
+      .main .tools-section .cards-title {
+        margin-top: 2rem; }
+      .main .tools-section .cards-container .card-custom,
+      .main .tools-section .cards-container .card-custom.coming-soon {
+        max-width: 40%;
+        margin: 1rem 0 1rem 0; }
+      .main .tools-section .cards-container .card {
+        max-width: 40%;
+        margin: 1rem 0 1rem 0; }
+    .main .sub-section-container.index,
+    .main .sub-section-container {
+      display: flex;
+      flex-direction: column;
+      margin-left: 1.2rem; }
+    .main textarea {
+      width: calc(100% - 3rem);
+      height: auto; }
+    .main .video-container {
+      position: unset; }
+      .main .video-container .video-content {
+        max-width: 75%; }
+    .main .sign-in {
+      display: flex;
+      flex-direction: column;
+      background-image: unset;
+      grid-template-columns: unset;
+      grid-template-rows: 1fr 1fr; }
+      .main .sign-in .sign-in-form {
+        position: relative;
+        width: 100%;
+        border-radius: unset; }
+        .main .sign-in .sign-in-form .sign-in-set {
+          width: 100%;
+          margin-top: 1rem; }
+        .main .sign-in .sign-in-form.display-form {
+          transition: .4s linear;
+          display: flex;
+          visibility: visible; }
+        .main .sign-in .sign-in-form.hide-form {
+          transition: .4s linear;
+          border-radius: unset;
+          display: none;
+          visibility: hidden; }
+      .main .sign-in .sign-up-option {
+        position: relative;
+        width: 100%;
+        top: unset;
+        bottom: unset;
+        right: unset;
+        margin: 1rem 0; }
+      .main .sign-in .sign-up-form {
+        position: relative;
+        display: none;
+        width: 100%; }
+        .main .sign-in .sign-up-form .sign-up-set {
+          width: 100%;
+          margin-top: 1rem; }
+        .main .sign-in .sign-up-form.display-form {
+          transition: .4s linear;
+          border-radius: unset;
+          display: flex;
+          visibility: visible; }
+        .main .sign-in .sign-up-form.hide-form {
+          transition: .4s linear;
+          border-radius: unset;
+          display: none;
+          visibility: hidden; }
+      .main .sign-in .sign-in-option {
+        position: relative;
+        display: none;
+        margin: 1rem 0; } }
 
 /* || MOBILE DEVICES */
 @media (max-width: 480px) {
