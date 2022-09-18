@@ -1433,14 +1433,16 @@ body {
         top: unset;
         bottom: unset;
         right: unset;
-        margin: 1rem 0; }
+        margin: 1rem 0;
+        padding: 0; }
       .main .sign-in .sign-up-form {
         position: relative;
         display: none;
         width: 100%; }
         .main .sign-in .sign-up-form .sign-up-set {
           width: 100%;
-          margin-top: 1rem; }
+          margin-top: 1rem;
+          height: auto; }
         .main .sign-in .sign-up-form.display-form {
           transition: .4s linear;
           border-radius: unset;
@@ -1454,7 +1456,8 @@ body {
       .main .sign-in .sign-in-option {
         position: relative;
         display: none;
-        margin: 1rem 0; } }
+        margin: 1rem 0;
+        padding: 0; } }
 
 /* || MOBILE DEVICES */
 @media (max-width: 480px) {

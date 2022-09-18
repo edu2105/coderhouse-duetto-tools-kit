@@ -96,6 +96,7 @@
                 bottom: unset;
                 right: unset;
                 margin: 1rem 0;
+                padding: 0;
             };
             .sign-up-form{
                 position: relative;
@@ -104,6 +105,7 @@
                 .sign-up-set{
                     width: 100%;
                     margin-top: 1rem;
+                    height: auto;
                 };
                 &.display-form{
                     transition: .4s linear;
@@ -122,6 +124,7 @@
                 position: relative;
                 display: none;
                 margin: 1rem 0;
+                padding: 0;
             };
         };
     }
