@@ -15,6 +15,7 @@ function startListeners(){
  * @param {String} payload - XML body to validate
  */
 async function htngValidator(payload){
+    let loader = document.getElementById("loader-container");
     let endpoint = "https://g2q49hzy5e.execute-api.sa-east-1.amazonaws.com/default/htngValidator";
     let requestHeaders = {
         'Content-Type': 'application/xml'
@@ -25,7 +26,9 @@ async function htngValidator(payload){
         body: payload
       };
 
+    loader.style.display = "block";
     const response = await fetch(endpoint, requestOptions);
+    loader.style.display = "none";
     console.log(response);
     const data = await response.json();
     console.log(data);

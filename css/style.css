@@ -553,6 +553,17 @@ body {
   .main .bold {
     color: #0C395A;
     font-weight: bold; }
+  .main .loader {
+    display: none;
+    position: absolute;
+    background-color: grey;
+    opacity: .6;
+    width: 100%;
+    height: 100%; }
+    .main .loader img {
+      position: absolute;
+      left: 50%;
+      bottom: 50%; }
 
 @keyframes animate {
   0% {

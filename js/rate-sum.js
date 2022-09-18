@@ -20,13 +20,16 @@ function startListeners(){
  * @param {file} formData - TSV File that should contain a "RATE" column with at least 1 row
  */
 async function rateSum(formData){
+    let loader = document.getElementById("loader-container");
     let endpoint = "https://enifi.stage.duettosystems.com/nifi-tools/rateSum";
     let requestOptions = {
         method: "POST",
         body: formData
     };
 
+    loader.style.display = "block";
     const response = await fetch(endpoint, requestOptions);
+    loader.style.display = "none";
     console.log(response);
     const data = await response.json();
     if(response.ok){

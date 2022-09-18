@@ -18,6 +18,7 @@ function startListeners(){
  * @param {object} textarea - Html element to display the CSV result
  */
 async function converter(json, textarea){
+    let loader = document.getElementById("loader-container");
     let endpoint = "https://enifi.stage.duettosystems.com/nifi-tools/jsontocsv";
     let requestHeaders = {
         'Content-Type': 'application/json'
@@ -28,7 +29,9 @@ async function converter(json, textarea){
         body: json
       };
 
+    loader.style.display = "block";
     const response = await fetch(endpoint, requestOptions);
+    loader.style.display = "none";
     console.log(response);
     if(response.ok){
         const data = await response.text();
