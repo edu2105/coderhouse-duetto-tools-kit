@@ -144,6 +144,7 @@ const loginListeners = () => {
         };
     });
 
+    //Listeners to apply effects/class changes after transition animation finishes
     signInFormPage.addEventListener("transitionend", (e) =>{
         console.log("Sign In form page transition end");
         if(window.getComputedStyle(signUpFormPage).visibility == "hidden" && transitionFromClick){
@@ -164,6 +165,16 @@ const loginListeners = () => {
             signUpOptionPage.style.display = "flex";
             transitionFromClick = false;
         };
+    });
+
+    //Logic to check values are the same in password and repeat password fields
+    password.addEventListener("keyup", () => {
+        clearTimeout(typeTimer);
+        typeTimer = setTimeout(checkPassRepetead, typeMaxInterval);
+    });
+
+    password.addEventListener("keydown", () => {
+        clearTimeout(typeTimer);
     });
 
     rPassword.addEventListener("keyup", () => {

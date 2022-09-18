@@ -48,6 +48,7 @@ function setListeners(){
             showConfirmButton: false,
             timer: 2500
         });
+        feedbackForm.reset();
         console.log("Feedback Form responses object: ");
         console.log({feedbackContent});
     });
